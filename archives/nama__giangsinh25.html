@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/svg+xml" href="/statics/images/logo.png" />
+    <title>Mừng Chúa Giáng Sinh</title>
+    <link rel="stylesheet" href="/statics/css/style.css" />
+    <link rel="stylesheet" href="/statics/css/responsive.css" />
+    <link rel="stylesheet" href="/statics/css/detailweeklysongs.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="/index.html">
+          <div class="logo">
+            <div>
+              <img alt="CĐ Ephata Logo" src="/statics/images/logo.png" />
+            </div>
+            <div><p>CĐ Ephata</p></div>
+          </div></a
+        >
+        <ul class="nav-menu">
+          <li><a href="/index.html">Trang Chủ</a></li>
+          <li><a href="/weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+          <li><a href="/performance.html">Lời Ca Tiếng Hát</a></li>
+          <li><a href="/life.html">Đời Sống</a></li>
+          <li><a href="about.html">Giới Thiệu</a></li>
+        </ul>
+        <div class="hamburger">☰</div>
+      </nav>
+    </header>
+
+    <div class="page-wrapper">
+      <!-- HERO + NÚT FULL PDF – ĐẸP NHẤT 2025, CHẠY 100% -->
+      <section class="hero">
+        <div class="container" style="text-align: center">
+          <!-- h1 cực đẹp, đọc rõ từ xa, có viền + bóng cam -->
+          <h1 class="super-title">
+            Mừng Chúa Giáng Sinh.<br />
+            <span>Năm A – 25.12.2025</span>
+          </h1>
+
+          <!-- Chủ đề (tùy chọn) -->
+          <p class="hero-subtitle">
+            Ngôi lời đã trở nên người phàm và cư ngụ giữa chúng ta.
+          </p>
+          <br />
+        </div>
+      </section>
+
+      <main class="container song-detail">
+        <!-- DANH SÁCH BÀI HÁT -->
+        <div class="songs-list no-advent">
+          <div class="song-item">
+            <h3>Nhập Lễ</h3>
+            <h4>Một Trẻ Thơ <span>– Martino</span></h4>
+            <p>Audio Sắp Được Cập Nhật.</p>
+          </div>
+
+          <div class="song-item">
+            <h3>Đáp Ca</h3>
+            <h4>TV 197 B <span>– Thanh Lam</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source src="/statics/mp4/tv197b.m4a" type="audio/mp4" />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <div class="song-item">
+            <h3>Alleluia</h3>
+            <h4>Chúa Đã Sinh Ra</h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source src="/statics/mp4/chua-da-sinh-ra.m4a" type="audio/mp4" />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <div class="song-item">
+            <h3>Dâng Lễ</h3>
+            <h4>Xin Dâng Lên <span>– Mi Trầm</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source src="/statics/mp4/xin-dang-len.m4a" type="audio/mp4" />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <div class="song-item">
+            <h3>Hiệp Lễ</h3>
+            <h4>Trời Đêm Belem <span>– Đỗ Vy Hạ</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source src="/statics/mp4/Troi-Dem-Be-Lem.m4a" type="audio/mp4" />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <div class="song-item">
+            <h3>Kết Lễ</h3>
+            <h4>Hồi Nhạc Thiên Quốc</h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source
+                src="/statics/mp4/hoi-nhac-thien-quoc.m4a"
+                type="audio/mp4"
+              />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <a
+            style="text-decoration: none; color: white"
+            href="/statics/pdf/full/nama__giangsinh25.pdf"
+            target="_blank"
+          >
+            <div class="pdf-toggle-btn">
+              TẢI TOÀN BỘ PDF TUẦN NÀY (5 bài hát)
+            </div>
+          </a>
+
+          <iframe
+            src="https://docs.google.com/gview?url=https://ephatachoir.org/statics/pdf/full/namA__giangsinh25.pdf&embedded=true"
+            width="100%"
+            height="800px"
+            frameborder="0"
+          >
+          </iframe>
+        </div>
+      </main>
+
+      <div class="footer-push"></div>
+    </div>
+
+    <footer>© 2025 HN – CĐ Ephata San Jose</footer>
+
+    <script src="/statics/js/index.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("SW registered"))
+          .catch((err) => console.log("SW error", err));
+      }
+    </script>
+  </body>
+</html>

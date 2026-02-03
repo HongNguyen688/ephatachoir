@@ -1,0 +1,168 @@
+/* ==================
+    RESPONSIVE 
+==================== */
+
+/* 1. Màn hình siêu lớn ≥ 1366px (Desktop 27", laptop 15-17") → 4 cột YouTube */
+@media (min-width: 1366px) {
+  .songs-youtube-grid {
+    gap: 3rem;
+    padding: 3rem 1rem;
+    max-width: 1400px; /* Optional: allow a bit wider on huge screens */
+  }
+}
+
+/* 2. iPad Pro ngang, tablet lớn, laptop 13-14" (1024px → 1366px) → ép đúng 3 cột đẹp */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .songs-youtube-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding: 2.5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* 3. Tablet thường, iPad dọc (dưới 1024px) → 2 cột */
+@media (max-width: 1024px) {
+  .songs-youtube-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .slides-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .navbar {
+    padding: 1.2rem;
+  }
+  .nav-menu {
+    gap: 1rem;
+  }
+  .logo p {
+    font-size: 1.6rem;
+  }
+  .hero .super-title {
+    font-size: 3.2rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero .super-title span {
+    font-size: 2rem !important;
+    display: block;
+    margin-top: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 0.95;
+  }
+}
+@media (max-width: 850px) {
+  .nav-menu {
+    gap: 0.75rem;
+  }
+  .logo p {
+    font-size: 1.5rem;
+  }
+}
+
+/* 4. Điện thoại lớn & tablet nhỏ (dưới 768px) → 1 cột */
+@media (max-width: 768px) {
+  /* Navbar hamburger */
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 999;
+  }
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-menu a {
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+    display: block;
+  }
+
+  /* Hero nhỏ lại */
+  .hero {
+    padding: 5rem 1rem 4rem !important;
+  }
+  .hero h1 {
+    font-size: 2.8rem !important;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  /* Tất cả grid về 1 cột */
+  .grid,
+  .gallery-grid,
+  .songs-list {
+    grid-template-columns: 1fr !important;
+    gap: 1.8rem;
+    margin: 2rem 0;
+  }
+
+  .slide-card {
+    flex-direction: column;
+  }
+  .slide-date {
+    min-width: auto;
+    padding: 1.2rem;
+  }
+  .links {
+    flex-direction: column;
+  }
+  .btn-youtube,
+  .btn-pdf,
+  .btn-slide,
+  .btn-download {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* 5. Điện thoại nhỏ hơn nữa (dưới 480px) */
+@media (max-width: 480px) {
+  .logo img {
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+  .logo p {
+    font-size: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem !important;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .songs-youtube-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .yt-item {
+    border-radius: 14px;
+  }
+}

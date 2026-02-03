@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/statics/images/logo.png" />
+
+    <title>CĐ Ephata - San Jose</title>
+    <link rel="stylesheet" href="statics/css/style.css" />
+    <link rel="stylesheet" href="statics/css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="index.html">
+          <div class="logo">
+            <div>
+              <img alt="CĐ Ephata Logo" src="statics/images/logo.png" />
+            </div>
+            <div><p>CĐ Ephata</p></div>
+          </div></a
+        >
+        <ul class="nav-menu">
+          <li><a href="index.html">Trang Chủ</a></li>
+          <li><a href="weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+          <li><a href="performance.html">Lời Ca Tiếng Hát</a></li>
+          <li><a href="life.html">Đời Sống</a></li>
+          <li><a href="about.html">Giới Thiệu</a></li>
+        </ul>
+        <div class="hamburger">☰</div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="container text-container">
+        <h1>Ca Đoàn Ephata</h1>
+        <p>Yêu thương – Phục vụ – Chia sẻ niềm tin</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <h2 style="text-align: center; margin: 2rem 0">
+        Bài Viết & Thông Báo Mới Nhất
+      </h2>
+      <div class="grid">
+        <div class="card">
+          <img src="statics/images/announcermance/newyear2026.png" alt="" />
+          <div class="card-body">
+            <h3>Lễ Mồng 1 Tết.</h3>
+            <p>Thứ ba, ngày 17 tháng 02 năm 2026 7:00 tối - Tiếng Việt</p>
+            <!-- <a href="#" class="btn-pdf">Xem thêm →</a> -->
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="statics/images/announcermance/img6.jpg" alt="" />
+          <div class="card-body">
+            <h3>Lễ Đức Maria - Mẹ Thiên Chúa (trọng và buộc)</h3>
+            <p>Thứ Năm, ngày 01 tháng 01 năm 2026 6:00 tối - Tiếng Việt</p>
+            <!-- <a href="#" class="btn-pdf">Xem thêm →</a> -->
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="statics/images/announcermance/img5.jpg" alt="" />
+          <div class="card-body">
+            <h3>Lễ Giáng Sinh 2025</h3>
+            <p>Chủ Nhật, ngày 25 tháng 12 năm 2025 11:00 sáng - Tiếng Việt</p>
+            <!-- <a href="#" class="btn-pdf">Xem thêm →</a> -->
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="statics/images/announcermance/img7.JPEG" alt="" />
+          <div class="card-body">
+            <h3>Đêm Hồng Ân 2025</h3>
+            <p>Thứ Sáu, ngày 19 tháng 12 năm 2025 7:00 tối</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="statics/images/announcermance/img4.jpg" alt="" />
+          <div class="card-body">
+            <h3>ĐỨC MẸ VÔ NHIỄM NGUYÊN TỘI (trọng và buộc)</h3>
+            <p>Thứ Hai, ngày 8 tháng 12 năm 2025 6:00 tối - Tiếng Việt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
+    <script src="statics/js/index.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("SW registered"))
+          .catch((err) => console.log("SW error", err));
+      }
+    </script>
+  </body>
+</html>

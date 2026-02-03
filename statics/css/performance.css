@@ -1,0 +1,76 @@
+/* ========================== 
+PERFORMANCE – YOUTUBE GRID 
+============================ */
+.songs-youtube-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem 1rem;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  /* 340px là kích thước lý tưởng cho 1 video YouTube thumbnail */
+}
+
+.yt-item {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(136, 176, 75, 0.15); /* green-tinted shadow */
+  transition: all 0.4s ease;
+  border: 1px solid #dbe7c7;
+  position: relative;
+}
+
+.yt-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(204, 170, 68, 0.25);
+}
+
+.yt-thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+}
+
+.yt-thumbnail iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.yt-info {
+  padding: 1rem 1.2rem;
+}
+
+.yt-info h3 {
+  color: #0f2418;
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.yt-info .date {
+  position: static; /* Override the absolute positioning */
+  background: none;
+  color: #888;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 0.3rem; /* Optional: small space above date */
+}
+
+/* Privacy */
+.privacy-container {
+  max-width: 800px;
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+}
+
+.privacy-container li {
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}

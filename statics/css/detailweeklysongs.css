@@ -1,0 +1,100 @@
+/* ======================= 
+  Detail Song Page
+======================== */
+.container.song-detail {
+  padding: 2rem 0.5rem;
+}
+
+.advent-box {
+  background: #fff9f5;
+  border-left: 6px solid #88b04b;
+  padding: 1.5rem;
+  border-radius: 0 12px 12px 0;
+  margin: 2rem 0;
+  box-shadow: 0 6px 20px rgba(136, 176, 75, 0.15);
+}
+.advent-box h3 {
+  color: #6b8e23;
+  margin-top: 0;
+}
+.advent-box ul {
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+
+.songs-list.no-advent {
+  margin-left: 0 !important;
+}
+.song-item {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(136, 176, 75, 0.15);
+  transition: all 0.3s;
+  border: 1px solid #dbe7c7;
+  margin: 1rem;
+}
+
+.song-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(204, 170, 68, 0.25);
+}
+.song-item h3 {
+  color: #0f2418;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+}
+.song-item h4 {
+  font-size: 1.6rem;
+  margin: 0 0 0.2rem;
+  color: #333;
+}
+.song-item h4 span {
+  font-size: 1.1rem;
+  color: #caa238;
+  font-weight: normal;
+}
+
+.audio-player {
+  width: 100%;
+  margin: 0.2rem 0;
+}
+.pdf-toggle-btn {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 1rem;
+  padding: 0.75rem 1.8rem;
+  background: #000000;
+  color: white;
+  font-weight: 600;
+  font-size: 1.75rem;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s ease;
+}
+.pdf-toggle-btn:hover {
+  background: #333333;
+  transform: translateY(-4px);
+}
+.pdf-viewer {
+  width: 100%;
+  height: 99vh; /* Or 100vh for almost full screen */
+  min-height: 600px; /* Minimum for small screens */
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+.pdf-viewer.active {
+  display: block;
+}
+/* Force full-width PDF content */
+.pdf-viewer::-webkit-pdf-viewer {
+  width: 100% !important;
+}
