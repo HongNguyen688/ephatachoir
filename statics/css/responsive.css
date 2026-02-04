@@ -142,7 +142,7 @@
 }
 
 /* 5. Điện thoại nhỏ hơn nữa (dưới 480px) */
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   .logo img {
     height: 3.2rem;
     width: 3.2rem;

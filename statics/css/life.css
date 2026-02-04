@@ -1,0 +1,54 @@
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(11, 58, 29, 0.18);
+  background: #fdf8ec; /* Nền trắng cam nhẹ */
+  padding: 12px;
+  transition: all 0.4s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px; /* Chiều cao cố định */
+  object-fit: contain; /* ← DÙNG CONTAIN = KHÔNG MẤT NGƯỜI */
+  object-position: center;
+  background: white;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+.gallery-item figcaption {
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #2f4f3a;
+}
+
+.date {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(11, 58, 29, 0.9);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #f7efd2;
+  font-size: 60px;
+  cursor: pointer;
+}

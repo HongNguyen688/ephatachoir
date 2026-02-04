@@ -33,19 +33,22 @@ document.querySelectorAll("audio").forEach(
     }),
 );
 
-/*===================================
-   Sort bài hát theo ngày mới nhất
-====================================*/
+/*=================================================
+   Sort bài hát theo ngày tháng (weeklysongs page)
+====================================================*/
 document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.querySelector(".posts-grid");
-  if (!grid) return;
-  const posts = Array.from(grid.querySelectorAll(".post-card"));
-  posts.sort((a, b) => {
-    return new Date(b.dataset.date) - new Date(a.dataset.date);
+  document.querySelectorAll(".sundays-grid").forEach((grid) => {
+    const posts = Array.from(grid.querySelectorAll(".post-card"));
+
+    posts.sort((a, b) => {
+      return new Date(a.dataset.date) - new Date(b.dataset.date);
+    });
+
+    posts.forEach((post) => grid.appendChild(post));
   });
-  posts.forEach((post) => grid.appendChild(post));
 });
 
+// Google Drive API key
 async function getFiles(folderId) {
   const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents&fields=files(id,name,mimeType,webViewLink,webContentLink,thumbnailLink)&key=${API_KEY}`;
   const res = await fetch(url);
