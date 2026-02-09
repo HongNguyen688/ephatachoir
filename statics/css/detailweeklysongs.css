@@ -7,14 +7,14 @@
 
 .advent-box {
   background: #fff9f5;
-  border-left: 6px solid #88b04b;
+  border-left: 6px solid purple;
   padding: 1.5rem;
   border-radius: 0 12px 12px 0;
   margin: 2rem 0;
   box-shadow: 0 6px 20px rgba(136, 176, 75, 0.15);
 }
 .advent-box h3 {
-  color: #6b8e23;
+  color: purple;
   margin-top: 0;
 }
 .advent-box ul {

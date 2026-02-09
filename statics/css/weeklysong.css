@@ -38,6 +38,7 @@
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
+
 .season-header {
   background: linear-gradient(135deg, #0b3a1d, #145a2a);
   color: white;
