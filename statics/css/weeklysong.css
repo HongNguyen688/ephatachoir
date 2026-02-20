@@ -3,23 +3,24 @@
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid var(--card-border);
 }
 .tab-button {
   padding: 12px 30px;
   font-size: 1.1rem;
   font-weight: bold;
-  background: #eee;
+  background: var(--accent);
   border: none;
   cursor: pointer;
   transition: all 0.3s;
   border-bottom: 4px solid transparent;
 }
+
 .tab-button.active,
 .tab-button:hover {
-  background: #fff;
-  border-bottom: 4px solid #0f2418;
-  color: #0f2418;
+  background: var(--primary);
+  border-bottom: 4px solid var(--primary-dark);
+  color: white;
 }
 
 .tab-content {
@@ -32,15 +33,20 @@
 /* Season block */
 .season {
   background: white;
-  border: 1px solid #ddd;
+  border: 1px solid var(--card-border);
   border-radius: 8px;
   margin-bottom: 25px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px var(--card-shadow);
 }
 
 .season-header {
-  background: linear-gradient(135deg, #0b3a1d, #145a2a);
+  background: linear-gradient(
+    135deg,
+    var(--hero-start),
+    var(--hero-mid),
+    var(--hero-end)
+  );
   color: white;
   padding: 15px 20px;
   font-size: 1.3rem;
@@ -49,7 +55,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background 0.3s;
 }
+
 .season-header::after {
   content: "▼";
   font-size: 1.1rem;

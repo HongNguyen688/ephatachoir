@@ -14,15 +14,15 @@ PERFORMANCE – YOUTUBE GRID
   background: white;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(136, 176, 75, 0.15); /* green-tinted shadow */
+  box-shadow: 0 10px 30px var(--card-shadow); /* green-tinted shadow */
   transition: all 0.4s ease;
-  border: 1px solid #dbe7c7;
+  border: 1px solid var(--card-border);
   position: relative;
 }
 
 .yt-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(204, 170, 68, 0.25);
+  box-shadow: 0 20px 40px var(--card-shadow);
 }
 
 .yt-thumbnail {
@@ -45,7 +45,7 @@ PERFORMANCE – YOUTUBE GRID
 }
 
 .yt-info h3 {
-  color: #0f2418;
+  color: var(--primary-dark);
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
   line-height: 1.4;
@@ -54,7 +54,7 @@ PERFORMANCE – YOUTUBE GRID
 .yt-info .date {
   position: static; /* Override the absolute positioning */
   background: none;
-  color: #888;
+  color: #666;
   padding: 0;
   border-radius: 0;
   font-size: 0.95rem;

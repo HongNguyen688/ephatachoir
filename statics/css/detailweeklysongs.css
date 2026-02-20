@@ -6,20 +6,21 @@
 }
 
 .advent-box {
-  background: #fff9f5;
-  border-left: 6px solid purple;
+  background: var(--background);
+  border-left: 6px solid var(--primary);
   padding: 1.5rem;
   border-radius: 0 12px 12px 0;
   margin: 2rem 0;
-  box-shadow: 0 6px 20px rgba(136, 176, 75, 0.15);
+  box-shadow: 0 6px 20px var(--card-shadow);
 }
 .advent-box h3 {
-  color: purple;
+  color: var(--primary-dark);
   margin-top: 0;
 }
 .advent-box ul {
   margin: 1rem 0;
   line-height: 1.8;
+  color: var(--text-main);
 }
 
 .songs-list.no-advent {
@@ -29,18 +30,18 @@
   background: #ffffff;
   border-radius: 20px;
   padding: 1.5rem 2rem;
-  box-shadow: 0 10px 30px rgba(136, 176, 75, 0.15);
+  box-shadow: 0 10px 30px var(--card-shadow);
   transition: all 0.3s;
-  border: 1px solid #dbe7c7;
+  border: 1px solid var(--card-border);
   margin: 1rem;
 }
 
 .song-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(204, 170, 68, 0.25);
+  box-shadow: 0 20px 40px var(--card-hover-shadow);
 }
 .song-item h3 {
-  color: #0f2418;
+  color: var(--primary-dark);
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -50,11 +51,11 @@
 .song-item h4 {
   font-size: 1.6rem;
   margin: 0 0 0.2rem;
-  color: #333;
+  color: var(--primary);
 }
 .song-item h4 span {
   font-size: 1.1rem;
-  color: #caa238;
+  color: var(--accent-dark);
   font-weight: normal;
 }
 
@@ -62,6 +63,7 @@
   width: 100%;
   margin: 0.2rem 0;
 }
+
 .pdf-toggle-btn {
   display: flex;
   justify-content: center;
@@ -86,7 +88,7 @@
   min-height: 600px; /* Minimum for small screens */
   border: none;
   border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px var(--card-shadow);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   display: none;

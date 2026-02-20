@@ -9,8 +9,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(11, 58, 29, 0.18);
-  background: #fdf8ec; /* Nền trắng cam nhẹ */
+  box-shadow: 0 10px 30px var(--card-shadow);
+  background: var(--background); /* Nền trắng cam nhẹ */
   padding: 12px;
   transition: all 0.4s ease;
 }
@@ -30,14 +30,14 @@
 .gallery-item figcaption {
   padding: 1rem;
   font-size: 0.9rem;
-  color: #2f4f3a;
+  color: var(--primary);
 }
 
 .date {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background: rgba(11, 58, 29, 0.9);
+  background: var(--primary);
   color: white;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
@@ -48,7 +48,7 @@
   position: absolute;
   top: 30px;
   right: 40px;
-  color: #f7efd2;
+  color: var(--hero-text);
   font-size: 60px;
   cursor: pointer;
 }
