@@ -1,0 +1,9 @@
+{
+  "appId": "com.ephatachoir",
+  "appName": "Ephata Choir",
+  "webDir": "www",
+  "server": {
+    "url": "https://ephatachoir.org",
+    "cleartext": false
+  }
+}

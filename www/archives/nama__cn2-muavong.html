@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="icon" type="image/svg+xml" href="../statics/images/logo.png" />
+    <title>CN II Mùa Vọng</title>
+    <link rel="stylesheet" href="../statics/css/style.css" />
+    <link rel="stylesheet" href="../statics/css/responsive.css" />
+    <link rel="stylesheet" href="../statics/css/detailweeklysongs.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="../index.html">
+          <div class="logo">
+            <div>
+              <img alt="CĐ Ephata Logo" src="../statics/images/logo.png" />
+            </div>
+            <div><p>CĐ Ephata</p></div>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Trang Chủ</a></li>
+          <li><a href="../weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+          <li><a href="../performance.html">Lời Ca Tiếng Hát</a></li>
+          <li><a href="../life.html">Đời Sống</a></li>
+          <li><a href="../about.html">Giới Thiệu</a></li>
+        </ul>
+        <div class="hamburger">☰</div>
+      </nav>
+    </header>
+
+    <div class="page-wrapper">
+      <section class="hero">
+        <div class="container" style="text-align: center">
+          <h1 class="super-title">
+            Chúa Nhật II Mùa Vọng<br />
+            <span>Năm A – 07.12.2025</span>
+          </h1>
+          <p class="hero-subtitle">
+            Hãy ăn năn thống hối, vì nước trời đã đến gần.
+          </p>
+          <br />
+        </div>
+      </section>
+
+      <main class="container song-detail">
+        <div class="advent-box">
+          <h3>Mùa Vọng – Nhắc nhở</h3>
+          <p>
+            Không có Kinh Vinh Danh • Vẫn có Alleluia • Không dạo đàn nếu không
+            có lời hát • 8.12: Lễ Đức Mẹ Vô Nhiễm (lễ buộc)
+          </p>
+        </div>
+
+        <div class="songs-list">
+          <!-- Nhập Lễ -->
+          <div class="song-item">
+            <h3>Nhập Lễ</h3>
+            <h4>Chúa Ngự Đến <span>– Trần Anh Linh</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source src="../statics/mp4/chua-ngu-den.m4a" type="audio/mp4" />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <!-- Đáp Ca -->
+          <div class="song-item">
+            <h3>Đáp Ca</h3>
+            <h4>TV 71 CN 2 Mùa Vọng <span>- Thái Nguyên</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source src="../statics/mp4/tv71.m4a" type="audio/mp4" />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <!-- Dâng Lễ -->
+          <div class="song-item">
+            <h3>Dâng Lễ</h3>
+            <h4>Lễ Dâng Trông Đợi <span>- Viết Chung</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source
+                src="../statics/mp4/le-dang-trong-doi.m4a"
+                type="audio/mp4"
+              />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <!-- Hiệp Lễ -->
+          <div class="song-item">
+            <h3>Hiệp Lễ</h3>
+            <h4>Sa Mạc Hồn Con <span>- Ngọc Khánh</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source
+                src="../statics/mp4/sa-mac-hon-con.m4a"
+                type="audio/mp4"
+              />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+
+          <!-- Kết Lễ (with PDF viewer) -->
+          <div class="song-item">
+            <h3>Kết Lễ</h3>
+            <h4>Nguồn Cậy Trông <span>- Hoàng Vũ</span></h4>
+            <audio controls playsinline preload="metadata" class="audio-player">
+              <source
+                src="../statics/mp4/nguon-cay-trong.m4a"
+                type="audio/mp4"
+              />
+              Trình duyệt của bạn không hỗ trợ phât âm thanh.
+            </audio>
+          </div>
+          <a
+            style="text-decoration: none; color: white"
+            href="../statics/pdf/full/nama__cn2-muavong.pdf"
+            target="_blank"
+          >
+            <div class="pdf-toggle-btn">
+              TẢI TOÀN BỘ PDF TUẦN NÀY (5 bài hát)
+            </div>
+          </a>
+
+          <embed
+            src="../statics/pdf/full/nama__cn2-muavong.pdf"
+            width="100%"
+            height="868px"
+            type="application/pdf"
+          />
+        </div>
+      </main>
+
+      <div class="footer-push"></div>
+    </div>
+
+    <footer>© 2025 HN – CĐ Ephata San Jose</footer>
+
+    <script src="../statics/js/index.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("SW registered"))
+          .catch((err) => console.log("SW error", err));
+      }
+    </script>
+  </body>
+</html>
