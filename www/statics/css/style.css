@@ -129,7 +129,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
 }
 .logo img {
   height: 4rem;
@@ -152,8 +152,8 @@ a:hover {
   display: flex;
   gap: 2rem;
   list-style: none;
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-top: 0.68rem;
+  padding-top: 0.68rem;
 }
 .nav-menu a {
   text-decoration: none;
