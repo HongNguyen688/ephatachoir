@@ -43,8 +43,8 @@
         <h2 style="text-align: center; margin: 3rem 0 2rem">
           Bộ Sưu Tập Hình Ảnh
         </h2>
-        <div class="gallery-grid">
-          <figure class="gallery-item">
+        <div class="gallery-grid" data-pagination data-per-page="12">
+          <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/xuan2026.jpg"
               alt="Lễ Bổn Mạng 2025"
@@ -54,7 +54,7 @@
             <span class="date">02/2026</span>
           </figure>
 
-          <figure class="gallery-item">
+          <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img8.png"
               alt="Lễ Bổn Mạng 2025"
@@ -64,7 +64,7 @@
             <span class="date">12/2025</span>
           </figure>
 
-          <figure class="gallery-item">
+          <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img7.JPEG"
               alt="Lễ Bổn Mạng 2025"
@@ -74,7 +74,7 @@
             <span class="date">12/2025</span>
           </figure>
 
-          <figure class="gallery-item">
+          <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img6.JPEG"
               alt="Lễ Bổn Mạng 2025"
@@ -84,7 +84,7 @@
             <span class="date">11/2025</span>
           </figure>
 
-           <figure class="gallery-item">
+           <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img5.JPG"
               alt="Lễ Bổn Mạng 2025"
@@ -94,7 +94,7 @@
             <span class="date">11/2025</span>
           </figure>
 
-           <figure class="gallery-item">
+           <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img4.JPG"
               alt="Lễ Bổn Mạng 2025"
@@ -104,7 +104,7 @@
             <span class="date">11/2025</span>
           </figure>
 
-          <figure class="gallery-item">
+          <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img1.jpg"
               alt="Lễ Bổn Mạng 2025"
@@ -114,7 +114,7 @@
             <span class="date">09/2025</span>
           </figure>
 
-          <figure class="gallery-item">
+          <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img2.png"
               alt="Giáng Sinh 2024"
@@ -123,7 +123,7 @@
             <figcaption>Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria</figcaption>
             <span class="date">09/2025</span>
           </figure>
-          <figure class="gallery-item">
+          <figure class="gallery-item page-item">
             <img
               src="./statics/images/memory/img3.png"
               alt="Lễ Bổn Mạng 2025"
@@ -131,21 +131,26 @@
             />
             <figcaption>Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria</figcaption>
             <span class="date">09/2025</span>
-          
+          </figure>
+          <figure class="gallery-item page-item">
+            <img
+              src="./statics/images/memory/img0.jpg"
+              alt="Lễ Bổn Mạng 2025"
+              loading="lazy"
+            />
+            <figcaption>Hành Hương 2025 – Cảm tạ Chúa và Mẹ Maria</figcaption>
+            <span class="date">04/2025</span>
+          </figure>
         </div>
+
+        <div id="pagination" class="pagination"></div>
       </main>
       <div class="footer-push"></div>
     </div>
 
     <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
     <script src="./statics/js/index.js" defer></script>
-    <!-- <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then(() => console.log("SW registered"))
-          .catch((err) => console.log("SW error", err));
-      }
-    </script> -->
+    <script src="./statics/js/pagination.js" defer></script>
+
   </body>
 </html>

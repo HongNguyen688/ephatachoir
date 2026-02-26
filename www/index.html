@@ -47,8 +47,8 @@
       <h2 style="text-align: center; margin: 2rem 0">
         Bài Viết & Thông Báo Mới Nhất
       </h2>
-      <div class="grid">
-        <div class="card">
+      <div class="grid" data-pagination data-per-page="6">
+        <div class="card page-item">
           <img src="./statics/images/announcermance/newyear2026.png" alt="" />
           <div class="card-body">
             <h3>Lễ Mồng 1 Tết.</h3>
@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card page-item">
           <img src="./statics/images/announcermance/img6.jpg" alt="" />
           <div class="card-body">
             <h3>Lễ Đức Maria - Mẹ Thiên Chúa (trọng và buộc)</h3>
@@ -66,7 +66,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card page-item">
           <img src="./statics/images/announcermance/img5.jpg" alt="" />
           <div class="card-body">
             <h3>Lễ Giáng Sinh 2025</h3>
@@ -75,7 +75,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card page-item">
           <img src="./statics/images/announcermance/img7.JPEG" alt="" />
           <div class="card-body">
             <h3>Đêm Hồng Ân 2025</h3>
@@ -83,7 +83,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card page-item">
           <img src="./statics/images/announcermance/img4.jpg" alt="" />
           <div class="card-body">
             <h3>ĐỨC MẸ VÔ NHIỄM NGUYÊN TỘI (trọng và buộc)</h3>
@@ -92,8 +92,10 @@
         </div>
       </div>
     </div>
+    <div class="pagination" id="pagination"></div>
     <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
-    <script src="./statics/js/index.js"></script>
+    <script src="./statics/js/index.js" defer></script>
+    <script src="./statics/js/pagination.js" defer></script>
     <!-- <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker

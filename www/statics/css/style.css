@@ -371,3 +371,31 @@ footer::before {
   display: block;
   height: 5px;
 }
+
+/* ==================
+    PAGINATION
+==================== */
+
+.pagination {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.page-btn {
+  margin: 5px;
+  padding: 8px 14px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.page-btn:hover {
+  background-color: #ddd;
+}
+
+.page-btn.active {
+  background-color: #b22222;
+  color: white;
+}
