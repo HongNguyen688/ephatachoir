@@ -1,0 +1,171 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: HongNguyen688/ephatachoir
+  branch: main
+
+media_folder: statics/images/announcements
+public_folder: /statics/images/announcements
+
+collections:
+  - name: announcements
+    label: Announcements / Thông Báo
+    files:
+      - file: data/announcements.json
+        label: Danh Sách Thông Báo
+        name: announcements
+        format: json
+        fields:
+          - name: announcements
+            label: Thông Báo
+            widget: list
+            fields:
+              - name: image
+                label: Hình Ảnh
+                widget: image
+                required: true
+                media_folder: statics/images/announcements
+                public_folder: /statics/images/announcements
+              - { name: title, label: Tiêu Đề, widget: string, required: true }
+              - {
+                  name: content,
+                  label: Nội Dung,
+                  widget: markdown,
+                  required: true,
+                }
+              - { name: date, label: Ngày, widget: datetime, required: true }
+
+  - name: weeks
+    label: Bài Hát Hàng Tuần
+    files:
+      - file: data/weeks.json
+        label: Tuần Lễ Phụng Vụ
+        name: weeks
+        format: json
+        fields:
+          - name: weeks
+            label: Danh sách các tuần
+            widget: list
+            summary: "{{fields.title}} – {{fields.date | date('DD/MM/YYYY')}}"
+            fields:
+              - {
+                  name: title,
+                  label: Tiêu đề tuần,
+                  widget: string,
+                  required: true,
+                }
+              - {
+                  name: liturgical_year,
+                  label: Năm Phụng Vụ,
+                  widget: select,
+                  options: ["A", "B", "C"],
+                  default: "A",
+                  required: true,
+                }
+              - {
+                  name: season,
+                  label: Mùa,
+                  widget: select,
+                  options:
+                    [
+                      "Mùa Vọng",
+                      "Mùa Giáng Sinh",
+                      "Mùa Thường Niên I",
+                      "Mùa Chay",
+                      "Mùa Phục Sinh",
+                      "Mùa Thường Niên II",
+                      "Các Ngày Lễ Khác",
+                    ],
+                  required: true,
+                }
+              - {
+                  name: date,
+                  label: Ngày (sắp xếp),
+                  widget: date,
+                  format: "YYYY-MM-DD",
+                  required: true,
+                }
+              - { name: theme, label: Chủ đề, widget: string }
+              - name: songs
+                label: Danh sách bài hát
+                widget: list
+                fields:
+                  - {
+                      - name: part,
+                      label: Phần,
+                      widget: select,
+                      options:
+                        [
+                          "Nhập Lễ",
+                          "Đáp Ca",
+                          "Dâng Lễ",
+                          "Hiệp Lễ",
+                          "Kết Lễ",
+                          "Phần Khác",
+                        ],
+                      required: true,
+                    }
+                  - {
+                      name: song_title,
+                      label: Tên bài hát,
+                      widget: string,
+                      required: true,
+                    }
+                  - { name: author, label: Soạn giả / Ca sĩ, widget: string }
+                  - name: audio
+                    label: File âm thanh (.m4a)
+                    widget: file
+                    required: true
+                    media_folder: statics/mp4
+                    public_folder: /statics/mp4
+                  # - name: pdf
+                  #   label: PDF riêng bài này (tùy chọn)
+                  #   widget: file
+                  #   media_folder: statics/pdf
+                  #   public_folder: /statics/pdf
+              - name: full_pdf
+                label: PDF toàn bộ tuần (tùy chọn)
+                widget: file
+                media_folder: statics/pdf
+                public_folder: /statics/pdf
+
+  - name: performances
+    label: Lời Ca Tiếng Hát / Performances
+    files:
+      - file: data/performances.json
+        label: YouTube Links
+        name: performances
+        format: json
+        fields:
+          - name: performances
+            label: Videos
+            widget: list
+            fields:
+              - { name: title, label: Tiêu Đề, widget: string, required: true }
+              - {
+                  name: youtube_url,
+                  label: Full YouTube URL,
+                  widget: string,
+                  required: true,
+                }
+
+  - name: life
+    label: Đời Sống / Life Page Pictures
+    files:
+      - file: data/life.json
+        label: Choir Pictures
+        name: life
+        format: json
+        fields:
+          - name: images
+            label: Hình Ảnh
+            widget: list
+            fields:
+              - name: image
+                label: Hình Ảnh
+                widget: image
+                required: true
+                media_folder: statics/images/memory
+                public_folder: /statics/images/memory
+              - { name: caption, label: Chú Thích (tùy chọn), widget: string }
