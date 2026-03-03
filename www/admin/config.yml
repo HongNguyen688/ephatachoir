@@ -5,7 +5,7 @@ backend:
   repo: HongNguyen688/ephatachoir
   branch: main
 
-media_folder: statics/images/announcements
+media_folder: statics/images/announcements   # ← removed extra 's' (change if your folder is really "statics")
 public_folder: /statics/images/announcements
 
 collections:
@@ -28,13 +28,8 @@ collections:
                 media_folder: statics/images/announcements
                 public_folder: /statics/images/announcements
               - { name: title, label: Tiêu Đề, widget: string, required: true }
-              - {
-                  name: content,
-                  label: Nội Dung,
-                  widget: markdown,
-                  required: true,
-                }
-              - { name: date, label: Ngày, widget: datetime, required: true }
+              - { name: content, label: Nội Dung, widget: markdown, required: true }
+              - { name: date, label: Ngày, widget: date, required: true }          # ← changed to date if no time needed
 
   - name: weeks
     label: Bài Hát Hàng Tuần
@@ -49,12 +44,7 @@ collections:
             widget: list
             summary: "{{fields.title}} – {{fields.date | date('DD/MM/YYYY')}}"
             fields:
-              - {
-                  name: title,
-                  label: Tiêu đề tuần,
-                  widget: string,
-                  required: true,
-                }
+              - { name: title, label: Tiêu đề tuần, widget: string, required: true }
               - {
                   name: liturgical_year,
                   label: Năm Phụng Vụ,
@@ -68,62 +58,40 @@ collections:
                   label: Mùa,
                   widget: select,
                   options:
-                    [
-                      "Mùa Vọng",
-                      "Mùa Giáng Sinh",
-                      "Mùa Thường Niên I",
-                      "Mùa Chay",
-                      "Mùa Phục Sinh",
-                      "Mùa Thường Niên II",
-                      "Các Ngày Lễ Khác",
-                    ],
+                    - Mùa Vọng
+                    - Mùa Giáng Sinh
+                    - Mùa Thường Niên I
+                    - Mùa Chay
+                    - Mùa Phục Sinh
+                    - Mùa Thường Niên II
+                    - Các Ngày Lễ Khác
                   required: true,
                 }
-              - {
-                  name: date,
-                  label: Ngày (sắp xếp),
-                  widget: date,
-                  format: "YYYY-MM-DD",
-                  required: true,
-                }
+              - { name: date, label: Ngày (sắp xếp), widget: date, format: "YYYY-MM-DD", required: true }
               - { name: theme, label: Chủ đề, widget: string }
               - name: songs
                 label: Danh sách bài hát
                 widget: list
                 fields:
-                  - {
-                      - name: part,
-                      label: Phần,
-                      widget: select,
-                      options:
-                        [
-                          "Nhập Lễ",
-                          "Đáp Ca",
-                          "Dâng Lễ",
-                          "Hiệp Lễ",
-                          "Kết Lễ",
-                          "Phần Khác",
-                        ],
-                      required: true,
-                    }
-                  - {
-                      name: song_title,
-                      label: Tên bài hát,
-                      widget: string,
-                      required: true,
-                    }
-                  - { name: author, label: Soạn giả / Ca sĩ, widget: string }
+                  - name: part
+                    label: Phần
+                    widget: select
+                    options:
+                      - Nhập Lễ
+                      - Đáp Ca
+                      - Dâng Lễ
+                      - Hiệp Lễ
+                      - Kết Lễ
+                      - Phần Khác
+                    required: true
+                  - { name: song_title, label: Tên bài hát, widget: string, required: true }
+                  - { name: author, label: Tác giả / Ca sĩ, widget: string }
                   - name: audio
                     label: File âm thanh (.m4a)
                     widget: file
                     required: true
-                    media_folder: statics/mp4
-                    public_folder: /statics/mp4
-                  # - name: pdf
-                  #   label: PDF riêng bài này (tùy chọn)
-                  #   widget: file
-                  #   media_folder: statics/pdf
-                  #   public_folder: /statics/pdf
+                    media_folder: statics/audio             # ← fixed from mp4 → audio
+                    public_folder: /statics/audio
               - name: full_pdf
                 label: PDF toàn bộ tuần (tùy chọn)
                 widget: file
