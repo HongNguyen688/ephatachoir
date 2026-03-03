@@ -34,8 +34,14 @@ collections:
                   widget: markdown,
                   required: true,
                 }
-              - { name: date, label: Ngày, widget: date, required: true } # ← changed to date if no time needed
-
+              - {
+                  name: date,
+                  label: Ngày,
+                  widget: datetime,
+                  time_format: false,
+                  date_format: "YYYY-MM-DD",
+                  required: true,
+                }
   - name: weeks
     label: Bài Hát Hàng Tuần
     files:
@@ -77,8 +83,9 @@ collections:
               - {
                   name: date,
                   label: Ngày (sắp xếp),
-                  widget: date,
-                  format: "YYYY-MM-DD",
+                  widget: datetime,
+                  time_format: false,
+                  date_format: "YYYY-MM-DD",
                   required: true,
                 }
               - { name: theme, label: Chủ đề, widget: string }
