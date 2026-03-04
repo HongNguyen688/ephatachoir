@@ -4,7 +4,7 @@ backend:
   name: github
   repo: HongNguyen688/ephatachoir
   branch: main
-  auth_type: pkce
+  client_id: Ov23lihgM6wsG6JwNqRz
 
 media_folder: statics/images/announcements # ← removed extra 's' (change if your folder is really "statics")
 public_folder: /statics/images/announcements
