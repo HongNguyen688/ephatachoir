@@ -47,55 +47,43 @@
       <h2 style="text-align: center; margin: 2rem 0">
         Bài Viết & Thông Báo Mới Nhất
       </h2>
-      <div class="grid" data-pagination data-per-page="6">
-        <div class="card page-item">
-          <img src="./statics/images/announcements/newyear2026.png" alt="" />
-          <div class="card-body">
-            <h3>Lễ Mồng 1 Tết.</h3>
-            <p>Thứ ba, ngày 17 tháng 02 năm 2026 7:00 tối - Tiếng Việt</p>
-            <!-- <a href="#" class="btn-pdf">Xem thêm →</a> -->
-          </div>
-        </div>
-
-        <div class="card page-item">
-          <img src="./statics/images/announcements/img6.jpg" alt="" />
-          <div class="card-body">
-            <h3>Lễ Đức Maria - Mẹ Thiên Chúa (trọng và buộc)</h3>
-            <p>Thứ Năm, ngày 01 tháng 01 năm 2026 6:00 tối - Tiếng Việt</p>
-            <!-- <a href="#" class="btn-pdf">Xem thêm →</a> -->
-          </div>
-        </div>
-
-        <div class="card page-item">
-          <img src="./statics/images/announcements/img5.jpg" alt="" />
-          <div class="card-body">
-            <h3>Lễ Giáng Sinh 2025</h3>
-            <p>Chủ Nhật, ngày 25 tháng 12 năm 2025 11:00 sáng - Tiếng Việt</p>
-            <!-- <a href="#" class="btn-pdf">Xem thêm →</a> -->
-          </div>
-        </div>
-
-        <div class="card page-item">
-          <img src="./statics/images/announcements/img7.JPEG" alt="" />
-          <div class="card-body">
-            <h3>Đêm Hồng Ân 2025</h3>
-            <p>Thứ Sáu, ngày 19 tháng 12 năm 2025 7:00 tối</p>
-          </div>
-        </div>
-
-        <div class="card page-item">
-          <img src="./statics/images/announcements/img4.jpg" alt="" />
-          <div class="card-body">
-            <h3>ĐỨC MẸ VÔ NHIỄM NGUYÊN TỘI (trọng và buộc)</h3>
-            <p>Thứ Hai, ngày 8 tháng 12 năm 2025 6:00 tối - Tiếng Việt</p>
-          </div>
-        </div>
+      <div class="grid" id="announcements-grid">
+        <!-- Announcements will be loaded here dynamically -->
       </div>
     </div>
     <div class="pagination" id="pagination"></div>
     <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
     <script src="./statics/js/index.js" defer></script>
-    <script src="./statics/js/pagination.js" defer></script>
+    <script>
+      async function loadAnnouncements() {
+        try {
+          const response = await fetch('data/announcements.json');
+          const data = await response.json();
+          const grid = document.getElementById('announcements-grid');
+          
+          const items = data.announcements || [];
+          
+          if (items.length > 0) {
+            grid.innerHTML = items.map(item => `
+              <div class="card">
+                <img src="${item.image}" alt="${item.title}" />
+                <div class="card-body">
+                  <h3>${item.title}</h3>
+                  <p>${item.content}</p>
+                </div>
+              </div>
+            `).join('');
+          } else {
+            grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có bài viết nào.</p>';
+          }
+        } catch (error) {
+          console.error('Error loading announcements:', error);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', loadAnnouncements);
+    </script>
+  </body>
+</html>
     <!-- <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker

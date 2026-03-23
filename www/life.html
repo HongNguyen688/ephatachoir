@@ -43,104 +43,8 @@
         <h2 style="text-align: center; margin: 3rem 0 2rem">
           Bộ Sưu Tập Hình Ảnh
         </h2>
-        <div class="gallery-grid" data-pagination data-per-page="12">
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/xuan2026.jpg"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Tết Bính Ngọ 2026</figcaption>
-            <span class="date">02/2026</span>
-          </figure>
-
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img8.png"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Giáng Sinh 2025</figcaption>
-            <span class="date">12/2025</span>
-          </figure>
-
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img7.JPEG"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Đêm Hồng Ân 2025</figcaption>
-            <span class="date">12/2025</span>
-          </figure>
-
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img6.JPEG"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Mừng 35 năm Hồng Ân & 65 năm sinh nhật Cha Lực</figcaption>
-            <span class="date">11/2025</span>
-          </figure>
-
-           <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img5.JPG"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Mừng 35 năm Hồng Ân & 65 năm sinh nhật Cha Lực</figcaption>
-            <span class="date">11/2025</span>
-          </figure>
-
-           <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img4.JPG"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-           <figcaption>Mừng 35 năm Hồng Ân & 65 năm sinh nhật Cha Lực</figcaption>
-            <span class="date">11/2025</span>
-          </figure>
-
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img1.jpg"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria</figcaption>
-            <span class="date">09/2025</span>
-          </figure>
-
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img2.png"
-              alt="Giáng Sinh 2024"
-              loading="lazy"
-            />
-            <figcaption>Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria</figcaption>
-            <span class="date">09/2025</span>
-          </figure>
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img3.png"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria</figcaption>
-            <span class="date">09/2025</span>
-          </figure>
-          <figure class="gallery-item page-item">
-            <img
-              src="./statics/images/memory/img0.jpg"
-              alt="Lễ Bổn Mạng 2025"
-              loading="lazy"
-            />
-            <figcaption>Hành Hương 2025 – Cảm tạ Chúa và Mẹ Maria</figcaption>
-            <span class="date">04/2025</span>
-          </figure>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Gallery items will be loaded here dynamically -->
         </div>
 
         <div id="pagination" class="pagination"></div>
@@ -150,7 +54,37 @@
 
     <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
     <script src="./statics/js/index.js" defer></script>
-    <script src="./statics/js/pagination.js" defer></script>
+    <script>
+      async function loadGallery() {
+        try {
+          const response = await fetch('data/life.json');
+          const data = await response.json();
+          const grid = document.getElementById('gallery-grid');
+          
+          const items = data.images || [];
+          
+          if (items.length > 0) {
+            grid.innerHTML = items.map(item => `
+              <figure class="gallery-item">
+                <img
+                  src="${item.image}"
+                  alt="${item.caption || 'Hình ảnh ca đoàn'}"
+                  loading="lazy"
+                />
+                <figcaption>${item.caption || ''}</figcaption>
+              </figure>
+            `).join('');
+          } else {
+            grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có hình ảnh nào.</p>';
+          }
+        } catch (error) {
+          console.error('Error loading gallery:', error);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', loadGallery);
+    </script>
+  </body>
+</html>
 
   </body>
 </html>

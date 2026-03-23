@@ -1,1 +1,44 @@
-{ "images": [] }
+{
+  "images": [
+    {
+      "image": "statics/images/memory/xuan2026.jpg",
+      "caption": "Tết Bính Ngọ 2026"
+    },
+    {
+      "image": "statics/images/memory/img8.png",
+      "caption": "Giáng Sinh 2025"
+    },
+    {
+      "image": "statics/images/memory/img7.JPEG",
+      "caption": "Đêm Hồng Ân 2025"
+    },
+    {
+      "image": "statics/images/memory/img6.JPEG",
+      "caption": "Mừng 35 năm Hồng Ân & 65 năm sinh nhật Cha Lực"
+    },
+    {
+      "image": "statics/images/memory/img5.JPG",
+      "caption": "Mừng 35 năm Hồng Ân & 65 năm sinh nhật Cha Lực"
+    },
+    {
+      "image": "statics/images/memory/img4.JPG",
+      "caption": "Mừng 35 năm Hồng Ân & 65 năm sinh nhật Cha Lực"
+    },
+    {
+      "image": "statics/images/memory/img1.jpg",
+      "caption": "Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria"
+    },
+    {
+      "image": "statics/images/memory/img2.png",
+      "caption": "Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria"
+    },
+    {
+      "image": "statics/images/memory/img3.png",
+      "caption": "Lễ Bổn Mạng 2025 – Cảm tạ Chúa và Mẹ Maria"
+    },
+    {
+      "image": "statics/images/memory/img0.jpg",
+      "caption": "Hành Hương 2025 – Cảm tạ Chúa và Mẹ Maria"
+    }
+  ]
+}

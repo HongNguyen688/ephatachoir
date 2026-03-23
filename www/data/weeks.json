@@ -1,1 +1,77 @@
-{ "weeks": [] }
+{
+  "weeks": [
+    {
+      "title": "Chúa Nhật IV Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-12-21",
+      "theme": "Chúa Giêsu sinh ra bởi Đức Maria, đính hôn với Thánh Giuse con vua Đavit.",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Dọn Đường Chúa Đến", "audio": "statics/audio/DonDuongChuaDen.m4a" }
+      ]
+    },
+    {
+      "title": "Chúa Nhật III Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-12-14",
+      "theme": "Thầy có phải là Đấng phải đến chăng?"
+    },
+    {
+      "title": "Chúa Nhật II Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-12-07",
+      "theme": "Hãy ăn năn thống hối, vì nước trời đã đến gần."
+    },
+    {
+      "title": "Chúa Nhật I Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-11-30",
+      "theme": "Hãy tỉnh thức, để sẵn sàng đón Chúa."
+    },
+    {
+      "title": "Mừng Chúa Giáng Sinh - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Giáng Sinh",
+      "date": "2025-12-25",
+      "theme": "Ngôi lời đã trở nên người phàm và cư ngụ giữa chúng ta."
+    },
+    {
+      "title": "Lễ Gia Đình Thánh Gia- Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Giáng Sinh",
+      "date": "2025-12-28",
+      "theme": "Này ông dạy đem Hài Nhi và mẹ người trốn sang Ai Cập."
+    },
+    {
+      "title": "Chúa Nhật Lễ Hiển Linh - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Giáng Sinh",
+      "date": "2026-01-04",
+      "theme": "Chúng tôi từ phương Đông đến thờ lạy Đức Vua."
+    },
+    {
+      "title": "Chúa Nhật VI Mùa Thường Niên - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-02-15",
+      "theme": "Ta không đến để huỷ bỏ nhưng để kiện toàn."
+    },
+    {
+      "title": "Chúa Nhật Lễ Chúa Chịu Phép Rửa - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-01-11",
+      "theme": "Giữ Trọn Đức Công Chính."
+    },
+    {
+      "title": "Mồng Một Tết",
+      "liturgical_year": "A",
+      "season": "Các Ngày Lễ Khác",
+      "date": "2026-02-17",
+      "theme": "Mừng Năm Mới – Cầu Bình An Cho Gia Đình"
+    }
+  ]
+}

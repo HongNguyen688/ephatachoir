@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
+    <title>Chi Tiết Phụng Vụ • CĐ Ephata</title>
+    <link rel="stylesheet" href="./statics/css/style.css" />
+    <link rel="stylesheet" href="./statics/css/responsive.css" />
+    <style>
+      .song-detail-card { background: #fff; padding: 2rem; border-radius: 12px; margin-top: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+      .song-item { border-bottom: 1px solid #eee; padding: 1rem 0; }
+      .song-item:last-child { border-bottom: none; }
+      .part-tag { background: #e67e22; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 8px; }
+      audio { width: 100%; margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="./index.html"><div class="logo"><div><img src="./statics/images/logo.png" /></div><div><p>CĐ Ephata</p></div></div></a>
+        <ul class="nav-menu">
+          <li><a href="./index.html">Trang Chủ</a></li>
+          <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+          <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
+          <li><a href="./life.html">Đời Sống</a></li>
+          <li><a href="./about.html">Giới Thiệu</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div id="song-detail-content">
+        <p style="text-align:center; padding: 3rem;">Đang tải thông tin...</p>
+      </div>
+    </main>
+
+    <script>
+      async function loadSongDetail() {
+        const params = new URLSearchParams(window.location.search);
+        const date = params.get('date');
+        
+        try {
+          const response = await fetch('data/weeks.json');
+          const data = await response.json();
+          const week = (data.weeks || []).find(w => w.date === date);
+          const container = document.getElementById('song-detail-content');
+
+          if (!week) {
+            container.innerHTML = '<p style="text-align:center; padding: 3rem;">Không tìm thấy thông tin cho ngày này.</p>';
+            return;
+          }
+
+          container.innerHTML = `
+            <div class="song-detail-card">
+              <h2 style="color: #e67e22;">${week.title}</h2>
+              <p><strong>Ngày:</strong> ${new Date(week.date).toLocaleDateString('vi-VN')}</p>
+              <p><strong>Mùa:</strong> ${week.season}</p>
+              <p><strong>Chủ đề:</strong> ${week.theme || ''}</p>
+              
+              <h3 style="margin-top: 2rem; border-bottom: 2px solid #e67e22; display: inline-block;">Danh Sách Bài Hát</h3>
+              <div class="songs-list">
+                ${(week.songs || []).map(song => `
+                  <div class="song-item">
+                    <span class="part-tag">${song.part}</span>
+                    <strong>${song.song_title}</strong> ${song.author ? `- ${song.author}` : ''}
+                    ${song.audio ? `<audio controls src="${song.audio}"></audio>` : ''}
+                  </div>
+                `).join('')}
+              </div>
+
+              ${week.full_pdf ? `
+                <div style="margin-top: 2rem;">
+                  <a href="${week.full_pdf}" class="btn-pdf" target="_blank">📄 Tải PDF Toàn Bộ</a>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      }
+      document.addEventListener('DOMContentLoaded', loadSongDetail);
+    </script>
+  </body>
+</html>

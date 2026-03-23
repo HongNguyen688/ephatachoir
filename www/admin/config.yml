@@ -6,14 +6,14 @@ backend:
   branch: main
   client_id: Ov23lihgM6wsG6JwNqRz
 
-media_folder: statics/images/announcements # ← removed extra 's' (change if your folder is really "statics")
+media_folder: www/statics/images/announcements 
 public_folder: /statics/images/announcements
 
 collections:
   - name: announcements
     label: Announcements / Thông Báo
     files:
-      - file: data/announcements.json
+      - file: www/data/announcements.json
         label: Danh Sách Thông Báo
         name: announcements
         format: json
@@ -26,7 +26,7 @@ collections:
                 label: Hình Ảnh
                 widget: image
                 required: true
-                media_folder: statics/images/announcements
+                media_folder: www/statics/images/announcements
                 public_folder: /statics/images/announcements
               - { name: title, label: Tiêu Đề, widget: string, required: true }
               - {
@@ -46,7 +46,7 @@ collections:
   - name: weeks
     label: Bài Hát Hàng Tuần
     files:
-      - file: data/weeks.json
+      - file: www/data/weeks.json
         label: Tuần Lễ Phụng Vụ
         name: weeks
         format: json
@@ -116,18 +116,18 @@ collections:
                     label: File âm thanh (.m4a)
                     widget: file
                     required: true
-                    media_folder: statics/audio # ← fixed from mp4 → audio
+                    media_folder: www/statics/audio 
                     public_folder: /statics/audio
               - name: full_pdf
                 label: PDF toàn bộ tuần (tùy chọn)
                 widget: file
-                media_folder: statics/pdf
+                media_folder: www/statics/pdf
                 public_folder: /statics/pdf
 
   - name: performances
     label: Lời Ca Tiếng Hát / Performances
     files:
-      - file: data/performances.json
+      - file: www/data/performances.json
         label: YouTube Links
         name: performances
         format: json
@@ -147,7 +147,7 @@ collections:
   - name: life
     label: Đời Sống / Life Page Pictures
     files:
-      - file: data/life.json
+      - file: www/data/life.json
         label: Choir Pictures
         name: life
         format: json
@@ -160,6 +160,6 @@ collections:
                 label: Hình Ảnh
                 widget: image
                 required: true
-                media_folder: statics/images/memory
+                media_folder: www/statics/images/memory
                 public_folder: /statics/images/memory
               - { name: caption, label: Chú Thích (tùy chọn), widget: string }
