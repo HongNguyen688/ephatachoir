@@ -1,70 +1,72 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1"
-      viewport-fit="cover,"
-      maximum-scale="1"
-    />
-    <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
 
-    <title>CĐ Ephata - San Jose</title>
-    <link rel="stylesheet" href="./statics/css/style.css" />
-    <link rel="stylesheet" href="./statics/css/responsive.css" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a href="./index.html">
-          <div class="logo">
-            <div>
-              <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
-            </div>
-            <div><p>CĐ Ephata</p></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" viewport-fit="cover," maximum-scale="1" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./statics/images/logo.png" />
+  <meta name="theme-color" content="#d35400" />
+  <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
+
+  <title>CĐ Ephata - San Jose</title>
+  <link rel="stylesheet" href="./statics/css/style.css" />
+  <link rel="stylesheet" href="./statics/css/responsive.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="./index.html">
+        <div class="logo">
+          <div>
+            <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
           </div>
-        </a>
-        <ul class="nav-menu">
-          <li><a href="./index.html">Trang Chủ</a></li>
-          <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
-          <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
-          <li><a href="./life.html">Đời Sống</a></li>
-          <li><a href="./about.html">Giới Thiệu</a></li>
-        </ul>
-        <div class="hamburger">☰</div>
-      </nav>
-    </header>
+          <div>
+            <p>CĐ Ephata</p>
+          </div>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="./index.html">Trang Chủ</a></li>
+        <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+        <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
+        <li><a href="./life.html">Đời Sống</a></li>
+        <li><a href="./about.html">Giới Thiệu</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
 
-    <section class="hero">
-      <div class="container text-container">
-        <h1>Ca Đoàn Ephata</h1>
-        <p>Yêu thương – Phục vụ – Chia sẻ niềm tin</p>
-      </div>
-    </section>
-
-    <div class="container">
-      <h2 style="text-align: center; margin: 2rem 0">
-        Bài Viết & Thông Báo Mới Nhất
-      </h2>
-      <div class="grid" id="announcements-grid">
-        <!-- Announcements will be loaded here dynamically -->
-      </div>
+  <section class="hero">
+    <div class="container text-container">
+      <h1>Ca Đoàn Ephata</h1>
+      <p>Yêu thương – Phục vụ – Chia sẻ niềm tin</p>
     </div>
-    <div class="pagination" id="pagination"></div>
-    <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
-    <script src="./statics/js/index.js" defer></script>
-    <script>
-      async function loadAnnouncements() {
-        try {
-          const response = await fetch('data/announcements.json');
-          const data = await response.json();
-          const grid = document.getElementById('announcements-grid');
-          
-          const items = data.announcements || [];
-          
-          if (items.length > 0) {
-            grid.innerHTML = items.map(item => `
+  </section>
+
+  <div class="container">
+    <h2 style="text-align: center; margin: 2rem 0">
+      Bài Viết & Thông Báo Mới Nhất
+    </h2>
+    <div class="grid" id="announcements-grid">
+      <!-- Announcements will be loaded here dynamically -->
+    </div>
+  </div>
+  <div class="pagination" id="pagination"></div>
+  <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
+  <script src="./statics/js/index.js" defer></script>
+  <script>
+    async function loadAnnouncements() {
+      try {
+        const response = await fetch('data/announcements.json');
+        const data = await response.json();
+        const grid = document.getElementById('announcements-grid');
+
+        const items = data.announcements || [];
+
+        if (items.length > 0) {
+          grid.innerHTML = items.map(item => `
               <div class="card">
                 <img src="${item.image}" alt="${item.title}" />
                 <div class="card-body">
@@ -73,24 +75,23 @@
                 </div>
               </div>
             `).join('');
-          } else {
-            grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có bài viết nào.</p>';
-          }
-        } catch (error) {
-          console.error('Error loading announcements:', error);
+        } else {
+          grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có bài viết nào.</p>';
         }
+      } catch (error) {
+        console.error('Error loading announcements:', error);
       }
-      document.addEventListener('DOMContentLoaded', loadAnnouncements);
-    </script>
-  </body>
-</html>
-    <!-- <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .register("/service-worker.js")
-          .then(() => console.log("SW registered"))
-          .catch((err) => console.log("SW error", err));
-      }
-    </script> -->
-  </body>
+    }
+    document.addEventListener('DOMContentLoaded', loadAnnouncements);
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(() => console.log('SW registered'))
+        .catch((err) => console.log('SW error', err));
+    }
+  </script>
+</body>
+
 </html>

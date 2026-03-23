@@ -1,0 +1,22 @@
+{
+  "name": "CĐ Ephata San Jose",
+  "short_name": "Ephata",
+  "description": "Bài hát hàng tuần và thông tin phụng vụ của cộng đoàn Ephata San Jose",
+  "start_url": "/www/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d35400",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/www/statics/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/www/statics/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

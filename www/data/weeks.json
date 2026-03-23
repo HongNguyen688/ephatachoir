@@ -1,77 +1,291 @@
 {
   "weeks": [
     {
-      "title": "Chúa Nhật IV Mùa Vọng - Năm A",
+      "title": "Chúa Nhật V Mùa Chay - Năm A",
       "liturgical_year": "A",
-      "season": "Mùa Vọng",
-      "date": "2025-12-21",
-      "theme": "Chúa Giêsu sinh ra bởi Đức Maria, đính hôn với Thánh Giuse con vua Đavit.",
+      "season": "Mùa Chay",
+      "date": "2026-03-22",
+      "theme": "Sự Sống - Sự Phục Sinh",
       "songs": [
-        { "part": "Nhập Lễ", "song_title": "Dọn Đường Chúa Đến", "audio": "statics/audio/DonDuongChuaDen.m4a" }
-      ]
+        { "part": "Nhập Lễ", "song_title": "Xin Chúa Thương", "author": "Vinam", "audio": "statics/mp4/xin-chua-thuong-vinam.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 29-Bởi Vì Chúa Xót Thương", "author": "Tường Ân", "audio": "statics/mp4/boi-vi-chua-xot-thuong-tuongan.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Tâm Tình Con Dâng 3", "author": "Mai Khanh", "audio": "statics/mp4/tam-tinh-con-dang3-maikhanh.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Phó Thác", "author": "Kiều Linh", "audio": "statics/mp4/pho-thac-kieulinh.m4a" },
+        { "part": "Kết Lễ", "song_title": "Mẹ Nhân Loại", "author": "Phanxico", "audio": "statics/mp4/me-nhan-loai1-phanxico.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muachay-cn5.pdf"
     },
     {
-      "title": "Chúa Nhật III Mùa Vọng - Năm A",
+      "title": "Chúa Nhật IV Mùa Chay - Năm A",
       "liturgical_year": "A",
-      "season": "Mùa Vọng",
-      "date": "2025-12-14",
-      "theme": "Thầy có phải là Đấng phải đến chăng?"
+      "season": "Mùa Chay",
+      "date": "2026-03-15",
+      "theme": "Thưa Ngài - Tôi tin",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Giọt Lệ Sầu", "author": "Lãng Tử", "audio": "statics/mp4/giot-le-sau-langtu.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 22B", "author": "Thanh Lâm", "audio": "statics/mp4/tv22b-thanhlam.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Lễ Dâng Thống Hối", "author": "Giang Ân", "audio": "statics/mp4/le-dang-thong-hoi-giangan.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Xin Mở Mắt Tôi", "author": "Đức Dũng", "audio": "statics/mp4/xin-mo-mat-toi-ducdung.m4a" },
+        { "part": "Kết Lễ", "song_title": "Về Bến Thiên Đàng", "author": "Minh Đệ", "audio": "statics/mp4/ve-ben-thien-dang-minhde.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muachay-cn4.pdf"
     },
     {
-      "title": "Chúa Nhật II Mùa Vọng - Năm A",
+      "title": "Chúa Nhật III Mùa Chay - Năm A",
       "liturgical_year": "A",
-      "season": "Mùa Vọng",
-      "date": "2025-12-07",
-      "theme": "Hãy ăn năn thống hối, vì nước trời đã đến gần."
+      "season": "Mùa Chay",
+      "date": "2026-03-08",
+      "theme": "Mạch nước vọt đến sự sống đời đời",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Lạy Chúa Bao Ngày Tháng", "author": "Kim Long", "audio": "statics/mp4/lay-chua-bao-ngay-thang-kimlong.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 94", "author": "Tường Ân", "audio": "statics/mp4/tv94-tuongan.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Tiến Dâng Lên", "author": "Phanxico", "audio": "statics/mp4/tien-dang-len-phanxico.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Cho Con Nhận Ra Chúa", "author": "Ân Đức", "audio": "statics/mp4/cho-con-nhan-ra-chua-anduc.m4a" },
+        { "part": "Kết Lễ", "song_title": "Lạy Thánh Giuse", "author": "Đạo Minh", "audio": "statics/mp4/lay-thanh-Giuse-daominh.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muachay-cn3.pdf"
     },
     {
-      "title": "Chúa Nhật I Mùa Vọng - Năm A",
+      "title": "Chúa Nhật II Mùa Chay - Năm A",
       "liturgical_year": "A",
-      "season": "Mùa Vọng",
-      "date": "2025-11-30",
-      "theme": "Hãy tỉnh thức, để sẵn sàng đón Chúa."
+      "season": "Mùa Chay",
+      "date": "2026-03-01",
+      "theme": "Mặt Người Chiếu Sáng Như Mặt Trời",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Từ Trong Đám Mây", "author": "Mi Trầm", "audio": "statics/mp4/tu-trong-dam-may-mitram.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 32", "author": "Thái Nguyên", "audio": "statics/mp4/tv32-thainguyen.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Lễ Dâng Mùa Cứu Độ", "author": "Viết Chung", "audio": "statics/mp4/le-dang-mua-cuu-do-vietchung.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Đưa Môn Sinh Lên Núi", "author": "Lê Phú Hải", "audio": "statics/mp4/nguoi-dua-mon-sinh-len-nui-lephuhai.m4a" },
+        { "part": "Kết Lễ", "song_title": "Mẹ Nhân Loại", "author": "Phanxico", "audio": "statics/mp4/me-nhan-loai-phanxico.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muachay-cn2.pdf"
     },
     {
-      "title": "Mừng Chúa Giáng Sinh - Năm A",
+      "title": "Chúa Nhật I Mùa Chay - Năm A",
       "liturgical_year": "A",
-      "season": "Mùa Giáng Sinh",
-      "date": "2025-12-25",
-      "theme": "Ngôi lời đã trở nên người phàm và cư ngụ giữa chúng ta."
-    },
-    {
-      "title": "Lễ Gia Đình Thánh Gia- Năm A",
-      "liturgical_year": "A",
-      "season": "Mùa Giáng Sinh",
-      "date": "2025-12-28",
-      "theme": "Này ông dạy đem Hài Nhi và mẹ người trốn sang Ai Cập."
-    },
-    {
-      "title": "Chúa Nhật Lễ Hiển Linh - Năm A",
-      "liturgical_year": "A",
-      "season": "Mùa Giáng Sinh",
-      "date": "2026-01-04",
-      "theme": "Chúng tôi từ phương Đông đến thờ lạy Đức Vua."
-    },
-    {
-      "title": "Chúa Nhật VI Mùa Thường Niên - Năm A",
-      "liturgical_year": "A",
-      "season": "Mùa Thường Niên I",
-      "date": "2026-02-15",
-      "theme": "Ta không đến để huỷ bỏ nhưng để kiện toàn."
-    },
-    {
-      "title": "Chúa Nhật Lễ Chúa Chịu Phép Rửa - Năm A",
-      "liturgical_year": "A",
-      "season": "Mùa Thường Niên I",
-      "date": "2026-01-11",
-      "theme": "Giữ Trọn Đức Công Chính."
+      "season": "Mùa Chay",
+      "date": "2026-02-22",
+      "theme": "Chúa Giêsu nhịn ăn bốn mươi ngày đêm và chịu cám dỗ",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Hãy Trở Về", "author": "Mi Trầm", "audio": "statics/mp4/hay-tro-ve-mitram.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 50", "author": "Huy Hoàng", "audio": "statics/mp4/tv50-huyhoang.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Lễ Vật Giao Hoà", "author": "Đỗ Vy Hạ", "audio": "statics/mp4/le-vat-giao-hoa-dovyha.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Cơn Cám Dỗ Thứ Tư", "author": "Thanh Lâm", "audio": "statics/mp4/con-cam-do-thu-tu-thanhlam.m4a" },
+        { "part": "Kết Lễ", "song_title": "Kinh Chay", "author": "Nguyễn Duy", "audio": "statics/mp4/kinh-chay-nguyenduy.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muachay-cn1.pdf"
     },
     {
       "title": "Mồng Một Tết",
       "liturgical_year": "A",
       "season": "Các Ngày Lễ Khác",
       "date": "2026-02-17",
-      "theme": "Mừng Năm Mới – Cầu Bình An Cho Gia Đình"
+      "theme": "Mừng Năm Mới – Cầu Bình An Cho Gia Đình",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Mừng Chào Mùa Xuân", "author": "Đỗ Vy Hạ", "audio": "statics/mp4/mung-chao-mua-xuan-dovyha.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 8", "author": "Thanh Lâm", "audio": "statics/mp4/tv8-thanhlam.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Ngày Xuân Xin Dâng", "author": "Phanxico", "audio": "statics/mp4/ngay-xuan-xin-dang-phanxico.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Đầu Xuân Cầu Cho Gia Đình", "author": "Phanxico", "audio": "statics/mp4/dau-xuan-cau-cho-gia-dinh-phanxico.m4a" },
+        { "part": "Hát tặng cộng đoàn", "song_title": "Chúc Xuân", "author": "Nguyễn Duy", "audio": "statics/mp4/chuc-xuan-nguyen-duy.m4a" },
+        { "part": "Kết Lễ", "song_title": "Nữ Vương Mùa Xuân", "author": "Vũ Mộng Thơ", "audio": "statics/mp4/nu-vuong-mua-xuan-vumongtho.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__mung1tet.pdf"
+    },
+    {
+      "title": "Chúa Nhật VI Mùa Thường Niên - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-02-15",
+      "theme": "Ta không đến để huỷ bỏ nhưng để kiện toàn",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Bước Vào Nhà Chúa", "author": "Xuân Kính", "audio": "statics/mp4/buoc-vao-nha-chua-xuankinh.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 118", "author": "Tường Ân", "audio": "statics/mp4/tv118-tuongan.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Lời Kinh Yêu Thương", "author": "Nguyễn Minh Thắng", "audio": "statics/mp4/loi-kinh-yeu-thuong-nguyenminhthang.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Biến Đổi Đời Con Chúa Ơi", "author": "", "audio": "statics/mp4/bien-doi-doi-con-chua-oi.m4a" },
+        { "part": "Kết Lễ", "song_title": "Sao Biển", "author": "Tâm Bảo", "audio": "statics/mp4/saobien-tambao.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muathuongnien-cn6.pdf"
+    },
+    {
+      "title": "Chúa Nhật V Mùa Thường Niên - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-02-08",
+      "theme": "Chính anh em là muối cho đời",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Dẫn Bước Con Đi", "author": "Kim Long", "audio": "statics/mp4/dan-buoc-con-di-kimlong.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 111", "author": "Thanh Lâm", "audio": "statics/mp4/tv111-thanhlam.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Tiến Dâng Cha", "author": "", "audio": "statics/mp4/tien-dang-cha.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Muối Men Cho Đời", "author": "Hồng Trần + Phạm Đình Đài", "audio": "statics/mp4/muoi-men-cho-doi-haitran-pddai.m4a" },
+        { "part": "Kết Lễ", "song_title": "Bài Ca Dâng Mẹ", "author": "Kim Long", "audio": "statics/mp4/bai-ca-dang-me-kimlong.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muathuongnien-cn5.pdf"
+    },
+    {
+      "title": "Chúa Nhật IV Mùa Thường Niên - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-02-01",
+      "theme": "Phúc cho những ai có tinh thần nghèo khó",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Hồn Tôi Ơi", "author": "Kim Long", "audio": "statics/mp4/hon-toi-oi-kim-long.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 145 C", "author": "Thanh Lâm", "audio": "statics/mp4/tv145c-thanh-lam.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Ca Dâng Lễ", "author": "Duy Vi", "audio": "statics/mp4/ca-dang-le-duy-vi.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Bài Ca Trên Núi", "author": "Nguyễn Duy", "audio": "statics/mp4/bai-ca-tren-nui-nguyen-duy.m4a" },
+        { "part": "Kết Lễ", "song_title": "Chút Tình Con Thơ", "author": "Nguyễn Duy", "audio": "statics/mp4/chut-tinh-con-tho-nguyen-duy.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muathuongnien-cn4.pdf"
+    },
+    {
+      "title": "Chúa Nhật III Mùa Thường Niên - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-01-25",
+      "theme": "Người vào Capharnaum để ứng nghiệm lời tiên tri Isaia",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Ca Khúc Hồng Ân 1", "author": "Nguyễn Duy", "audio": "statics/mp4/ca-khuc-hong-an-nguyen-duy.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 26", "author": "Thanh Lâm", "audio": "statics/mp4/tv26-thanh-lam.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Ca Khúc Trầm Hương", "author": "Dao Kim", "audio": "statics/mp4/ca-khuc-tram-huong-dao-kim.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Chúa Là Ánh Sáng", "author": "Huy Hoàng", "audio": "statics/mp4/chua-la-anh-sang-huy-hoang.m4a" },
+        { "part": "Kết Lễ", "song_title": "Tạ Ơn Chúa Với Mẹ", "author": "Thy Yên", "audio": "statics/mp4/ta-on-chua-voi-me-thy-yen.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__muathuongnien-cn3.pdf"
+    },
+    {
+      "title": "Chúa Nhật II Mùa Thường Niên - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-01-18",
+      "theme": "Đây là chiên Thiên Chúa, đây đấng xoá tội trần gian",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Hãy Đến", "author": "Kim Long", "audio": "statics/mp4/hay-den-tung-ho-chua.m4a" },
+        { "part": "Đáp Ca", "song_title": "Thánh Vịnh 39", "author": "Thanh Lâm", "audio": "statics/mp4/tv39.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Thành Tâm Kính Tiến", "author": "", "audio": "statics/mp4/thanh-tam-kinh-tien.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Xin Hiệp Nhất Chúng Con", "author": "Thành Tâm", "audio": "statics/mp4/bai-ca-hiep-nhat.m4a" },
+        { "part": "Kết Lễ", "song_title": "Dâng Về Mẹ", "author": "Kim Long", "audio": "statics/mp4/dang-ve-me.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__cn2-muathuongnien.pdf"
+    },
+    {
+      "title": "Chúa Nhật Lễ Chúa Chịu Phép Rửa - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Thường Niên I",
+      "date": "2026-01-11",
+      "theme": "Giữ Trọn Đức Công Chính",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Sau Phép Rửa", "author": "Mi Trầm", "audio": "statics/mp4/sau-phep-rua.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 28", "author": "Thái Nguyên", "audio": "statics/mp4/tv28.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Lễ Dâng Tình Yêu", "author": "Đinh Công Huỳnh", "audio": "statics/mp4/le-dang-tinh-yeu.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Chỉ Có Một Chúa", "author": "Thành Tâm", "audio": "statics/mp4/chi-co-mot-chua.m4a" },
+        { "part": "Kết Lễ", "song_title": "Thần Khí Chúa", "author": "Nguyễn Đức Tuấn", "audio": "statics/mp4/than-khi-chua-sai-di.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__chuachiupheprua.pdf"
+    },
+    {
+      "title": "Chúa Nhật Lễ Hiển Linh - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Giáng Sinh",
+      "date": "2026-01-04",
+      "theme": "Chúng tôi từ phương Đông đến thờ lạy Đức Vua",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Loài Người Ơi", "author": "Văn Thiều", "audio": "statics/mp4/loai-nguoi-oi.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 71", "author": "Thanh Lâm", "audio": "statics/mp4/tv71-thanhlam.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Dâng Về Hài Nhi", "author": "Tin Yêu", "audio": "statics/mp4/dang-ve-hai-nhi.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Theo Ánh Sao Thiêng [We Three Kings]", "author": "John Hopkins", "audio": "statics/mp4/theo-anh-sao-thien.m4a" },
+        { "part": "Kết Lễ", "song_title": "Mẹ Là Niềm Hy Vọng", "author": "An Phong", "audio": "statics/mp4/me-la-niem-hi-vong.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__lehienlinh.pdf"
+    },
+    {
+      "title": "Lễ Gia Đình Thánh Gia - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Giáng Sinh",
+      "date": "2025-12-28",
+      "theme": "Này ông dạy đem Hài Nhi và mẹ người trốn sang Ai Cập",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Gương Thánh Gia", "author": "Thiên Lý", "audio": "statics/mp4/guong-thanh-gia.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 127 C", "author": "Thanh Lâm", "audio": "statics/mp4/tv127c.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Trong Hang Đá Nhỏ", "author": "Phanxico", "audio": "statics/mp4/trong-hang-da-nho.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Mùa Đông Năm Ấy", "author": "Hoài Đức", "audio": "statics/mp4/mua-dong-nam-ay.m4a" },
+        { "part": "Kết Lễ", "song_title": "Hang Be-Lem", "author": "Hải Linh", "audio": "statics/mp4/hang-be-lem.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__legdthanhgia.pdf"
+    },
+    {
+      "title": "Mừng Chúa Giáng Sinh - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Giáng Sinh",
+      "date": "2025-12-25",
+      "theme": "Ngôi lời đã trở nên người phàm và cư ngụ giữa chúng ta",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Một Trẻ Thơ", "author": "Martino", "audio": "" },
+        { "part": "Đáp Ca", "song_title": "TV 197 B", "author": "Thanh Lam", "audio": "statics/mp4/tv197b.m4a" },
+        { "part": "Alleluia", "song_title": "Chúa Đã Sinh Ra", "author": "", "audio": "statics/mp4/chua-da-sinh-ra.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Xin Dâng Lên", "author": "Mi Trầm", "audio": "statics/mp4/xin-dang-len.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Trời Đêm Belem", "author": "Đỗ Vy Hạ", "audio": "statics/mp4/Troi-Dem-Be-Lem.m4a" },
+        { "part": "Kết Lễ", "song_title": "Hồi Nhạc Thiên Quốc", "author": "", "audio": "statics/mp4/hoi-nhac-thien-quoc.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__giangsinh25.pdf"
+    },
+    {
+      "title": "Chúa Nhật IV Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-12-21",
+      "theme": "Chúa Giêsu sinh ra bởi Đức Maria, đính hôn với Thánh Giuse con vua Đavit",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Trời Cao", "author": "Duy Tân", "audio": "statics/mp4/troi-cao.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 23 – Đức Vua Hiển Vinh", "author": "Bùi Ninh", "audio": "statics/mp4/tv23.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Hiến Lễ Chờ Mong", "author": "Đinh Công Huỳnh", "audio": "statics/mp4/hien-le-cho-mong.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Chúa Đã Làm Người", "author": "Thái Nguyên", "audio": "statics/mp4/chua-da-lam-nguoi.m4a" },
+        { "part": "Kết Lễ", "song_title": "Xin Vâng 2", "author": "Mi Trầm", "audio": "statics/mp4/Xin-Vang2.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__cn4-muavong.pdf"
+    },
+    {
+      "title": "Chúa Nhật III Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-12-14",
+      "theme": "Thầy có phải là Đấng phải đến chăng?",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Vui Lên", "author": "Mi Trầm", "audio": "statics/mp4/vui-len.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 145-Xin Đến Cứu Độ", "author": "Tường Ân", "audio": "statics/mp4/tv145.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Dâng Niềm Đợi Mong", "author": "Tường Ân", "audio": "statics/mp4/dang-niem-doi-mong.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Để Chúa Đến", "author": "Nguyễn Duy", "audio": "statics/mp4/de-chua-den.m4a" },
+        { "part": "Kết Lễ", "song_title": "Avemaria", "author": "Quang Uy", "audio": "statics/mp4/AVE-MARIA .m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__cn3-muavong.pdf"
+    },
+    {
+      "title": "Chúa Nhật II Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-12-07",
+      "theme": "Hãy ăn năn thống hối, vì nước trời đã đến gần",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Chúa Ngự Đến", "author": "Trần Anh Linh", "audio": "statics/mp4/chua-ngu-den.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 71 CN 2 Mùa Vọng", "author": "Thái Nguyên", "audio": "statics/mp4/tv71.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Lễ Dâng Trông Đợi", "author": "Viết Chung", "audio": "statics/mp4/le-dang-trong-doi.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Sa Mạc Hồn Con", "author": "Ngọc Khánh", "audio": "statics/mp4/sa-mac-hon-con.m4a" },
+        { "part": "Kết Lễ", "song_title": "Nguồn Cậy Trông", "author": "Hoàng Vũ", "audio": "statics/mp4/nguon-cay-trong.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__cn2-muavong.pdf"
+    },
+    {
+      "title": "Chúa Nhật I Mùa Vọng - Năm A",
+      "liturgical_year": "A",
+      "season": "Mùa Vọng",
+      "date": "2025-11-30",
+      "theme": "Hãy tỉnh thức, để sẵn sàng đón Chúa",
+      "songs": [
+        { "part": "Nhập Lễ", "song_title": "Nguyện Mùa Vọng", "author": "Hoàng Vũ", "audio": "statics/mp4/nguyen-mua-vong.m4a" },
+        { "part": "Đáp Ca", "song_title": "TV 121 – Tôi Vui Mừng 2", "author": "Tường Ân", "audio": "statics/mp4/tv121.m4a" },
+        { "part": "Dâng Lễ", "song_title": "Lễ Dâng Mùa Vọng", "author": "Đinh Công Huỳnh", "audio": "statics/mp4/le-dang-mua-vong.m4a" },
+        { "part": "Hiệp Lễ", "song_title": "Tỉnh Thức và Cầu Nguyện", "author": "Thái Nguyên", "audio": "statics/mp4/tinh-thuc-va-cau nguyen.m4a" },
+        { "part": "Kết Lễ", "song_title": "Dâng Nữ Vương Luyện Hình", "author": "Phương Anh", "audio": "statics/mp4/dang-nu-vuong-luyen hinh.m4a" }
+      ],
+      "full_pdf": "statics/pdf/nama__cn1-muavong.pdf"
     }
   ]
 }
