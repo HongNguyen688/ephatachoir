@@ -476,24 +476,24 @@ footer::before {
 }
 
 :root[data-theme="christmas"] {
-  --primary: #FFD700; /* Radiant Gold */
-  --primary-hover: #FFE436;
-  --primary-dark: #FFB300;
-  --accent: #00A859; /* Bright Emerald Green */
-  --accent-hover: #32CD32;
-  --accent-dark: #008000;
-  --nav-border: #FFD700;
-  --hero-start: #006400; /* Super rich dark green */
-  --hero-mid: #00C853; /* Burst of incredibly bright, joyful green */
-  --hero-end: #008033;
-  --hero-text: #ffffff;
-  --hero-title: #FFD700; /* Bright gold titles pop perfectly on bright green */
-  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  --text-heading: #00A859;
-  --footer-start: #008033;
-  --footer-end: #006400;
-  --footer-text: #FFD700;
+  --primary: #cda434; /* Gold links/buttons */
+  --primary-hover: #e5c158;
+  --primary-dark: #8c6b1a;
+  --accent: #156B3A; /* Pine Green */
+  --accent-hover: #1b8a4a;
+  --accent-dark: #0A3F24;
+  --nav-border: #cda434; /* Gold border */
+  --hero-start: #0A3F24; /* Deep Pine Background */
+  --hero-mid: #156B3A;
+  --hero-end: #0E502B;
+  --hero-text: #f0f0f0;
+  --hero-title: #e5c158; /* Amazing Gold Title */
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --text-heading: #156B3A; /* Articles get Pine Green headings */
+  --footer-start: #0E502B;
+  --footer-end: #0A3F24;
+  --footer-text: #cda434;
 }
 
 /* ==================

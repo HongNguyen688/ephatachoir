@@ -14,7 +14,7 @@ const THEME_META_COLORS = {
   gold: '#FF9800',
   red: '#e50914',
   white: '#ffffff',
-  christmas: '#00C853'
+  christmas: '#156B3A'
 };
 
 function applyTheme(themeName) {
