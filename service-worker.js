@@ -1,29 +1,42 @@
 // ============================================================
-// CĐ Ephata Service Worker — Offline PWA (v6)
+// CĐ Ephata Service Worker — Offline PWA (v7)
 // ============================================================
-const CACHE_VERSION = 'v6';
+const CACHE_VERSION = 'v7';
 const CACHE_NAME = `ephata-cache-${CACHE_VERSION}`;
 
 // Assets to pre-cache
 const STATIC_SHELL = [
-  '/www/manifest.json',
-  '/www/statics/css/style.css',
-  '/www/statics/css/responsive.css',
-  '/www/statics/css/weeklysong.css',
-  '/www/statics/css/detailweeklysongs.css',
-  '/www/statics/css/performance.css',
-  '/www/statics/css/life.css',
-  '/www/statics/js/index.js',
-  '/www/statics/images/logo.png',
-  '/www/data/weeks.json',
-  '/www/data/performances.json',
+  '/',
+  '/index.html',
+  '/weeklysongs.html',
+  '/song-detail.html',
+  '/performance.html',
+  '/life.html',
+  '/about.html',
+  '/manifest.json',
+  '/statics/css/style.css',
+  '/statics/css/responsive.css',
+  '/statics/css/weeklysong.css',
+  '/statics/css/detailweeklysongs.css',
+  '/statics/css/performance.css',
+  '/statics/css/life.css',
+  '/statics/js/index.js',
+  '/statics/images/logo.png',
+  '/data/weeks.json',
+  '/data/performances.json',
 ];
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
-      Promise.allSettled(STATIC_SHELL.map((url) => cache.add(url)))
+      Promise.all(STATIC_SHELL.map(url => {
+        // Cache with cache busting to securely get latest on install
+        return fetch(url + '?t=' + Date.now()).then(response => {
+          if (!response.ok) throw new Error('Failed ' + url);
+          return cache.put(url, response);
+        });
+      }).map(p => p.catch(e => console.warn('PWA Pre-cache failed for', e))))
     )
   );
 });
@@ -41,11 +54,22 @@ self.addEventListener('fetch', (event) => {
   const req = event.request;
   const url = new URL(req.url);
 
-  // Skip cross-origin and non-GET
-  if (url.origin !== self.location.origin || req.method !== 'GET') return;
+  // Skip cross-origin and non-GET requests, skip admin panel
+  if (url.origin !== self.location.origin || req.method !== 'GET' || url.pathname.startsWith('/admin')) return;
 
-  // 1. SKIP navigation/HTML entirely for Safari redirect safety
-  if (req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('/')) {
+  // 1. HTML / Navigation: Network-first
+  if (req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname === '/') {
+    event.respondWith(
+      fetch(req)
+        .then(res => {
+          if (res.ok && !res.redirected) {
+             const copy = res.clone();
+             caches.open(CACHE_NAME).then(c => c.put(req, copy));
+          }
+          return res;
+        })
+        .catch(() => caches.match(req).then(cached => cached || caches.match('/index.html')))
+    );
     return;
   }
 
@@ -92,8 +116,6 @@ self.addEventListener('fetch', (event) => {
         return res;
       }).catch(() => null);
 
-      // If we have a cached version, return it immediately
-      // If not, wait for the network but fallback to standard fetch if net fails
       return cached || net || fetch(req);
     })
   );
