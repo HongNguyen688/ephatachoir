@@ -59,6 +59,7 @@
   </main>
   <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
   <script src="./statics/js/index.js" defer></script>
+  <!-- <script src="./statics/js/pagination.js" defer></script> -->
   <script>
     const SEASON_ORDER = [
       'Mùa Vọng',
@@ -92,20 +93,17 @@
               .filter(w => w.season === season)
               .sort((a, b) => new Date(a.date) - new Date(b.date)); // oldest → newest
 
+            const seasonId = `pagination-${year}-${season.replace(/\s+/g, '-').toLowerCase()}`;
+
             const bodyContent = seasonWeeks.length === 0
               ? '<p style="text-align:center; padding: 1.5rem; color: #888;">Chưa có dữ liệu cho mùa này.</p>'
-              : `<div class="sundays-grid">
-                    ${seasonWeeks.map(w => `
-                      <article class="post-card">
-                        <h3>${w.title} - ${new Date(w.date + 'T12:00:00').toLocaleDateString('vi-VN')}</h3>
-                        <p>${w.theme || ''}</p>
-                        <a href="song-detail?date=${w.date}">Xem Chi Tiết →</a>
-                      </article>
-                    `).join('')}
-                  </div>`;
+              : `
+                  <div class="sundays-grid" id="grid-${seasonId}"></div>
+                  <div id="${seasonId}" class="pagination"></div>
+                `;
 
             return `
-                <div class="season">
+                <div class="season" data-season-year="${year}" data-season-name="${season}">
                   <div class="season-header active">${season}</div>
                   <div class="season-body active">
                     ${bodyContent}
@@ -113,6 +111,26 @@
                 </div>
               `;
           }).join('');
+
+          // Initialize pagination for each season in this year
+          SEASON_ORDER.forEach(season => {
+            const seasonWeeks = yearWeeks.filter(w => w.season === season);
+            if (seasonWeeks.length > 0) {
+              const seasonId = `pagination-${year}-${season.replace(/\s+/g, '-').toLowerCase()}`;
+              const grid = document.getElementById(`grid-${seasonId}`);
+              const pagEl = document.getElementById(seasonId);
+
+              if (grid && pagEl) {
+                window.setupPagination(seasonWeeks, grid, pagEl, 12, (w) => `
+                  <article class="post-card">
+                    <h3>${w.title} - ${new Date(w.date + 'T12:00:00').toLocaleDateString('vi-VN')}</h3>
+                    <p>${w.theme || ''}</p>
+                    <a href="song-detail?date=${w.date}">Xem Chi Tiết →</a>
+                  </article>
+                `);
+              }
+            }
+          });
         });
 
         // Re-attach accordion listeners 

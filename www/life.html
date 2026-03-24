@@ -57,6 +57,7 @@
 
     <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
     <script src="./statics/js/index.js" defer></script>
+    <script src="./statics/js/pagination.js" defer></script>
     <script>
       async function loadGallery() {
         try {
@@ -67,7 +68,7 @@
           const items = data.images || [];
           
           if (items.length > 0) {
-            grid.innerHTML = items.map(item => `
+            window.setupPagination(items, grid, document.getElementById('pagination'), 12, (item) => `
               <figure class="gallery-item">
                 <img
                   src="${item.image}"
@@ -76,9 +77,10 @@
                 />
                 <figcaption>${item.caption || ''}</figcaption>
               </figure>
-            `).join('');
+            `);
           } else {
             grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có hình ảnh nào.</p>';
+            document.getElementById('pagination').innerHTML = '';
           }
         } catch (error) {
           console.error('Error loading gallery:', error);

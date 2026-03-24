@@ -393,28 +393,54 @@ footer::before {
     PAGINATION
 ==================== */
 
+/* ==================
+    PAGINATION
+==================== */
 .pagination {
-  text-align: center;
-  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
 }
 
 .page-btn {
-  margin: 5px;
-  padding: 8px 14px;
-  border: none;
-  background-color: #eee;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--card-border);
+  background: var(--background);
+  color: var(--text-main);
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
-  border-radius: 6px;
-  font-weight: bold;
+  transition: all 0.3s ease;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.page-btn:hover {
-  background-color: #ddd;
+.page-btn:hover:not(:disabled) {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .page-btn.active {
-  background-color: #b22222;
-  color: white;
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-btn.prev-next {
+  padding: 0.6rem 1.5rem;
 }
 
 /* ==================

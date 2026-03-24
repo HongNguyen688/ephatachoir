@@ -59,6 +59,7 @@
     <footer>© 2025 HN – CĐ Ephata San Jose</footer>
 
     <script src="./statics/js/index.js" defer></script>
+    <script src="./statics/js/pagination.js" defer></script>
     <script>
       function getYouTubeId(url) {
         if (!url) return '';
@@ -77,7 +78,7 @@
           const items = data.performances || [];
           
           if (items.length > 0) {
-            grid.innerHTML = items.map(item => `
+            window.setupPagination(items, grid, document.getElementById('pagination'), 12, (item) => `
               <div class="yt-item">
                 <div class="yt-thumbnail">
                   <iframe
@@ -92,9 +93,10 @@
                   <h3>${item.title}</h3>
                 </div>
               </div>
-            `).join('');
+            `);
           } else {
             grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có video nào. Vui lòng thêm video trong trang Admin.</p>';
+            document.getElementById('pagination').innerHTML = '';
           }
         } catch (error) {
           console.error('Error loading performances:', error);
