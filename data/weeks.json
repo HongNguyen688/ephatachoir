@@ -1,0 +1,50 @@
+{
+  "weeks": [
+    {
+      "title": "Chúa Nhật Lễ Lá",
+      "liturgical_year": "A",
+      "season": "Mùa Chay",
+      "date": "2026-03-29",
+      "theme": "Chúc Tụng Đấng Nhân Danh Chúa Mà Đến",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Rước Lá",
+          "author": "Khuyết Danh",
+          "audio": "statics/audio/Rước Lá.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 21",
+          "author": "Huy Hoàng",
+          "audio": "statics/audio/ Thánh Vịnh 21 - Chúa Nhật Lễ Lá - Lm. Huy Hoàng x Nguyễn Vinh Sơn.m4a"
+        },
+        {
+          "part": "Phần Khác",
+          "song_title": "Tung Hô Tin Mừng",
+          "author": "Khuyết Danh",
+          "audio": "statics/audio/Tung hô Tin Mừng Lễ lá & Thứ Sáu Tuần Thánh hvh.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Xin Dâng Chúa Tình Yêu",
+          "author": "Như Ý",
+          "audio": "statics/audio/Xin Dang Chua Tinh Yeu (Nhu Y).m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Bài Ca Thương Khó",
+          "author": "Phương Anh",
+          "audio": "statics/audio/Bài Ca Thương Khó - Phương Anh - CĐTT.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Tình Mẹ",
+          "author": "Phương Anh",
+          "audio": "statics/audio/MẸ NHÂN LOẠI PHANXICO CA ĐOÀN MÔNG TRIỆU GX. FATIMA BÌNH TRIỆU.m4a"
+        }
+      ],
+      "full_pdf": "statics/pdf/Bài Hát CN Lễ Lá-03-29-2026.pdf"
+    }
+  ]
+}
