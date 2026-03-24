@@ -12,7 +12,7 @@ const THEME_META_COLORS = {
   purple: '#6A1B9A',
   green: '#1B5E20',
   red: '#C62828',
-  white_gold: '#ffffff',
+  gold_white: '#ffffff',
   navy: '#1565C0'
 };
 
