@@ -436,21 +436,21 @@ footer::before {
 }
 
 :root[data-theme="white_gold"] {
-  --primary: #C9A227; /* Main Color: Gold */
-  --primary-hover: #E0B83A;
-  --primary-dark: #8E721B;
+  --primary: #FFC107; /* Vibrant Yellow from Ao Dais */
+  --primary-hover: #FFD54F;
+  --primary-dark: #FFA000;
   --accent: #FFF59D; /* Accent: Light Yellow */
   --accent-hover: #FFF9C4;
   --accent-dark: #FFF176;
-  --nav-border: #C9A227;
+  --nav-border: #FFC107;
   --hero-start: #FFFFFF; /* Main Color: White */
   --hero-mid: #FFFDE7; /* Very faint light yellow glow */
   --hero-end: #FFFFFF;
-  --hero-text: #444444;
-  --hero-title: #222222;
-  --hero-text-shadow: none;
-  --hero-p-shadow: none;
-  --text-heading: #C9A227;
+  --hero-text: #F0F0F0;
+  --hero-title: #FFFFFF; /* Requested: White Hero Title */
+  --hero-text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --hero-p-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --text-heading: #FFC107;
   --footer-start: #FFFFFF;
   --footer-end: #FFFDE7;
   --footer-text: #333333;
