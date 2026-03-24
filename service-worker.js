@@ -1,7 +1,6 @@
+// CĐ Ephata Service Worker — Offline PWA (v8)
 // ============================================================
-// CĐ Ephata Service Worker — Offline PWA (v7)
-// ============================================================
-const CACHE_VERSION = 'v7';
+const CACHE_VERSION = 'v8';
 const CACHE_NAME = `ephata-cache-${CACHE_VERSION}`;
 
 // Assets to pre-cache
@@ -21,6 +20,7 @@ const STATIC_SHELL = [
   '/statics/css/performance.css',
   '/statics/css/life.css',
   '/statics/js/index.js',
+  '/statics/js/pagination.js',
   '/statics/images/logo.png',
   '/data/weeks.json',
   '/data/performances.json',
