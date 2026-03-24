@@ -475,6 +475,27 @@ footer::before {
   --card-hover-shadow: rgba(0,0,0,0.08);
 }
 
+:root[data-theme="christmas"] {
+  --primary: #cda434; /* Gold links/buttons */
+  --primary-hover: #e5c158;
+  --primary-dark: #8c6b1a;
+  --accent: #1a4225; /* Pine Green */
+  --accent-hover: #2e5938;
+  --accent-dark: #0f2b18;
+  --nav-border: #cda434; /* Gold border */
+  --hero-start: #0f2b18; /* Deep Pine Background */
+  --hero-mid: #1a4225;
+  --hero-end: #12331c;
+  --hero-text: #f0f0f0;
+  --hero-title: #e5c158; /* Amazing Gold Title */
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --text-heading: #1a4225; /* Articles get Pine Green headings */
+  --footer-start: #12331c;
+  --footer-end: #0f2b18;
+  --footer-text: #cda434;
+}
+
 /* ==================
     SETTINGS PAGE UI
 ==================== */

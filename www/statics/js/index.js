@@ -13,7 +13,8 @@ const THEME_META_COLORS = {
   green: '#2b7a0b',
   gold: '#d35400',
   red: '#e50914',
-  white: '#ffffff'
+  white: '#ffffff',
+  christmas: '#1a4225'
 };
 
 function applyTheme(themeName) {
