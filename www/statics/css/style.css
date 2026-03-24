@@ -420,19 +420,19 @@ footer::before {
 }
 
 :root[data-theme="gold"] {
-  --primary: #d35400;
-  --primary-hover: #e67e22;
-  --primary-dark: #a04000;
-  --accent: #f5cba7;
-  --accent-hover: #fbeee6;
-  --accent-dark: #a04000;
-  --nav-border: #d35400;
-  --hero-start: #d35400;
-  --hero-mid: #f39c12;
-  --hero-end: #e67e22;
-  --text-heading: #d35400;
-  --footer-start: #d35400;
-  --footer-end: #e67e22;
+  --primary: #FF9800; /* Vibrant Orange */
+  --primary-hover: #FFB74D;
+  --primary-dark: #F57C00;
+  --accent: #FFE0B2;
+  --accent-hover: #FFF3E0;
+  --accent-dark: #F57C00;
+  --nav-border: #FF9800;
+  --hero-start: #FF5722; /* Deep Fiery Orange */
+  --hero-mid: #FFC107; /* Brilliant Sun Yellow */
+  --hero-end: #FF9800;
+  --text-heading: #E65100;
+  --footer-start: #FF9800;
+  --footer-end: #FF5722;
 }
 
 :root[data-theme="red"] {
@@ -476,24 +476,24 @@ footer::before {
 }
 
 :root[data-theme="christmas"] {
-  --primary: #cda434; /* Gold links/buttons */
-  --primary-hover: #e5c158;
-  --primary-dark: #8c6b1a;
-  --accent: #1a4225; /* Pine Green */
-  --accent-hover: #2e5938;
-  --accent-dark: #0f2b18;
-  --nav-border: #cda434; /* Gold border */
-  --hero-start: #0f2b18; /* Deep Pine Background */
-  --hero-mid: #1a4225;
-  --hero-end: #12331c;
-  --hero-text: #f0f0f0;
-  --hero-title: #e5c158; /* Amazing Gold Title */
-  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-  --text-heading: #1a4225; /* Articles get Pine Green headings */
-  --footer-start: #12331c;
-  --footer-end: #0f2b18;
-  --footer-text: #cda434;
+  --primary: #FFD700; /* Radiant Gold */
+  --primary-hover: #FFE436;
+  --primary-dark: #FFB300;
+  --accent: #00A859; /* Bright Emerald Green */
+  --accent-hover: #32CD32;
+  --accent-dark: #008000;
+  --nav-border: #FFD700;
+  --hero-start: #006400; /* Super rich dark green */
+  --hero-mid: #00C853; /* Burst of incredibly bright, joyful green */
+  --hero-end: #008033;
+  --hero-text: #ffffff;
+  --hero-title: #FFD700; /* Bright gold titles pop perfectly on bright green */
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --text-heading: #00A859;
+  --footer-start: #008033;
+  --footer-end: #006400;
+  --footer-text: #FFD700;
 }
 
 /* ==================
