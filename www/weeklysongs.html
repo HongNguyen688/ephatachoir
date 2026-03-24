@@ -87,13 +87,17 @@
             return;
           }
 
-          // Render all 6 seasons in fixed order
-          container.innerHTML = SEASON_ORDER.map(season => {
-            const seasonWeeks = yearWeeks
-              .filter(w => w.season === season)
-              .sort((a, b) => new Date(a.date) - new Date(b.date)); // oldest → newest
+          // Helper for safe IDs (removes accents/special chars)
+          const slugify = (str) => {
+            if (!str) return 'season';
+            return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+          };
 
-            const seasonId = `pagination-${year}-${season.replace(/\s+/g, '-').toLowerCase()}`;
+          // Render seasonal containers
+          container.innerHTML = SEASON_ORDER.map(season => {
+            const seasonSlug = slugify(season);
+            const seasonId = `pagination-${year}-${seasonSlug}`;
+            const seasonWeeks = yearWeeks.filter(w => w.season === season);
 
             const bodyContent = seasonWeeks.length === 0
               ? '<p style="text-align:center; padding: 1.5rem; color: #888;">Chưa có dữ liệu cho mùa này.</p>'
@@ -112,22 +116,33 @@
               `;
           }).join('');
 
-          // Initialize pagination for each season in this year
+          // Initialize pagination with chronological sort (Oldest → Newest)
           SEASON_ORDER.forEach(season => {
-            const seasonWeeks = yearWeeks.filter(w => w.season === season);
+            const seasonWeeks = yearWeeks
+              .filter(w => w.season === season)
+              .sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort: Old -> New
+
             if (seasonWeeks.length > 0) {
-              const seasonId = `pagination-${year}-${season.replace(/\s+/g, '-').toLowerCase()}`;
+              const seasonSlug = slugify(season);
+              const seasonId = `pagination-${year}-${seasonSlug}`;
               const grid = document.getElementById(`grid-${seasonId}`);
               const pagEl = document.getElementById(seasonId);
-
+              
               if (grid && pagEl) {
-                window.setupPagination(seasonWeeks, grid, pagEl, 12, (w) => `
+                const render = (w) => `
                   <article class="post-card">
                     <h3>${w.title} - ${new Date(w.date + 'T12:00:00').toLocaleDateString('vi-VN')}</h3>
                     <p>${w.theme || ''}</p>
                     <a href="song-detail?date=${w.date}">Xem Chi Tiết →</a>
                   </article>
-                `);
+                `;
+
+                if (window.setupPagination) {
+                  window.setupPagination(seasonWeeks, grid, pagEl, 12, render);
+                } else {
+                  console.warn("Pagination script not loaded, fallback render");
+                  grid.innerHTML = seasonWeeks.map(render).join('');
+                }
               }
             }
           });
