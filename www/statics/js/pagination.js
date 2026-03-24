@@ -25,17 +25,15 @@ window.setupPagination = function(items, container, paginationEl, itemsPerPage =
     return;
   }
 
-  function showPage(page) {
+  function showPage(page, isInitial = false) {
     currentPage = page;
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
 
     if (renderItem) {
-      // Dynamic rendering from data objects
       const pageItems = items.slice(start, end);
       container.innerHTML = pageItems.map(item => renderItem(item)).join('');
     } else {
-      // Static elements toggle
       items.forEach((item, index) => {
         item.style.display = (index >= start && index < end) ? '' : 'none';
       });
@@ -43,13 +41,16 @@ window.setupPagination = function(items, container, paginationEl, itemsPerPage =
 
     renderButtons();
     
-    // Smooth scroll to container top
-    const topOffset = container.getBoundingClientRect().top + window.pageYOffset - 100;
-    window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    // Smooth scroll only on user click (not initial load)
+    if (!isInitial) {
+      const topOffset = container.getBoundingClientRect().top + window.pageYOffset - 100;
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }
   }
 
   function renderButtons() {
     paginationEl.innerHTML = '';
+    if (totalPages <= 1) return;
     
     // Previous Button
     const prevBtn = document.createElement('button');
@@ -63,7 +64,6 @@ window.setupPagination = function(items, container, paginationEl, itemsPerPage =
     let startPage = Math.max(1, currentPage - 1);
     let endPage = Math.min(totalPages, startPage + 2);
     
-    // Adjust if at the end
     if (endPage - startPage < 2) {
       startPage = Math.max(1, endPage - 2);
     }
@@ -85,6 +85,7 @@ window.setupPagination = function(items, container, paginationEl, itemsPerPage =
     paginationEl.appendChild(nextBtn);
   }
 
-  // Initial call
-  showPage(1);
+  // Initial call - pass true for isInitial
+  showPage(1, true);
 };
+

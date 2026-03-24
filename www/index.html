@@ -67,7 +67,7 @@
         const items = data.announcements || [];
 
         if (items.length > 0) {
-          window.setupPagination(items, grid, document.getElementById('pagination'), 12, (item) => `
+          const render = (item) => `
               <div class="card">
                 <img src="${item.image}" alt="${item.title}" />
                 <div class="card-body">
@@ -75,7 +75,12 @@
                   <p>${item.content}</p>
                 </div>
               </div>
-            `);
+            `;
+          if (window.setupPagination) {
+            window.setupPagination(items, grid, document.getElementById('pagination'), 12, render);
+          } else {
+            grid.innerHTML = items.map(render).join('');
+          }
         } else {
           grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có bài viết nào.</p>';
           document.getElementById('pagination').innerHTML = '';

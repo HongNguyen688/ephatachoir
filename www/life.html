@@ -68,7 +68,7 @@
           const items = data.images || [];
           
           if (items.length > 0) {
-            window.setupPagination(items, grid, document.getElementById('pagination'), 12, (item) => `
+            const render = (item) => `
               <figure class="gallery-item">
                 <img
                   src="${item.image}"
@@ -77,7 +77,12 @@
                 />
                 <figcaption>${item.caption || ''}</figcaption>
               </figure>
-            `);
+            `;
+            if (window.setupPagination) {
+              window.setupPagination(items, grid, document.getElementById('pagination'), 12, render);
+            } else {
+              grid.innerHTML = items.map(render).join('');
+            }
           } else {
             grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có hình ảnh nào.</p>';
             document.getElementById('pagination').innerHTML = '';
