@@ -452,24 +452,27 @@ footer::before {
 }
 
 :root[data-theme="white"] {
-  --primary: #cda434;
-  --primary-hover: #dfc86e;
-  --primary-dark: #a38229;
-  --accent: #fdf9e6;
-  --accent-hover: #ffffff;
-  --accent-dark: #a38229;
-  --nav-border: #cda434;
+  --primary: #8a1c1c; /* Classic USCCB Burgundy */
+  --primary-hover: #a32222;
+  --primary-dark: #631414;
+  --accent: #e9ecef; /* Clean light gray */
+  --accent-hover: #dee2e6;
+  --accent-dark: #ced4da;
+  --nav-border: #8a1c1c;
   --hero-start: #ffffff;
-  --hero-mid: #fffcf2;
-  --hero-end: #fcfcfc;
-  --hero-text: #4a4a4a;
-  --hero-title: #222222;
+  --hero-mid: #f8f9fa;
+  --hero-end: #ffffff;
+  --hero-text: #444444;
+  --hero-title: #1a1a1a;
   --hero-text-shadow: none;
   --hero-p-shadow: none;
-  --text-heading: #cda434;
-  --footer-start: #f8f9fa;
-  --footer-end: #ffffff;
-  --footer-text: #333333;
+  --text-heading: #8a1c1c; /* Burgundy headings */
+  --footer-start: #ffffff;
+  --footer-end: #f1f3f5;
+  --footer-text: #444444;
+  --card-border: #e9ecef;
+  --card-shadow: rgba(0,0,0,0.04);
+  --card-hover-shadow: rgba(0,0,0,0.08);
 }
 
 /* ==================
