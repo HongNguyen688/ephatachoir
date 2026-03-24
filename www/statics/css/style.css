@@ -419,22 +419,6 @@ footer::before {
   --footer-end: #0A2B0E;
 }
 
-:root[data-theme="gold"] {
-  --primary: #C9A227;
-  --primary-hover: #E0B83A;
-  --primary-dark: #8E721B;
-  --accent: #F2D06B;
-  --accent-hover: #FBECA4;
-  --accent-dark: #8E721B;
-  --nav-border: #C9A227;
-  --hero-start: #8E721B;
-  --hero-mid: #C9A227;
-  --hero-end: #A6851F;
-  --text-heading: #C9A227;
-  --footer-start: #A6851F;
-  --footer-end: #8E721B;
-}
-
 :root[data-theme="red"] {
   --primary: #C62828;
   --primary-hover: #D32F2F;
@@ -451,49 +435,25 @@ footer::before {
   --footer-end: #8E1C1C;
 }
 
-:root[data-theme="white"] {
-  --primary: #8a1c1c; /* Classic USCCB Burgundy */
-  --primary-hover: #a32222;
-  --primary-dark: #631414;
-  --accent: #e9ecef; /* Clean light gray */
-  --accent-hover: #dee2e6;
-  --accent-dark: #ced4da;
-  --nav-border: #8a1c1c;
-  --hero-start: #ffffff;
-  --hero-mid: #f8f9fa;
-  --hero-end: #ffffff;
+:root[data-theme="white_gold"] {
+  --primary: #C9A227; /* Main Color: Gold */
+  --primary-hover: #E0B83A;
+  --primary-dark: #8E721B;
+  --accent: #FFF59D; /* Accent: Light Yellow */
+  --accent-hover: #FFF9C4;
+  --accent-dark: #FFF176;
+  --nav-border: #C9A227;
+  --hero-start: #FFFFFF; /* Main Color: White */
+  --hero-mid: #FFFDE7; /* Very faint light yellow glow */
+  --hero-end: #FFFFFF;
   --hero-text: #444444;
-  --hero-title: #1a1a1a;
+  --hero-title: #222222;
   --hero-text-shadow: none;
   --hero-p-shadow: none;
-  --text-heading: #8a1c1c; /* Burgundy headings */
-  --footer-start: #ffffff;
-  --footer-end: #f1f3f5;
-  --footer-text: #444444;
-  --card-border: #e9ecef;
-  --card-shadow: rgba(0,0,0,0.04);
-  --card-hover-shadow: rgba(0,0,0,0.08);
-}
-
-:root[data-theme="christmas"] {
-  --primary: #cda434; /* Gold links/buttons */
-  --primary-hover: #e5c158;
-  --primary-dark: #8c6b1a;
-  --accent: #156B3A; /* Pine Green */
-  --accent-hover: #1b8a4a;
-  --accent-dark: #0A3F24;
-  --nav-border: #cda434; /* Gold border */
-  --hero-start: #0A3F24; /* Deep Pine Background */
-  --hero-mid: #156B3A;
-  --hero-end: #0E502B;
-  --hero-text: #f0f0f0;
-  --hero-title: #e5c158; /* Amazing Gold Title */
-  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
-  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-  --text-heading: #156B3A; /* Articles get Pine Green headings */
-  --footer-start: #0E502B;
-  --footer-end: #0A3F24;
-  --footer-text: #cda434;
+  --text-heading: #C9A227;
+  --footer-start: #FFFFFF;
+  --footer-end: #FFFDE7;
+  --footer-text: #333333;
 }
 
 :root[data-theme="navy"] {
