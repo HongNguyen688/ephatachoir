@@ -1,95 +1,100 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="manifest" href="./manifest.json" />
-    <link rel="apple-touch-icon" href="./statics/images/logo.png" />
-    <meta name="theme-color" content="#d35400" />
-    <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
-    <title>CĐ Ephata - San Jose</title>
-    <link rel="stylesheet" href="./statics/css/style.css" />
-    <link rel="stylesheet" href="./statics/css/responsive.css" />
-    <link rel="stylesheet" href="./statics/css/weeklysong.css" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a href="./index.html">
-          <div class="logo">
-            <div>
-              <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
-            </div>
-            <div><p>CĐ Ephata</p></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./statics/images/logo.png" />
+  <meta name="theme-color" content="#d35400" />
+  <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
+  <title>CĐ Ephata - San Jose</title>
+  <link rel="stylesheet" href="./statics/css/style.css" />
+  <link rel="stylesheet" href="./statics/css/responsive.css" />
+  <link rel="stylesheet" href="./statics/css/weeklysong.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="./index.html">
+        <div class="logo">
+          <div>
+            <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
           </div>
-        </a>
-        <ul class="nav-menu">
-          <li><a href="./index.html">Trang Chủ</a></li>
-          <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
-          <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
-          <li><a href="./life.html">Đời Sống</a></li>
-          <li><a href="./about.html">Giới Thiệu</a></li>
-        </ul>
-        <div class="hamburger">☰</div>
-      </nav>
-    </header>
-    <section class="hero">
-      <div class="container" style="text-align: center">
-        <h1>Bài Hát Hàng Tuần</h1>
-      </div>
-    </section>
-    <main class="container">
-      <h2 style="text-align: center; margin: 2rem 0">
-        Danh Sách Bài Hát Theo Năm Phụng Vụ
-      </h2>
+          <div>
+            <p>CĐ Ephata</p>
+          </div>
+        </div>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="./index.html">Trang Chủ</a></li>
+        <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+        <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
+        <li><a href="./life.html">Đời Sống</a></li>
+        <li><a href="./about.html">Giới Thiệu</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="container" style="text-align: center">
+      <h1>Bài Hát Hàng Tuần</h1>
+    </div>
+  </section>
+  <main class="container">
+    <h2 style="text-align: center; margin: 2rem 0">
+      Danh Sách Bài Hát Theo Năm Phụng Vụ
+    </h2>
 
-      <div class="tabs" id="year-tabs">
-        <button class="tab-button active" data-tab="nam-a">Năm A</button>
-        <button class="tab-button" data-tab="nam-b">Năm B</button>
-        <button class="tab-button" data-tab="nam-c">Năm C</button>
-      </div>
+    <div class="tabs" id="year-tabs">
+      <button class="tab-button active" data-tab="nam-a">Năm A</button>
+      <button class="tab-button" data-tab="nam-b">Năm B</button>
+      <button class="tab-button" data-tab="nam-c">Năm C</button>
+    </div>
 
-      <div id="nam-a" class="tab-content active"></div>
-      <div id="nam-b" class="tab-content"></div>
-      <div id="nam-c" class="tab-content"></div>
-    </main>
-    <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
-    <script src="./statics/js/index.js" defer></script>
-    <script>
-      const SEASON_ORDER = [
-        'Mùa Vọng',
-        'Mùa Giáng Sinh',
-        'Mùa Thường Niên I',
-        'Mùa Chay',
-        'Mùa Thường Niên II',
-        'Các Ngày Lễ Khác'
-      ];
+    <div id="nam-a" class="tab-content active"></div>
+    <div id="nam-b" class="tab-content"></div>
+    <div id="nam-c" class="tab-content"></div>
+  </main>
+  <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
+  <script src="./statics/js/index.js" defer></script>
+  <script>
+    const SEASON_ORDER = [
+      'Mùa Vọng',
+      'Mùa Giáng Sinh',
+      'Mùa Thường Niên I',
+      'Mùa Chay',
+      'Mùa Phục Sinh',
+      'Mùa Thường Niên II',
+      'Các Ngày Lễ Khác'
+    ];
 
-      async function loadWeeks() {
-        try {
-          const response = await fetch('data/weeks.json');
-          const data = await response.json();
-          const weeks = data.weeks || [];
-          
-          const years = ['A', 'B', 'C'];
-          years.forEach(year => {
-            const container = document.getElementById(`nam-${year.toLowerCase()}`);
-            const yearWeeks = weeks.filter(w => w.liturgical_year === year);
-            
-            if (yearWeeks.length === 0) {
-              container.innerHTML = '<p style="text-align:center; padding: 2rem;">Chưa có dữ liệu cho năm này.</p>';
-              return;
-            }
+    async function loadWeeks() {
+      try {
+        const response = await fetch('data/weeks.json', { cache: 'no-cache' });
+        const data = await response.json();
+        const weeks = data.weeks || [];
 
-            // Render all 6 seasons in fixed order
-            container.innerHTML = SEASON_ORDER.map(season => {
-              const seasonWeeks = yearWeeks
-                .filter(w => w.season === season)
-                .sort((a, b) => new Date(a.date) - new Date(b.date)); // oldest → newest
+        const years = ['A', 'B', 'C'];
+        years.forEach(year => {
+          const container = document.getElementById(`nam-${year.toLowerCase()}`);
+          const yearWeeks = weeks.filter(w => w.liturgical_year === year);
 
-              const bodyContent = seasonWeeks.length === 0
-                ? '<p style="text-align:center; padding: 1.5rem; color: #888;">Chưa có dữ liệu cho mùa này.</p>'
-                : `<div class="sundays-grid">
+          if (yearWeeks.length === 0) {
+            container.innerHTML = '<p style="text-align:center; padding: 2rem;">Chưa có dữ liệu cho năm này.</p>';
+            return;
+          }
+
+          // Render all 6 seasons in fixed order
+          container.innerHTML = SEASON_ORDER.map(season => {
+            const seasonWeeks = yearWeeks
+              .filter(w => w.season === season)
+              .sort((a, b) => new Date(a.date) - new Date(b.date)); // oldest → newest
+
+            const bodyContent = seasonWeeks.length === 0
+              ? '<p style="text-align:center; padding: 1.5rem; color: #888;">Chưa có dữ liệu cho mùa này.</p>'
+              : `<div class="sundays-grid">
                     ${seasonWeeks.map(w => `
                       <article class="post-card">
                         <h3>${w.title} - ${new Date(w.date + 'T12:00:00').toLocaleDateString('vi-VN')}</h3>
@@ -99,7 +104,7 @@
                     `).join('')}
                   </div>`;
 
-              return `
+            return `
                 <div class="season">
                   <div class="season-header active">${season}</div>
                   <div class="season-body active">
@@ -107,33 +112,34 @@
                   </div>
                 </div>
               `;
-            }).join('');
-          });
-
-          // Re-attach accordion listeners 
-          document.querySelectorAll(".season-header").forEach((header) => {
-            header.addEventListener("click", () => {
-              const body = header.nextElementSibling;
-              body.classList.toggle("active");
-              header.classList.toggle("active");
-            });
-          });
-        } catch (error) {
-          console.error('Error loading weeks:', error);
-        }
-      }
-
-      // Tab switching 
-      document.querySelectorAll(".tab-button").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".tab-button").forEach((b) => b.classList.remove("active"));
-          document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
-          btn.classList.add("active");
-          document.getElementById(btn.dataset.tab).classList.add("active");
+          }).join('');
         });
-      });
 
-      document.addEventListener('DOMContentLoaded', loadWeeks);
-    </script>
-  </body>
+        // Re-attach accordion listeners 
+        document.querySelectorAll(".season-header").forEach((header) => {
+          header.addEventListener("click", () => {
+            const body = header.nextElementSibling;
+            body.classList.toggle("active");
+            header.classList.toggle("active");
+          });
+        });
+      } catch (error) {
+        console.error('Error loading weeks:', error);
+      }
+    }
+
+    // Tab switching 
+    document.querySelectorAll(".tab-button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-button").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".tab-content").forEach((c) => c.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', loadWeeks);
+  </script>
+</body>
+
 </html>

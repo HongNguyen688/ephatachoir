@@ -1,105 +1,119 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="manifest" href="./manifest.json" />
-    <link rel="apple-touch-icon" href="./statics/images/logo.png" />
-    <meta name="theme-color" content="#d35400" />
-    <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
-    <title>Chi Tiết Phụng Vụ • CĐ Ephata</title>
-    <link rel="stylesheet" href="./statics/css/style.css" />
-    <link rel="stylesheet" href="./statics/css/responsive.css" />
-    <link rel="stylesheet" href="./statics/css/detailweeklysongs.css" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a href="./index.html">
-          <div class="logo">
-            <div><img alt="CĐ Ephata Logo" src="./statics/images/logo.png" /></div>
-            <div><p>CĐ Ephata</p></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./statics/images/logo.png" />
+  <meta name="theme-color" content="#d35400" />
+  <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
+  <title>Chi Tiết Phụng Vụ • CĐ Ephata</title>
+  <link rel="stylesheet" href="./statics/css/style.css" />
+  <link rel="stylesheet" href="./statics/css/responsive.css" />
+  <link rel="stylesheet" href="./statics/css/detailweeklysongs.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="./index.html">
+        <div class="logo">
+          <div>
+            <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
           </div>
-        </a>
-        <ul class="nav-menu">
-          <li><a href="./index.html">Trang Chủ</a></li>
-          <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
-          <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
-          <li><a href="./life.html">Đời Sống</a></li>
-          <li><a href="./about.html">Giới Thiệu</a></li>
-        </ul>
-        <div class="hamburger">☰</div>
-      </nav>
-    </header>
-
-    <div class="page-wrapper">
-      <!-- Hero Section (filled by JS) -->
-      <section class="hero" id="hero-section" style="display:none;">
-        <div class="container" style="text-align: center">
-          <h1 class="super-title" id="hero-title"></h1>
-          <p id="hero-theme"></p>
-          <br />
+          <div>
+            <p>CĐ Ephata</p>
+          </div>
         </div>
-      </section>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="./index.html">Trang Chủ</a></li>
+        <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+        <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
+        <li><a href="./life.html">Đời Sống</a></li>
+        <li><a href="./about.html">Giới Thiệu</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
 
-      <main class="container song-detail" id="songs-container">
-        <p style="text-align:center; padding: 3rem;">Đang tải thông tin...</p>
-      </main>
+  <div class="page-wrapper">
+    <!-- Hero Section (filled by JS) -->
+    <section class="hero" id="hero-section" style="display: none">
+      <div class="container" style="text-align: center">
+        <h1 class="super-title" id="hero-title"></h1>
+        <p id="hero-theme"></p>
+        <br />
+      </div>
+    </section>
 
-      <div class="footer-push"></div>
-    </div>
+    <main class="container song-detail" id="songs-container">
+      <p style="text-align: center; padding: 3rem">Đang tải thông tin...</p>
+    </main>
 
-    <footer>© 2025 HN – CĐ Ephata San Jose</footer>
+    <div class="footer-push"></div>
+  </div>
 
-    <script>
-      async function loadSongDetail() {
-        const params = new URLSearchParams(window.location.search);
-        const date = params.get('date');
+  <footer>© 2025 HN – CĐ Ephata San Jose</footer>
+  <script src="./statics/js/index.js" defer></script>
 
-        if (!date) {
-          document.getElementById('songs-container').innerHTML =
+  <script>
+    async function loadSongDetail() {
+      const params = new URLSearchParams(window.location.search);
+      const date = params.get("date");
+
+      if (!date) {
+        document.getElementById("songs-container").innerHTML =
+          '<p style="text-align:center; padding: 3rem;">Không tìm thấy thông tin cho ngày này.</p>';
+        return;
+      }
+
+      try {
+        const response = await fetch("data/weeks.json", { cache: "no-cache" });
+        const data = await response.json();
+        const week = (data.weeks || []).find((w) => w.date === date);
+        const container = document.getElementById("songs-container");
+
+        if (!week) {
+          container.innerHTML =
             '<p style="text-align:center; padding: 3rem;">Không tìm thấy thông tin cho ngày này.</p>';
           return;
         }
 
-        try {
-          const response = await fetch('data/weeks.json');
-          const data = await response.json();
-          const week = (data.weeks || []).find(w => w.date === date);
-          const container = document.getElementById('songs-container');
+        // Fill hero section
+        const heroSection = document.getElementById("hero-section");
+        const heroTitle = document.getElementById("hero-title");
+        const heroTheme = document.getElementById("hero-theme");
+        heroSection.style.display = "";
+        heroTitle.innerHTML = `${week.title}<br/><span>${new Date(week.date + "T12:00:00").toLocaleDateString("vi-VN")}</span>`;
+        heroTheme.textContent = week.theme ? `Chủ đề: ${week.theme}` : "";
 
-          if (!week) {
-            container.innerHTML =
-              '<p style="text-align:center; padding: 3rem;">Không tìm thấy thông tin cho ngày này.</p>';
-            return;
-          }
-
-          // Fill hero section
-          const heroSection = document.getElementById('hero-section');
-          const heroTitle = document.getElementById('hero-title');
-          const heroTheme = document.getElementById('hero-theme');
-          heroSection.style.display = '';
-          heroTitle.innerHTML = `${week.title}<br/><span>${new Date(week.date + 'T12:00:00').toLocaleDateString('vi-VN')}</span>`;
-          heroTheme.textContent = week.theme ? `Chủ đề: ${week.theme}` : '';
-
-          // Build songs list
-          const songs = week.songs || [];
-          const songsHTML = songs.map(song => `
+        // Build songs list
+        const songs = week.songs || [];
+        const songsHTML = songs
+          .map(
+            (song) => `
             <div class="song-item">
               <h3>${song.part}</h3>
-              <h4>${song.song_title}${song.author ? `<span> - ${song.author}</span>` : ''}</h4>
-              ${song.audio ? `<audio controls playsinline preload="metadata" class="audio-player">
+              <h4>${song.song_title}${song.author ? `<span> - ${song.author}</span>` : ""}</h4>
+              ${song.audio
+                ? `<audio controls playsinline preload="metadata" class="audio-player">
                 <source src="${song.audio}" type="audio/mp4" />
                 Trình duyệt của bạn không hỗ trợ phát âm thanh.
-              </audio>` : ''}
+              </audio>`
+                : ""
+              }
             </div>
-          `).join('');
+          `,
+          )
+          .join("");
 
-          // Build PDF section — download button + inline embed (matches archive pages)
-          let pdfHTML = '';
-          if (week.full_pdf) {
-            pdfHTML = `
+        // Build PDF section — download button + inline embed (matches archive pages)
+        let pdfHTML = "";
+        if (week.full_pdf) {
+          pdfHTML = `
               <a style="text-decoration: none; color: white;" href="${week.full_pdf}" target="_blank">
                 <div class="pdf-toggle-btn">📄 TẢI TOÀN BỘ PDF TUẦN NÀY (${songs.length} bài hát)</div>
               </a>
@@ -110,24 +124,24 @@
                 type="application/pdf"
               />
             `;
-          }
-
-          container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
-        } catch (error) {
-          console.error('Error loading week:', error);
         }
-      }
 
-
-      document.addEventListener('DOMContentLoaded', loadSongDetail);
-    </script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker
-          .register('/service-worker.js')
-          .then(() => console.log('SW registered'))
-          .catch(err => console.log('SW error', err));
+        container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
+      } catch (error) {
+        console.error("Error loading week:", error);
       }
-    </script>
-  </body>
+    }
+
+    document.addEventListener("DOMContentLoaded", loadSongDetail);
+  </script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then(() => console.log("SW registered"))
+        .catch((err) => console.log("SW error", err));
+    }
+  </script>
+</body>
+
 </html>
