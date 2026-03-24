@@ -11,7 +11,7 @@ document.querySelector(".hamburger")?.addEventListener("click", () => {
 const THEME_META_COLORS = {
   purple: '#522398',
   green: '#2b7a0b',
-  gold: '#f39c12',
+  gold: '#d35400',
   red: '#e50914',
   white: '#ffffff'
 };
