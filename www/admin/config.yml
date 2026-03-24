@@ -115,8 +115,8 @@ collections:
                     label: File âm thanh (.m4a)
                     widget: file
                     required: true
-                    media_folder: /www/statics/audio 
-                    public_folder: /statics/audio
+                    media_folder: /www/statics/mp4 
+                    public_folder: /statics/mp4
               - name: full_pdf
                 label: PDF toàn bộ tuần (tùy chọn)
                 widget: file
