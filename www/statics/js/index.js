@@ -5,6 +5,39 @@ document.querySelector(".hamburger")?.addEventListener("click", () => {
   document.querySelector(".nav-menu").classList.toggle("active");
 });
 
+/*============================
+   Theme Management
+============================*/
+const THEME_META_COLORS = {
+  purple: '#522398',
+  green: '#2b7a0b',
+  gold: '#b8860b',
+  red: '#c62828'
+};
+
+function applyTheme(themeName) {
+  if (!themeName) return;
+  if (themeName === 'purple') {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
+    document.documentElement.setAttribute('data-theme', themeName);
+  }
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor && THEME_META_COLORS[themeName]) {
+    metaThemeColor.setAttribute('content', THEME_META_COLORS[themeName]);
+  }
+  localStorage.setItem('ephata_theme', themeName);
+}
+
+// Apply on load to make sure meta tag and states are updated
+const savedTheme = localStorage.getItem('ephata_theme');
+if (savedTheme) {
+  applyTheme(savedTheme);
+}
+
+// Make globally available
+window.applyTheme = applyTheme;
+
 /*=================================
    Lightbox gallery (memory page)
 ==================================*/
