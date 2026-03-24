@@ -496,6 +496,27 @@ footer::before {
   --footer-text: #cda434;
 }
 
+:root[data-theme="navy"] {
+  --primary: #1565C0; /* Vibrant Royal Blue */
+  --primary-hover: #1976D2;
+  --primary-dark: #0D47A1;
+  --accent: #64B5F6;
+  --accent-hover: #90CAF9;
+  --accent-dark: #0D47A1;
+  --nav-border: #1565C0;
+  --hero-start: #0A2342; /* Deep Navy */
+  --hero-mid: #1565C0; /* Royal Blue */
+  --hero-end: #0D47A1; /* Dark Blue */
+  --hero-text: #f0f0f0;
+  --hero-title: #ffffff;
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --text-heading: #1565C0;
+  --footer-start: #0D47A1;
+  --footer-end: #0A2342;
+  --footer-text: #ffffff;
+}
+
 /* ==================
     SETTINGS PAGE UI
 ==================== */
