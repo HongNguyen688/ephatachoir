@@ -59,16 +59,16 @@ document.getElementById("lightbox")?.addEventListener("click", (e) => {
 ============================*/
 document.querySelectorAll("audio").forEach(
   (a) =>
-    (a.onplay = () => {
-      document.querySelectorAll("audio").forEach((o) => {
-        if (o !== a) o.pause();
-      });
-    }),
+  (a.onplay = () => {
+    document.querySelectorAll("audio").forEach((o) => {
+      if (o !== a) o.pause();
+    });
+  }),
 );
 
-/*=================================================
-   Sort bài hát theo ngày tháng (weeklysongs page)
-====================================================*/
+/*=============================
+   Sort weeklysongs by date
+================================*/
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".sundays-grid").forEach((grid) => {
     const posts = Array.from(grid.querySelectorAll(".post-card"));
