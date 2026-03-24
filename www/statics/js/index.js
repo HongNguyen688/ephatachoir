@@ -9,10 +9,10 @@ document.querySelector(".hamburger")?.addEventListener("click", () => {
    Theme Management
 ============================*/
 const THEME_META_COLORS = {
-  purple: '#522398',
-  green: '#2b7a0b',
-  gold: '#FF9800',
-  red: '#e50914',
+  purple: '#6A1B9A',
+  green: '#1B5E20',
+  gold: '#C9A227',
+  red: '#C62828',
   white: '#ffffff',
   christmas: '#156B3A',
   navy: '#1565C0'
