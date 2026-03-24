@@ -451,15 +451,28 @@ footer::before {
   --primary-hover: #2E7D32;
   --primary-dark: #0A2B0E;
   --accent: #4CAF50;
-  --accent-hover: #A5D6A7;
+  --accent-hover: #81C784;
   --accent-dark: #0A2B0E;
   --nav-border: #1B5E20;
   --hero-start: #0A2B0E;
   --hero-mid: #1B5E20;
   --hero-end: #103B13;
+  --hero-text: #ffffff;
+  --hero-title: #ffffff;
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(76, 175, 80, 0.3);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --card-border: #c8e6c9;
+  --card-shadow: rgba(27, 94, 32, 0.12);
+  --card-hover-shadow: rgba(27, 94, 32, 0.22);
+  --accent-shadow: rgba(27, 94, 32, 0.25);
+  --accent-shadow-hover: rgba(27, 94, 32, 0.45);
+  --button-ripple: rgba(255, 255, 255, 0.3);
+  --background: #f1f8e9;
+  --text-main: #333333;
   --text-heading: #1B5E20;
-  --footer-start: #103B13;
+  --footer-start: #1B5E20;
   --footer-end: #0A2B0E;
+  --footer-text: #e8f5e9;
 }
 
 :root[data-theme="red"] {
@@ -467,43 +480,55 @@ footer::before {
   --primary-hover: #D32F2F;
   --primary-dark: #8E1C1C;
   --accent: #EF5350;
-  --accent-hover: #FFCDD2;
+  --accent-hover: #E57373;
   --accent-dark: #8E1C1C;
   --nav-border: #C62828;
   --hero-start: #8E1C1C;
   --hero-mid: #C62828;
   --hero-end: #A32020;
+  --hero-text: #ffffff;
+  --hero-title: #ffffff;
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(198, 40, 40, 0.3);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --card-border: #ffcdd2;
+  --card-shadow: rgba(198, 40, 40, 0.12);
+  --card-hover-shadow: rgba(198, 40, 40, 0.22);
+  --accent-shadow: rgba(198, 40, 40, 0.25);
+  --accent-shadow-hover: rgba(198, 40, 40, 0.45);
+  --button-ripple: rgba(255, 255, 255, 0.3);
+  --background: #ffebee;
+  --text-main: #333333;
   --text-heading: #C62828;
-  --footer-start: #A32020;
+  --footer-start: #C62828;
   --footer-end: #8E1C1C;
+  --footer-text: #ffebee;
 }
 
 :root[data-theme="gold_white"] {
-  --background: #ffffff;
+  --background: #fffdf6;
   --header-bg: #ffffff;
   --primary: #fdc700;
-  /* Vibrant Yellow */
   --primary-hover: #f2b105;
   --primary-dark: #c69b00;
   --accent: #f2b105;
-  /* Black */
-  --accent-hover: #f2b105;
+  --accent-hover: #ffd54f;
   --accent-dark: #fdc700;
   --nav-border: #f2b105;
   --hero-start: #fdc700;
-  /* Vibrant Yellow Start */
   --hero-mid: #eac604;
-  /* Soft Yellow Mid */
   --hero-end: #f2b105;
-  /* Clean White End */
-  --hero-text: #1a1a1a;
-  /* High Contrast Dark Text */
-  --hero-title: #1a1a1a;
-  --hero-text-shadow: none;
-  --hero-p-shadow: none;
+  --hero-text: #ffffff;
+  --hero-title: #ffffff;
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(253, 199, 0, 0.4);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --card-border: #fff4d1;
+  --card-shadow: rgba(183, 140, 0, 0.12);
+  --card-hover-shadow: rgba(183, 140, 0, 0.22);
+  --accent-shadow: rgba(183, 140, 0, 0.25);
+  --accent-shadow-hover: rgba(183, 140, 0, 0.45);
+  --button-ripple: rgba(255, 255, 255, 0.5);
   --text-main: #333333;
   --text-heading: #000000;
-  --card-border: #f0f0f0;
   --footer-start: #fdc700;
   --footer-end: #f2b105;
   --footer-text: #ffffff;
@@ -511,7 +536,6 @@ footer::before {
 
 :root[data-theme="navy"] {
   --primary: #1565C0;
-  /* Vibrant Royal Blue */
   --primary-hover: #1976D2;
   --primary-dark: #0D47A1;
   --accent: #64B5F6;
@@ -519,19 +543,54 @@ footer::before {
   --accent-dark: #0D47A1;
   --nav-border: #1565C0;
   --hero-start: #0A2342;
-  /* Deep Navy */
   --hero-mid: #1565C0;
-  /* Royal Blue */
   --hero-end: #0D47A1;
-  /* Dark Blue */
-  --hero-text: #f0f0f0;
+  --hero-text: #ffffff;
   --hero-title: #ffffff;
-  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 20px rgba(21, 101, 192, 0.3);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --card-border: #bbdefb;
+  --card-shadow: rgba(13, 71, 161, 0.12);
+  --card-hover-shadow: rgba(13, 71, 161, 0.22);
+  --accent-shadow: rgba(13, 71, 161, 0.25);
+  --accent-shadow-hover: rgba(13, 71, 161, 0.45);
+  --button-ripple: rgba(255, 255, 255, 0.3);
+  --background: #eba;
+  --background: #e3f2fd;
+  --text-main: #333333;
   --text-heading: #1565C0;
-  --footer-start: #0D47A1;
-  --footer-end: #0A2342;
-  --footer-text: #ffffff;
+  --footer-start: #1565C0;
+  --footer-end: #0D47A1;
+  --footer-text: #e3f2fd;
+}
+
+:root[data-theme="purple"] {
+  --primary: #6A1B9A;
+  --primary-hover: #8E24AA;
+  --primary-dark: #4A126A;
+  --accent: #AB47BC;
+  --accent-hover: #CE93D8;
+  --accent-dark: #4A126A;
+  --nav-border: #6A1B9A;
+  --hero-start: #4A126A;
+  --hero-mid: #6A1B9A;
+  --hero-end: #57167D;
+  --hero-text: #ffffff;
+  --hero-title: #ffffff;
+  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 220, 140, 0.35);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --card-border: #d4c9e8;
+  --card-shadow: rgba(82, 35, 152, 0.12);
+  --card-hover-shadow: rgba(82, 35, 152, 0.22);
+  --accent-shadow: rgba(82, 35, 152, 0.25);
+  --accent-shadow-hover: rgba(82, 35, 152, 0.45);
+  --button-ripple: rgba(255, 255, 255, 0.35);
+  --background: #f8f6fc;
+  --text-main: #333333;
+  --text-heading: #522398;
+  --footer-start: #522398;
+  --footer-end: #470a68;
+  --footer-text: #e5def0;
 }
 
 /* ==================
