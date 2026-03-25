@@ -73,6 +73,9 @@ window.setThemeMode = (mode) => {
   localStorage.setItem('theme_mode', mode);
   if (mode === 'auto') {
     applyAutoTheme();
+  } else {
+    const savedTheme = localStorage.getItem('ephata_theme') || 'purple';
+    applyTheme(savedTheme, false);
   }
   if (window.updateSettingsUI) window.updateSettingsUI();
 };
