@@ -38,32 +38,92 @@
       <h1 class="settings-title">Cài Đặt / Settings</h1>
 
       <section class="settings-section">
-        <h2>Màu Mùa Phụng Vụ (Theme Color)</h2>
-        <p>Chọn màu giao diện cho website dựa theo mùa Phụng Vụ hiện tại.</p>
+        <h2>Chế Độ Hiển Thị (Theme Mode)</h2>
+        <p>Chọn cách website thay đổi màu sắc.</p>
+        <div class="mode-options">
+          <button class="mode-btn" id="mode-auto" onclick="setThemeMode('auto')">
+            <span class="mode-icon">🗓️</span>
+            <div class="mode-info">
+              <span class="mode-name">Tự động (Theo mùa Phụng Vụ)</span>
+              <span class="mode-desc">Website sẽ tự đổi màu theo lịch mỗi tuần.</span>
+            </div>
+          </button>
+          <button class="mode-btn" id="mode-manual" onclick="setThemeMode('manual')">
+            <span class="mode-icon">🎨</span>
+            <div class="mode-info">
+              <span class="mode-name">Thủ công (Tự chọn)</span>
+              <span class="mode-desc">Bạn có thể tự chọn màu yêu thích bên dưới.</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section class="settings-section" id="manual-theme-section">
+        <h2>Màu Mùa Phụng Vụ (Manual Color)</h2>
+        <p>Chọn màu giao diện cố định cho website.</p>
 
         <div class="theme-buttons">
-          <button class="theme-btn" onclick="applyTheme('navy')">
+          <button class="theme-btn" data-theme="navy" onclick="applyTheme('navy')">
             <span class="color-circle" style="background: #1565C0;"></span>
             <span class="theme-name">Giao Diện Quanh Năm (Xanh Navy)</span>
           </button>
-          <button class="theme-btn" onclick="applyTheme('purple')">
+          <button class="theme-btn" data-theme="purple" onclick="applyTheme('purple')">
             <span class="color-circle" style="background: #6A1B9A;"></span>
             <span class="theme-name">Mùa Vọng / Mùa Chay (Tím)</span>
           </button>
-          <button class="theme-btn" onclick="applyTheme('gold_white')">
+          <button class="theme-btn" data-theme="gold_white" onclick="applyTheme('gold_white')">
             <span class="color-circle" style="background: #ffffff; border: 2px solid #fdc700;"></span>
             <span class="theme-name">Mùa Giáng Sinh / Phục Sinh (Trắng & Vàng)</span>
           </button>
-          <button class="theme-btn" onclick="applyTheme('green')">
+          <button class="theme-btn" data-theme="green" onclick="applyTheme('green')">
             <span class="color-circle" style="background: #1B5E20;"></span>
             <span class="theme-name">Mùa Thường Niên (Xanh Lá)</span>
           </button>
-          <button class="theme-btn" onclick="applyTheme('red')">
+          <button class="theme-btn" data-theme="red" onclick="applyTheme('red')">
             <span class="color-circle" style="background: #C62828;"></span>
             <span class="theme-name">Các Ngày Lễ Khác (Đỏ)</span>
           </button>
         </div>
       </section>
+
+      <script>
+        function updateUI() {
+          const mode = localStorage.getItem('theme_mode') || 'auto';
+          const theme = localStorage.getItem('ephata_theme');
+
+          // Update Mode Buttons
+          document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+          document.getElementById(`mode-${mode}`).classList.add('active');
+
+          // Update Manual Buttons
+          const manualSection = document.getElementById('manual-theme-section');
+          if (mode === 'auto') {
+            manualSection.classList.add('disabled-section');
+          } else {
+            manualSection.classList.remove('disabled-section');
+          }
+
+          document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.theme === theme) btn.classList.add('active');
+          });
+        }
+
+        // Intercept native functions to update UI
+        const originalSetThemeMode = window.setThemeMode;
+        window.setThemeMode = (mode) => {
+          originalSetThemeMode(mode);
+          updateUI();
+        };
+
+        const originalApplyTheme = window.applyTheme;
+        window.applyTheme = (theme) => {
+          originalApplyTheme(theme);
+          updateUI();
+        };
+
+        document.addEventListener('DOMContentLoaded', updateUI);
+      </script>
 
       <section class="settings-section" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
         <h2>Privacy Policy</h2>

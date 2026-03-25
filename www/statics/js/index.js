@@ -8,15 +8,37 @@ document.querySelector(".hamburger")?.addEventListener("click", () => {
 /*============================
    Theme Management
 ============================*/
-const THEME_META_COLORS = {
-  purple: '#6A1B9A',
-  green: '#1B5E20',
-  red: '#C62828',
-  gold_white: '#ffffff',
-  navy: '#1565C0'
+const THEME_MAP = {
+  'Mùa Vọng': 'purple',
+  'Mùa Chay': 'purple',
+  'Mùa Giáng Sinh': 'gold_white',
+  'Mùa Phục Sinh': 'gold_white',
+  'Mùa Thường Niên I': 'green',
+  'Mùa Thường Niên II': 'green',
+  'Các Ngày Lễ Khác': 'red'
 };
 
-function applyTheme(themeName) {
+async function applyAutoTheme() {
+  try {
+    const response = await fetch('./data/weeks.json');
+    const data = await response.json();
+    const now = new Date();
+    
+    // Find the current or most recent week
+    const currentWeek = data.weeks
+      .filter(w => new Date(w.date) <= now)
+      .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+
+    if (currentWeek && THEME_MAP[currentWeek.season]) {
+      applyTheme(THEME_MAP[currentWeek.season], false);
+      console.log(`Auto-theme applied: ${currentWeek.season} -> ${THEME_MAP[currentWeek.season]}`);
+    }
+  } catch (e) {
+    console.error('Failed to apply auto-theme:', e);
+  }
+}
+
+function applyTheme(themeName, save = true) {
   if (!themeName) return;
   if (themeName === 'purple') {
     document.documentElement.removeAttribute('data-theme');
@@ -27,17 +49,31 @@ function applyTheme(themeName) {
   if (metaThemeColor && THEME_META_COLORS[themeName]) {
     metaThemeColor.setAttribute('content', THEME_META_COLORS[themeName]);
   }
-  localStorage.setItem('ephata_theme', themeName);
+  if (save) {
+    localStorage.setItem('ephata_theme', themeName);
+    localStorage.setItem('theme_mode', 'manual');
+  }
 }
 
-// Apply on load to make sure meta tag and states are updated
+// Initialize Theme
+const themeMode = localStorage.getItem('theme_mode') || 'auto';
 const savedTheme = localStorage.getItem('ephata_theme');
-if (savedTheme) {
-  applyTheme(savedTheme);
+
+if (themeMode === 'auto') {
+  applyAutoTheme();
+} else if (savedTheme) {
+  applyTheme(savedTheme, false);
 }
 
 // Make globally available
 window.applyTheme = applyTheme;
+window.applyAutoTheme = applyAutoTheme;
+window.setThemeMode = (mode) => {
+  localStorage.setItem('theme_mode', mode);
+  if (mode === 'auto') {
+    applyAutoTheme();
+  }
+};
 
 /*=================================
    Lightbox gallery (memory page)
