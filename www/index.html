@@ -8,11 +8,126 @@
   <link rel="apple-touch-icon" href="./statics/images/logo.png" />
   <meta name="theme-color" content="#d35400" />
   <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-  <title>CĐ Ephata - San Jose</title>
+  <title>CĐ Ephata - Trang Chủ</title>
   <link rel="stylesheet" href="./statics/css/style.css" />
   <link rel="stylesheet" href="./statics/css/responsive.css" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    /* Home Page Specific Styles */
+    .discovery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin: 4rem 0;
+    }
+
+    .discovery-card {
+      background: var(--header-bg);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .discovery-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 50px var(--card-hover-shadow);
+      border-color: var(--primary);
+    }
+
+    .discovery-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: transform 0.3s ease;
+    }
+
+    .discovery-card:hover .discovery-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .discovery-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .discovery-card p {
+      color: var(--text-main);
+      font-size: 1.05rem;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
+    .mission-section {
+      padding: 6rem 2rem;
+      background: var(--card-border);
+      border-radius: 30px;
+      margin: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission-text {
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--primary-dark);
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      border-radius: 20px;
+      color: white;
+      margin-bottom: 6rem;
+    }
+
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      background: white;
+      color: var(--primary-dark);
+      border-radius: 50px;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      background: var(--accent-hover);
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
@@ -30,6 +145,7 @@
       </a>
       <ul class="nav-menu">
         <li><a href="./index.html">Trang Chủ</a></li>
+        <li><a href="./thongbao.html">Thông Báo</a></li>
         <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
         <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
         <li><a href="./life.html">Đời Sống</a></li>
@@ -41,57 +157,58 @@
 
   <section class="hero">
     <div class="container text-container">
-      <h1>Ca Đoàn Ephata</h1>
-      <p>Yêu thương – Phục vụ – Chia sẻ niềm tin</p>
+      <h1>Chào Mừng Đến Với CĐ Ephata</h1>
+      <p>Yêu thương – Phục vụ – Chia sẻ niềm tin qua lời ca tiếng hát</p>
     </div>
   </section>
 
   <div class="container">
-    <h2 style="text-align: center; margin: 2rem 0">
-      Bài Viết & Thông Báo Mới Nhất
-    </h2>
-    <div class="grid" id="announcements-grid">
-      <!-- Announcements will be loaded here dynamically -->
+
+    <div class="mission-section">
+      <p class="mission-text">
+        Hát là cầu nguyện hai lần. Chúng tôi dùng lời ca để tôn vinh Thiên Chúa và phục vụ cộng đoàn trong tình hiệp
+        nhất và yêu thương.
+      </p>
     </div>
+
+    <div class="discovery-grid">
+      <a href="./thongbao.html" class="discovery-card">
+        <div class="discovery-icon">📢</div>
+        <h3>Thông Báo & Tin Tức</h3>
+        <p>Cập nhật những thông tin mới nhất về lịch tập, sự kiện và các hoạt động của ca đoàn.</p>
+      </a>
+
+      <a href="./weeklysongs.html" class="discovery-card">
+        <div class="discovery-icon">🎵</div>
+        <h3>Bản Nhạc Phụng Vụ</h3>
+        <p>Kho dữ liệu bài hát hàng tuần theo Năm Phụng Vụ với đầy đủ bản nhạc PDF và file tập hát.</p>
+      </a>
+
+      <a href="./performance.html" class="discovery-card">
+        <div class="discovery-icon">🎥</div>
+        <h3>Lời Ca Tiếng Hát</h3>
+        <p>Xem lại các buổi biểu diễn, video thánh ca và những khoảnh khắc tôn vinh Chúa qua âm nhạc.</p>
+      </a>
+
+      <a href="./life.html" class="discovery-card">
+        <div class="discovery-icon">📸</div>
+        <h3>Đời Sống Ca Đoàn</h3>
+        <p>Ghi lại những kỷ niệm, hành trình gắn kết và niềm vui phục vụ của các thành viên Ephata.</p>
+      </a>
+    </div>
+
+    <section class="cta-section">
+      <h2>Bạn yêu thích âm nhạc và muốn phục vụ?</h2>
+      <p style="margin-bottom: 2rem; opacity: 0.9;">Hãy gia nhập gia đình Ca Đoàn Ephata để cùng nhau lan tỏa niềm tin
+        qua tiếng hát.</p>
+      <a href="./about.html" class="cta-btn">Gia Nhập Cùng Chúng Tôi</a>
+    </section>
+
   </div>
-  <div class="pagination" id="pagination"></div>
+
   <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
+
   <script src="./statics/js/index.js" defer></script>
-  <script src="./statics/js/pagination.js" defer></script>
-  <script>
-    async function loadAnnouncements() {
-      try {
-        const response = await fetch('data/announcements.json');
-        const data = await response.json();
-        const grid = document.getElementById('announcements-grid');
-
-        const items = data.announcements || [];
-
-        if (items.length > 0) {
-          const render = (item) => `
-              <div class="card">
-                <img src="${item.image}" alt="${item.title}" />
-                <div class="card-body">
-                  <h3>${item.title}</h3>
-                  <p>${item.content}</p>
-                </div>
-              </div>
-            `;
-          if (window.setupPagination) {
-            window.setupPagination(items, grid, document.getElementById('pagination'), 12, render);
-          } else {
-            grid.innerHTML = items.map(render).join('');
-          }
-        } else {
-          grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có bài viết nào.</p>';
-          document.getElementById('pagination').innerHTML = '';
-        }
-      } catch (error) {
-        console.error('Error loading announcements:', error);
-      }
-    }
-    document.addEventListener('DOMContentLoaded', loadAnnouncements);
-  </script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker

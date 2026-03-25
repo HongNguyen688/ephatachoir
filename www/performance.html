@@ -1,84 +1,89 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="manifest" href="./manifest.json" />
-    <link rel="apple-touch-icon" href="./statics/images/logo.png" />
-    <meta name="theme-color" content="#d35400" />
-    <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
-    <title>Lời Ca Tiếng Hát • CĐ Ephata San Jose</title>
-    <link rel="stylesheet" href="./statics/css/style.css" />
-    <link rel="stylesheet" href="./statics/css/responsive.css" />
-    <link rel="stylesheet" href="./statics/css/performance.css" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <a href="./index.html">
-          <div class="logo">
-            <div>
-              <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
-            </div>
-            <div><p>CĐ Ephata</p></div>
-          </div></a
-        >
-        <ul class="nav-menu">
-          <li><a href="./index.html">Trang Chủ</a></li>
-          <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
-          <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
-          <li><a href="./life.html">Đời Sống</a></li>
-          <li><a href="./about.html">Giới Thiệu</a></li>
-        </ul>
-        <div class="hamburger">☰</div>
-      </nav>
-    </header>
 
-    <div class="page-wrapper">
-      <section class="hero">
-        <div class="container" style="text-align: center">
-          <h1 class="super-title">Lời Ca Tiếng Hát</h1>
-          <p style="font-size: 1.5rem; color: #fff9f5; margin: 1rem 0">
-            Những giai điệu thánh ca do chính anh chị em ca đoàn Ephata trình
-            bày
-          </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="./statics/images/logo.png" />
+  <meta name="theme-color" content="#d35400" />
+  <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
+  <title>Lời Ca Tiếng Hát • CĐ Ephata San Jose</title>
+  <link rel="stylesheet" href="./statics/css/style.css" />
+  <link rel="stylesheet" href="./statics/css/responsive.css" />
+  <link rel="stylesheet" href="./statics/css/performance.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="./index.html">
+        <div class="logo">
+          <div>
+            <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
+          </div>
+          <div>
+            <p>CĐ Ephata</p>
+          </div>
         </div>
-      </section>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="./index.html">Trang Chủ</a></li>
+        <li><a href="./thongbao.html">Thông Báo</a></li>
+        <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+        <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
+        <li><a href="./life.html">Đời Sống</a></li>
+        <li><a href="./about.html">Giới Thiệu</a></li>
+      </ul>
+      <div class="hamburger">☰</div>
+    </nav>
+  </header>
 
-      <main class="container">
-        <div class="songs-youtube-grid" id="performances-grid">
-          <!-- Videos will be loaded here dynamically -->
-        </div>
+  <div class="page-wrapper">
+    <section class="hero">
+      <div class="container" style="text-align: center">
+        <h1 class="super-title">Lời Ca Tiếng Hát</h1>
+        <p class="hero-subtitle">
+          Những giai điệu thánh ca do chính anh chị em ca đoàn Ephata trình
+          bày
+        </p>
+      </div>
+    </section>
 
-        <div id="pagination" class="pagination"></div>
-      </main>
+    <main class="container">
+      <div class="songs-youtube-grid" id="performances-grid">
+        <!-- Videos will be loaded here dynamically -->
+      </div>
 
-      <div class="footer-push"></div>
-    </div>
+      <div id="pagination" class="pagination"></div>
+    </main>
 
-    <footer>© 2025 HN – CĐ Ephata San Jose</footer>
+    <div class="footer-push"></div>
+  </div>
 
-    <script src="./statics/js/index.js" defer></script>
-    <script src="./statics/js/pagination.js" defer></script>
-    <script>
-      function getYouTubeId(url) {
-        if (!url) return '';
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-        const match = url.match(regExp);
-        return (match && match[2].length === 11) ? match[2] : url;
-      }
+  <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
 
-      async function loadPerformances() {
-        try {
-          const response = await fetch('data/performances.json');
-          const data = await response.json();
-          const grid = document.getElementById('performances-grid');
-          
-          // Use the key 'performances' as defined in config.yml
-          const items = data.performances || [];
-          
-          if (items.length > 0) {
-            window.setupPagination(items, grid, document.getElementById('pagination'), 12, (item) => `
+  <script src="./statics/js/index.js" defer></script>
+  <script src="./statics/js/pagination.js" defer></script>
+  <script>
+    function getYouTubeId(url) {
+      if (!url) return '';
+      const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      const match = url.match(regExp);
+      return (match && match[2].length === 11) ? match[2] : url;
+    }
+
+    async function loadPerformances() {
+      try {
+        const response = await fetch('data/performances.json');
+        const data = await response.json();
+        const grid = document.getElementById('performances-grid');
+
+        // Use the key 'performances' as defined in config.yml
+        const items = data.performances || [];
+
+        if (items.length > 0) {
+          window.setupPagination(items, grid, document.getElementById('pagination'), 12, (item) => `
               <div class="yt-item">
                 <div class="yt-thumbnail">
                   <iframe
@@ -94,17 +99,18 @@
                 </div>
               </div>
             `);
-          } else {
-            grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có video nào. Vui lòng thêm video trong trang Admin.</p>';
-            document.getElementById('pagination').innerHTML = '';
-          }
-        } catch (error) {
-          console.error('Error loading performances:', error);
-          const grid = document.getElementById('performances-grid');
-          grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Có lỗi xảy ra khi tải dữ liệu.</p>';
+        } else {
+          grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Chưa có video nào. Vui lòng thêm video trong trang Admin.</p>';
+          document.getElementById('pagination').innerHTML = '';
         }
+      } catch (error) {
+        console.error('Error loading performances:', error);
+        const grid = document.getElementById('performances-grid');
+        grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Có lỗi xảy ra khi tải dữ liệu.</p>';
       }
-      document.addEventListener('DOMContentLoaded', loadPerformances);
-    </script>
-  </body>
+    }
+    document.addEventListener('DOMContentLoaded', loadPerformances);
+  </script>
+</body>
+
 </html>

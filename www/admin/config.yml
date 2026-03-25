@@ -19,6 +19,7 @@ collections:
             label: Thông Báo
             widget: list
             add_to_top: true
+            summary: "{{fields.title}} – {{fields.date}}"
             fields:
               - name: image
                 label: Hình Ảnh
@@ -136,6 +137,7 @@ collections:
             label: Videos
             widget: list
             add_to_top: true
+            summary: "{{fields.title}}"
             fields:
               - { name: title, label: Tiêu Đề, widget: string, required: true }
               - {
@@ -157,6 +159,7 @@ collections:
             label: Hình Ảnh
             widget: list
             add_to_top: true
+            summary: "{{fields.caption}} ({{fields.image}})"
             fields:
               - name: image
                 label: Hình Ảnh
