@@ -87,42 +87,8 @@
       </section>
 
       <script>
-        function updateUI() {
-          const mode = localStorage.getItem('theme_mode') || 'auto';
-          const theme = localStorage.getItem('ephata_theme');
-
-          // Update Mode Buttons
-          document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-          document.getElementById(`mode-${mode}`).classList.add('active');
-
-          // Update Manual Buttons
-          const manualSection = document.getElementById('manual-theme-section');
-          if (mode === 'auto') {
-            manualSection.classList.add('disabled-section');
-          } else {
-            manualSection.classList.remove('disabled-section');
-          }
-
-          document.querySelectorAll('.theme-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.theme === theme) btn.classList.add('active');
-          });
-        }
-
-        // Intercept native functions to update UI
-        const originalSetThemeMode = window.setThemeMode;
-        window.setThemeMode = (mode) => {
-          originalSetThemeMode(mode);
-          updateUI();
-        };
-
-        const originalApplyTheme = window.applyTheme;
-        window.applyTheme = (theme) => {
-          originalApplyTheme(theme);
-          updateUI();
-        };
-
-        document.addEventListener('DOMContentLoaded', updateUI);
+        // UI updates are now handled globally in index.js
+        // to avoid race conditions with script loading.
       </script>
 
       <section class="settings-section" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">

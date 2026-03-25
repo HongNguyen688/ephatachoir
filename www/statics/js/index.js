@@ -53,6 +53,7 @@ function applyTheme(themeName, save = true) {
     localStorage.setItem('ephata_theme', themeName);
     localStorage.setItem('theme_mode', 'manual');
   }
+  if (window.updateSettingsUI) window.updateSettingsUI();
 }
 
 // Initialize Theme
@@ -73,6 +74,7 @@ window.setThemeMode = (mode) => {
   if (mode === 'auto') {
     applyAutoTheme();
   }
+  if (window.updateSettingsUI) window.updateSettingsUI();
 };
 
 /*=================================
@@ -194,4 +196,39 @@ if ('serviceWorker' in navigator) {
       .catch(err => console.error('Service Worker registration failed:', err));
   });
 }
+
+/*============================
+   Settings UI Logic
+==============================*/
+function updateSettingsUI() {
+  const manualSection = document.getElementById('manual-theme-section');
+  if (!manualSection) return; // Not on settings page
+
+  const mode = localStorage.getItem('theme_mode') || 'auto';
+  const theme = localStorage.getItem('ephata_theme');
+
+  // Update Mode Buttons
+  document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+  const activeModeBtn = document.getElementById(`mode-${mode}`);
+  if (activeModeBtn) activeModeBtn.classList.add('active');
+
+  // Update Manual Section State
+  if (mode === 'auto') {
+    manualSection.classList.add('disabled-section');
+  } else {
+    manualSection.classList.remove('disabled-section');
+  }
+
+  // Update Theme Buttons
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.dataset.theme === theme) btn.classList.add('active');
+  });
+}
+
+// Initial UI sync
+document.addEventListener('DOMContentLoaded', updateSettingsUI);
+// Export for settings.html
+window.updateSettingsUI = updateSettingsUI;
+
 
