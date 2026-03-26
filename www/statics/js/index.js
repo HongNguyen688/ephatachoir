@@ -199,6 +199,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 /*============================
+   External Link Helper (Mobile Safe)
+==============================*/
+window.openExternalLink = async (url) => {
+  console.log("Attempting to open link:", url);
+  try {
+    const capacitor = window.Capacitor;
+    if (capacitor && capacitor.isNativePlatform()) {
+      const { Browser } = capacitor.Plugins;
+      if (Browser) {
+        // If it's a local PDF, Browser.open might not work (Safari can't see app files)
+        // So we only use Browser.open for http links.
+        if (url.startsWith('http')) {
+          await Browser.open({ url: url });
+          return;
+        }
+      }
+    }
+    // Fallback: Just open it. On mobile this will usually navigate the webview to the PDF
+    window.open(url, '_blank');
+  } catch (err) {
+    console.error("Link opening failed:", err);
+    window.open(url, '_blank');
+  }
+};
+
+/*============================
    Service Worker Registration
 ==============================*/
 if ('serviceWorker' in navigator) {
