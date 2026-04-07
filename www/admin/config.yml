@@ -3,6 +3,8 @@
 backend:
   name: git-gateway
 
+local_backend: false
+
 media_folder: www/statics/images/announcements 
 public_folder: /statics/images/announcements
 

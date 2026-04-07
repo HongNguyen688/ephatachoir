@@ -55,8 +55,15 @@ To manage website content, navigate to `https://ephatachoir.org/admin`.
 - `www/data/`: JSON database files.
 - `www/admin/`: CMS configuration (`config.yml`).
 
-### Automated Theme Logic
-Themes are mapped in `index.js` using the `THEME_MAP` object. To add a new liturgical season, update the `season` string in `weeks.json` and ensure it has a corresponding theme in `style.css`.
+## 🚀 Verification & Quality Assurance
+
+To ensure the website and apps are always performing perfectly, please refer to our **[Comprehensive Test Suite](.gemini/antigravity/brain/e8d13bee-6fb5-4a66-993f-5e0dbb52b127/test_cases.md)**.
+
+The test suite covers:
+- **🎨 Theme Accuracy:** Manual and automatic switching.
+- **📱 Mobile App Native Features:** PDF handling and offline synchronization.
+- **🛠️ Admin Panel Verification:** Content management and media uploads.
+- **🧪 Data Integrity:** Strict validation of song list formats.
 
 ---
 
@@ -66,4 +73,4 @@ The site is deployed via **Netlify**. Any push to the `main` branch on GitHub wi
 
 ---
 
-© 2026 HN - Ephata Choir. All rights reserved.
+© 2025 HN - Ephata Choir. All rights reserved.
