@@ -29,18 +29,22 @@ const THEME_MAP = {
 
 async function applyAutoTheme() {
   try {
-    const response = await fetch('./data/weeks.json');
+    const response = await fetch('./data/weeks.json', { cache: 'no-cache' });
     const data = await response.json();
     const now = new Date();
 
     // Find the current or most recent week
-    const currentWeek = data.weeks
-      .filter(w => new Date(w.date) <= now)
-      .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+    const weeks = (data.weeks || []).filter(w => w.date && new Date(w.date) <= now);
+    const currentWeek = weeks.sort((a, b) => new Date(b.date) - new Date(a.date))[0];
 
-    if (currentWeek && THEME_MAP[currentWeek.season]) {
-      applyTheme(THEME_MAP[currentWeek.season], false);
-      console.log(`Auto-theme applied: ${currentWeek.season} -> ${THEME_MAP[currentWeek.season]}`);
+    if (currentWeek) {
+      const theme = THEME_MAP[currentWeek.season];
+      if (theme) {
+        applyTheme(theme, false);
+        console.log(`Auto-theme: ${currentWeek.season} (${currentWeek.date}) -> ${theme}`);
+      } else {
+        console.warn(`No theme mapping for season: ${currentWeek.season}`);
+      }
     }
   } catch (e) {
     console.error('Failed to apply auto-theme:', e);

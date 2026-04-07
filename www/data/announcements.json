@@ -1,6 +1,12 @@
 {
   "announcements": [
     {
+      "image": "/statics/images/announcements/mung-chua-phuc-sinh.webp",
+      "title": "Mừng Chúa Phục Sinh",
+      "content": "Chủ Nhật, ngày 05 tháng 04 năm 2026 11:00 sáng - Tiếng Việt",
+      "date": "2026-04-05"
+    },
+    {
       "image": "statics/images/announcements/newyear2026.png",
       "title": "Lễ Mồng 1 Tết.",
       "content": "Thứ ba, ngày 17 tháng 02 năm 2026 7:00 tối - Tiếng Việt",

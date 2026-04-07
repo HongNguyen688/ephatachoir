@@ -104,10 +104,10 @@ collections:
                     options:
                       - Nhập Lễ
                       - Đáp Ca
+                      - Phần Khác
                       - Dâng Lễ
                       - Hiệp Lễ
                       - Kết Lễ
-                      - Phần Khác
                     required: true
                   - {
                       name: song_title,

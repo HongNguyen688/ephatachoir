@@ -1,6 +1,98 @@
 {
   "weeks": [
     {
+      "liturgical_year": "A",
+      "title": "Chúa Nhật Phục Sinh",
+      "season": "Mùa Phục Sinh",
+      "date": "2026-04-05",
+      "theme": "Người Phải Sống Lại Từ Cõi Chết.",
+      "full_pdf": "/statics/pdf/bài-hát-lễ-phục-sinh-4-5-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Con Hãy Nhớ Rằng",
+          "author": "Kim Long",
+          "audio": "/statics/mp4/con-hãy-nhớ-rằng-kim-long-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 117",
+          "author": "Thiên Lý",
+          "audio": "/statics/mp4/đáp-ca-chúa-nhật-phục-sinh-thánh-vịnh-117-st-thiên-lý.m4a"
+        },
+        {
+          "part": "Phần Khác",
+          "song_title": "Hoan Ca Phục Sinh",
+          "author": "Nam Hoa",
+          "audio": "/statics/mp4/hoan-ca-phục-sinh-ca-tiếp-liên-nam-hoa-tl-cnps-c-04-17-22-.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Lễ Dâng Tình Yêu",
+          "author": "Đ.Dũng & Đ.C.Huỳnh",
+          "audio": "/statics/mp4/lễ-dâng-tình-yêu-đinh-dũng-đinh-công-huỳnh-.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Chúa Sống Lại Rồi",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/chúa-sống-lại-rồi-lm-thành-tâm-.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": " Lạy Nữ Vương Thiên Đàng",
+          "author": "Ngô Duy Linh",
+          "audio": "/statics/mp4/lạy-nữ-vương-thiên-đàng-ngô-duy-linh-.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
+      "title": "Chúa Nhật Lễ Lá",
+      "season": "Mùa Chay",
+      "date": "2026-03-29",
+      "theme": "Sự Thương Khó Đức Giêsu Kitô, Chúa Chúng Ta.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-lễ-lá-03-29-2026.pdf",
+      "songs": [
+        {
+          "part": "Kết Lễ",
+          "song_title": "Tình Mẹ",
+          "author": "Phương Anh",
+          "audio": "https://www.youtube.com/watch?v=3FWw_vaJJZs"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Bài Ca Thương Khó",
+          "author": "Phương Anh",
+          "audio": "/statics/mp4/bài-ca-thương-khó-phương-anh-cđtt.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Xin Dâng Chúa Tình Yêu",
+          "author": "Như Ý",
+          "audio": "/statics/mp4/xin-dang-chua-tinh-yeu-nhu-y-.m4a"
+        },
+        {
+          "part": "Phần Khác",
+          "song_title": "Tung Hô Tin Mừng",
+          "author": "Không Tên",
+          "audio": "/statics/mp4/tung-hô-tin-mừng-lễ-lá-thứ-sáu-tuần-thánh-hvh.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh vịnh 21",
+          "author": "Huy Hoàng",
+          "audio": "/statics/mp4/thánh-vịnh-21-chúa-nhật-lễ-lá-lm.-huy-hoàng-x-nguyễn-vinh-sơn.m4a"
+        },
+        {
+          "part": "Nhập Lễ",
+          "song_title": " Rước Lá",
+          "author": "Không Tên",
+          "audio": "/statics/mp4/rước-lá.m4a"
+        }
+      ]
+    },
+    {
       "title": "Lễ Mùng 1 Tết",
       "liturgical_year": "A",
       "season": "Các Ngày Lễ Khác",

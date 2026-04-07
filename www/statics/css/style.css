@@ -7,33 +7,36 @@
 }
 
 :root {
-  --primary: #6A1B9A;
-  /* Elegant Purple */
-  --primary-hover: #8E24AA;
-  --primary-dark: #4A126A;
-  --accent: #AB47BC;
-  --accent-hover: #CE93D8;
-  --accent-dark: #4A126A;
-  --nav-border: #6A1B9A;
-  --hero-start: #4A126A;
-  --hero-mid: #6A1B9A;
-  --hero-end: #57167D;
+  --primary: #2e7d32;
+  /* Forest Green */
+  --primary-hover: #388e3c;
+  --primary-dark: #1b5e20;
+  --accent: #ffd700;
+  /* Gold Accent */
+  --accent-hover: #ffea00;
+  --accent-dark: #f9a825;
+  --nav-border: #2e7d32;
+  --hero-start: #8bc34a;
+  /* Lime Green */
+  --hero-mid: #4caf50;
+  --hero-end: #2e7d32;
   --hero-text: #ffffff;
   --hero-title: #ffffff;
-  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 220, 140, 0.35);
-  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-  --card-border: #d4c9e8;
-  --card-shadow: rgba(82, 35, 152, 0.12);
-  --card-hover-shadow: rgba(82, 35, 152, 0.22);
-  --accent-shadow: rgba(82, 35, 152, 0.25);
-  --accent-shadow-hover: rgba(82, 35, 152, 0.45);
-  --button-ripple: rgba(255, 255, 255, 0.35);
-  --background: #f8f6fc;
+  --hero-text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --hero-p-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  --card-border: #c8e6c9;
+  --card-shadow: rgba(46, 125, 50, 0.1);
+  --card-hover-shadow: rgba(46, 125, 50, 0.2);
+  --accent-shadow: rgba(255, 215, 0, 0.3);
+  --accent-shadow-hover: rgba(255, 215, 0, 0.5);
+  --button-ripple: rgba(255, 255, 255, 0.4);
+  --background: #f1f8e9;
+  /* Pale Green */
   --text-main: #333333;
-  --text-heading: #522398;
-  --footer-start: #522398;
-  --footer-end: #470a68;
-  --footer-text: #e5def0;
+  --text-heading: #2e7d32;
+  --footer-start: #2e7d32;
+  --footer-end: #1b5e20;
+  --footer-text: #ffffff;
 }
 
 html,
@@ -187,22 +190,46 @@ a:hover {
 /* HERO effect */
 .hero {
   position: relative;
-  background: linear-gradient(135deg,
-      var(--hero-start) 0%,
-      var(--hero-mid) 50%,
-      var(--hero-end) 100%);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 40%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px),
+    linear-gradient(135deg, var(--hero-start) 0%, var(--hero-mid) 50%, var(--hero-end) 100%);
+  background-size: 100% 100%, 100% 100%, 60px 60px, 110px 110px, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 30px 30px, 0 0;
   color: var(--hero-text);
   padding: 9rem 2rem;
   text-align: center;
   overflow: hidden;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 20px);
+  pointer-events: none;
+}
+
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.28);
+  background: rgba(0, 0, 0, 0.08); /* Reduced for Christmas theme */
   pointer-events: none;
+}
+
+/* Override stars & textures for other themes */
+:root[data-theme] .hero {
+  background-image: linear-gradient(135deg, var(--hero-start) 0%, var(--hero-mid) 50%, var(--hero-end) 100%);
+  background-size: 100% 100%;
+}
+:root[data-theme] .hero::after {
+  display: none;
+}
+:root[data-theme] .hero::before {
+  background: rgba(0, 0, 0, 0.28);
 }
 
 /* Lighten hero overlay for light themes */

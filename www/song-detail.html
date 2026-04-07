@@ -91,7 +91,21 @@
         heroTheme.textContent = week.theme ? `Chủ đề: ${week.theme}` : "";
 
         // Build songs list
-        const songs = week.songs || [];
+        const SONG_PART_ORDER = [
+          "Nhập Lễ",
+          "Đáp Ca",
+          "Phần Khác",
+          "Dâng Lễ",
+          "Hiệp Lễ",
+          "Kết Lễ"
+        ];
+
+        const songs = (week.songs || []).sort((a, b) => {
+          const indexA = SONG_PART_ORDER.indexOf(a.part);
+          const indexB = SONG_PART_ORDER.indexOf(b.part);
+          return (indexA === -1 ? 99 : indexA) - (indexB === -1 ? 99 : indexB);
+        });
+
         const songsHTML = songs
           .map(
             (song) => `
