@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật II Phục Sinh",
+      "season": "Mùa Phục Sinh",
+      "date": "2026-04-12",
+      "theme": "Phúc Thay Những Người Không Thấy Mà Tin.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-2-phục-sinh-4-12-2026.pdf",
+      "songs": [
+        {
+          "part": "Kết Lễ",
+          "song_title": "Lạy Nữ Vương Thiên Đàng",
+          "author": "T.Dũng & T.Cẩm",
+          "audio": "/statics/mp4/lạy-nữ-vương-thiên-đàng-nhạctiến-dũng-lời-thiện-cẩm.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Không Thấy Mà Tin",
+          "author": "P.Đ.Huyến & Vũ Đình Ân",
+          "audio": "/statics/mp4/không-thấy-mà-tin-phạm-đức-huyến-vũ-đình-ân.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Xin Dâng 2",
+          "author": "Ân Đức",
+          "audio": "/statics/mp4/xin-dâng-2.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 117",
+          "author": "Tường Ân",
+          "audio": "/statics/mp4/vì-chúa-hảo-tâm-thánh-vịnh-117-sáng-tác-tường-ân-ca-len-di-lyrics.m4a"
+        },
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Lòng Thương Xót Chúa 3",
+          "author": "Nguyễn Chánh",
+          "audio": "/statics/mp4/lòng-thương-xót-chúa-3.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật Phục Sinh",
       "season": "Mùa Phục Sinh",
       "date": "2026-04-05",
