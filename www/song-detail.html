@@ -56,7 +56,7 @@
     <div class="footer-push"></div>
   </div>
 
-  <footer>© 2025 HN – CĐ Ephata San Jose</footer>
+  <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
   <script src="./statics/js/index.js" defer></script>
 
   <script>
@@ -114,7 +114,7 @@
         let pdfHTML = "";
         if (week.full_pdf) {
           pdfHTML = `
-              <a style="text-decoration: none; color: white;" href="${week.full_pdf}" target="_blank">
+              <a href="${week.full_pdf}" onclick="openExternalLink(this.href); return false;" style="text-decoration: none;">
                 <div class="pdf-toggle-btn">📄 TẢI TOÀN BỘ PDF TUẦN NÀY (${songs.length} bài hát)</div>
               </a>
               <embed
@@ -137,7 +137,7 @@
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .register("/service-worker.js")
+        .register("./service-worker.js")
         .then(() => console.log("SW registered"))
         .catch((err) => console.log("SW error", err));
     }

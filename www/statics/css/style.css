@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -209,6 +211,19 @@ a:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
+:root[data-theme="white"] .hero::before {
+  background: transparent;
+}
+
+:root[data-theme="white"] .hero {
+  /* background-image: 
+    radial-gradient(var(--primary) 1px, transparent 1px), 
+    radial-gradient(var(--primary) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px; */
+  background-color: #ffffff;
+}
+
 /* Logo + title */
 .hero h1 {
   font-size: 4.2rem !important;
@@ -231,8 +246,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 2px;
   margin-top: 0;
-  color: #f3ecd2;
-
+  color: var(--hero-text);
   text-shadow: var(--hero-p-shadow);
   position: relative;
   z-index: 2;
@@ -299,7 +313,8 @@ a:hover {
   padding: 0.75rem 1.8rem;
   background: linear-gradient(135deg, var(--accent), var(--primary));
 
-  color: var(--hero-text) !important;
+  /* color: var(--hero-text) !important; */
+  color: #ffffff !important;
   font-weight: 600;
   font-size: 1rem;
   border-radius: 50px;
@@ -309,7 +324,6 @@ a:hover {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  /* để ripple ở dưới */
 }
 
 /* Hiệu ứng sóng khi hover */
@@ -476,62 +490,81 @@ footer::before {
 }
 
 :root[data-theme="red"] {
-  --primary: #C62828;
-  --primary-hover: #D32F2F;
-  --primary-dark: #8E1C1C;
-  --accent: #EF5350;
-  --accent-hover: #E57373;
-  --accent-dark: #8E1C1C;
-  --nav-border: #C62828;
-  --hero-start: #8E1C1C;
-  --hero-mid: #C62828;
-  --hero-end: #A32020;
+  --primary: #d32f2f;
+  /* Vibrant Christmas Red */
+  --primary-hover: #b71c1c;
+  --primary-dark: #8b0000;
+  --accent: #ffeb3b;
+  /* Bright Gold Accent */
+  --accent-hover: #fdd835;
+  --accent-dark: #f9a825;
+  --nav-border: #d32f2f;
+  --hero-start: #d32f2f;
+  --hero-mid: #b71c1c;
+  --hero-end: #8b0000;
   --hero-text: #ffffff;
   --hero-title: #ffffff;
-  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(198, 40, 40, 0.3);
-  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --hero-text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --hero-p-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   --card-border: #ffcdd2;
-  --card-shadow: rgba(198, 40, 40, 0.12);
-  --card-hover-shadow: rgba(198, 40, 40, 0.22);
-  --accent-shadow: rgba(198, 40, 40, 0.25);
-  --accent-shadow-hover: rgba(198, 40, 40, 0.45);
-  --button-ripple: rgba(255, 255, 255, 0.3);
-  --background: #ffebee;
+  --card-shadow: rgba(183, 28, 28, 0.1);
+  --card-hover-shadow: rgba(183, 28, 28, 0.2);
+  --accent-shadow: rgba(253, 216, 53, 0.25);
+  --accent-shadow-hover: rgba(253, 216, 53, 0.45);
+  --button-ripple: rgba(255, 255, 255, 0.4);
+  --background: #fffafa;
+  /* Snow White */
   --text-main: #333333;
-  --text-heading: #C62828;
-  --footer-start: #C62828;
-  --footer-end: #8E1C1C;
-  --footer-text: #ffebee;
+  --text-heading: #d32f2f;
+  --footer-start: #b71c1c;
+  --footer-end: #8b0000;
+  --footer-text: #ffffff;
+}
+
+/* Festive Texture for Red Theme */
+:root[data-theme="red"] .hero {
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1.5px),
+    linear-gradient(135deg, var(--hero-start) 0%, var(--hero-mid) 50%, var(--hero-end) 100%);
+  background-size: 40px 40px, 70px 70px, 100% 100%;
+  background-position: 0 0, 20px 20px, 0 0;
+  position: relative;
+}
+
+:root[data-theme="red"] .hero::before {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 :root[data-theme="gold_white"] {
   --background: #fffdf6;
   --header-bg: #ffffff;
-  --primary: #fdc700;
-  --primary-hover: #f2b105;
-  --primary-dark: #c69b00;
-  --accent: #f2b105;
-  --accent-hover: #ffd54f;
-  --accent-dark: #fdc700;
-  --nav-border: #f2b105;
-  --hero-start: #fdc700;
-  --hero-mid: #eac604;
-  --hero-end: #f2b105;
+  --primary: #fbc02d;
+  /* Joyous Golden Yellow */
+  --primary-hover: #f9a825;
+  --primary-dark: #f57f17;
+  --accent: #fff59d;
+  --accent-hover: #fff176;
+  --accent-dark: #fdd835;
+  --nav-border: #fbc02d;
+  --hero-start: #f9a825;
+  --hero-mid: #fdd835;
+  --hero-end: #fbc02d;
   --hero-text: #ffffff;
   --hero-title: #ffffff;
-  --hero-text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(253, 199, 0, 0.4);
-  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  --hero-text-shadow: 0 2px 10px rgba(184, 134, 11, 0.3);
+  --hero-p-shadow: 0 1px 5px rgba(184, 134, 11, 0.2);
   --card-border: #fff4d1;
-  --card-shadow: rgba(183, 140, 0, 0.12);
-  --card-hover-shadow: rgba(183, 140, 0, 0.22);
-  --accent-shadow: rgba(183, 140, 0, 0.25);
-  --accent-shadow-hover: rgba(183, 140, 0, 0.45);
+  --card-shadow: rgba(183, 140, 0, 0.1);
+  --card-hover-shadow: rgba(183, 140, 0, 0.2);
+  --accent-shadow: rgba(253, 199, 0, 0.2);
+  --accent-shadow-hover: rgba(253, 199, 0, 0.4);
   --button-ripple: rgba(255, 255, 255, 0.5);
-  --text-main: #333333;
-  --text-heading: #000000;
-  --footer-start: #fdc700;
-  --footer-end: #f2b105;
-  --footer-text: #ffffff;
+  --text-main: #3e2723;
+  --text-heading: #1a1a1a;
+  --footer-start: #fbc02d;
+  --footer-end: #f9a825;
+  --footer-text: #3e2723;
 }
 
 :root[data-theme="navy"] {
@@ -562,6 +595,128 @@ footer::before {
   --footer-start: #1565C0;
   --footer-end: #0D47A1;
   --footer-text: #e3f2fd;
+}
+
+:root[data-theme="white"] {
+  --primary: #0f172a;
+  /* Midnight Blue/Charcoal */
+  --primary-hover: #1e293b;
+  --primary-dark: #020617;
+  --accent: #334155;
+  --accent-hover: #475569;
+  --accent-dark: #0f172a;
+  --nav-border: #f1f5f9;
+  --hero-start: #ffffff;
+  --hero-mid: #f8fafc;
+  --hero-end: #ffffff;
+  --hero-text: #0f172a;
+  --hero-title: #0f172a;
+  --hero-text-shadow: none;
+  --hero-p-shadow: none;
+  --card-border: #f1f5f9;
+  --card-shadow: rgba(15, 23, 42, 0.05);
+  --card-hover-shadow: rgba(15, 23, 42, 0.1);
+  --accent-shadow: rgba(51, 65, 85, 0.1);
+  --accent-shadow-hover: rgba(51, 65, 85, 0.2);
+  --button-ripple: rgba(15, 23, 42, 0.1);
+  --background: #ffffff;
+  --text-main: #334155;
+  --text-heading: #0f172a;
+  --footer-start: #0f172a;
+  --footer-end: #1e293b;
+  --footer-text: #ffffff;
+}
+
+/* Typography Overrides for White Theme */
+[data-theme="white"] h1,
+[data-theme="white"] h2,
+[data-theme="white"] .hero-title,
+[data-theme="white"] .settings-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Refined Hero for White Theme */
+:root[data-theme="white"] .hero {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+    linear-gradient(to bottom, #f1f5f9 1px, transparent 1px),
+    linear-gradient(135deg, var(--hero-start) 0%, var(--hero-mid) 50%, var(--hero-end) 100%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  position: relative;
+}
+
+:root[data-theme="white"] .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, #ffffff 80%);
+  pointer-events: none;
+}
+
+:root[data-theme="white"] .hero::before {
+  background: transparent;
+}
+
+:root[data-theme="christmas_green"] {
+  --primary: #2e7d32;
+  /* Forest Green */
+  --primary-hover: #388e3c;
+  --primary-dark: #1b5e20;
+  --accent: #ffd700;
+  /* Gold Accent */
+  --accent-hover: #ffea00;
+  --accent-dark: #f9a825;
+  --nav-border: #2e7d32;
+  --hero-start: #8bc34a;
+  /* Lime Green */
+  --hero-mid: #4caf50;
+  --hero-end: #2e7d32;
+  --hero-text: #ffffff;
+  --hero-title: #ffffff;
+  --hero-text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --hero-p-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  --card-border: #c8e6c9;
+  --card-shadow: rgba(46, 125, 50, 0.1);
+  --card-hover-shadow: rgba(46, 125, 50, 0.2);
+  --accent-shadow: rgba(255, 215, 0, 0.3);
+  --accent-shadow-hover: rgba(255, 215, 0, 0.5);
+  --button-ripple: rgba(255, 255, 255, 0.4);
+  --background: #f1f8e9;
+  /* Pale Green */
+  --text-main: #333333;
+  --text-heading: #2e7d32;
+  --footer-start: #2e7d32;
+  --footer-end: #1b5e20;
+  --footer-text: #ffffff;
+}
+
+/* Festive Texture for Christmas Green */
+:root[data-theme="christmas_green"] .hero {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 40%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.3) 1.5px, transparent 1.5px),
+    linear-gradient(135deg, var(--hero-start) 0%, var(--hero-mid) 50%, var(--hero-end) 100%);
+  background-size: 100% 100%, 100% 100%, 60px 60px, 110px 110px, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 30px 30px, 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+:root[data-theme="christmas_green"] .hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 20px);
+  pointer-events: none;
+}
+
+:root[data-theme="christmas_green"] .hero::before {
+  background: rgba(0, 0, 0, 0.08);
 }
 
 :root[data-theme="purple"] {
@@ -658,7 +813,7 @@ footer::before {
 
 .mode-btn .mode-icon {
   font-size: 2rem;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .mode-btn .mode-name {
@@ -749,14 +904,33 @@ footer::before {
 }
 
 .theme-btn.active::after {
-  content: 'Selected';
+  content: '✓';
   position: absolute;
-  right: 1.5rem;
-  font-size: 0.8rem;
+  top: -10px;
+  right: -10px;
+  background: var(--primary);
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: var(--primary);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 0 3px white;
+  z-index: 10;
+  animation: badgePop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .color-circle {

@@ -8,10 +8,19 @@ document.querySelector(".hamburger")?.addEventListener("click", () => {
 /*============================
    Theme Management
 ============================*/
+const THEME_META_COLORS = {
+  purple: '#6A1B9A',
+  green: '#1B5E20',
+  red: '#C62828',
+  gold_white: '#fdb52a',
+  navy: '#1565C0',
+  white: '#ffffff',
+  christmas_green: '#2e7d32'
+};
 const THEME_MAP = {
   'Mùa Vọng': 'purple',
   'Mùa Chay': 'purple',
-  'Mùa Giáng Sinh': 'gold_white',
+  'Mùa Giáng Sinh': 'christmas_green',
   'Mùa Phục Sinh': 'gold_white',
   'Mùa Thường Niên I': 'green',
   'Mùa Thường Niên II': 'green',
@@ -23,7 +32,7 @@ async function applyAutoTheme() {
     const response = await fetch('./data/weeks.json');
     const data = await response.json();
     const now = new Date();
-    
+
     // Find the current or most recent week
     const currentWeek = data.weeks
       .filter(w => new Date(w.date) <= now)
@@ -188,6 +197,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Push setup error:", e);
   }
 });
+
+/*============================
+   External Link Helper (Mobile Safe)
+==============================*/
+window.openExternalLink = async (url) => {
+  console.log("Attempting to open link:", url);
+  try {
+    const capacitor = window.Capacitor;
+    if (capacitor && capacitor.isNativePlatform()) {
+      const { Browser } = capacitor.Plugins;
+      if (Browser) {
+        // If it's a local PDF, Browser.open might not work (Safari can't see app files)
+        // So we only use Browser.open for http links.
+        if (url.startsWith('http')) {
+          await Browser.open({ url: url });
+          return;
+        }
+      }
+    }
+    // Fallback: Just open it. On mobile this will usually navigate the webview to the PDF
+    window.open(url, '_blank');
+  } catch (err) {
+    console.error("Link opening failed:", err);
+    window.open(url, '_blank');
+  }
+};
 
 /*============================
    Service Worker Registration

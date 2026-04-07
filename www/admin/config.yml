@@ -2,8 +2,11 @@
 
 backend:
   name: git-gateway
+  branch: main
 
-media_folder: www/statics/images/announcements 
+local_backend: false
+
+media_folder: www/statics/images/announcements
 public_folder: /statics/images/announcements
 
 collections:
@@ -19,13 +22,14 @@ collections:
             label: Thông Báo
             widget: list
             add_to_top: true
+            summary: "{{fields.title}} – {{fields.date}}"
             fields:
               - name: image
                 label: Hình Ảnh
                 widget: image
                 required: true
-                media_folder: /www/statics/images/announcements
-                public_folder: /statics/images/announcements
+                media_folder: www/statics/images/announcements
+                public_folder: statics/images/announcements
               - { name: title, label: Tiêu Đề, widget: string, required: true }
               - {
                   name: content,
@@ -116,13 +120,13 @@ collections:
                     label: File âm thanh (.m4a)
                     widget: file
                     required: true
-                    media_folder: /www/statics/mp4 
-                    public_folder: /statics/mp4
+                    media_folder: www/statics/mp4
+                    public_folder: statics/mp4
               - name: full_pdf
                 label: PDF toàn bộ tuần (tùy chọn)
                 widget: file
-                media_folder: /www/statics/pdf
-                public_folder: /statics/pdf
+                media_folder: www/statics/pdf
+                public_folder: statics/pdf
 
   - name: performances
     label: Lời Ca Tiếng Hát / Performances
@@ -136,6 +140,7 @@ collections:
             label: Videos
             widget: list
             add_to_top: true
+            summary: "{{fields.title}}"
             fields:
               - { name: title, label: Tiêu Đề, widget: string, required: true }
               - {
@@ -157,11 +162,12 @@ collections:
             label: Hình Ảnh
             widget: list
             add_to_top: true
+            summary: "{{fields.caption}} ({{fields.image}})"
             fields:
               - name: image
                 label: Hình Ảnh
                 widget: image
                 required: true
-                media_folder: /www/statics/images/memory
-                public_folder: /statics/images/memory
+                media_folder: www/statics/images/memory
+                public_folder: statics/images/memory
               - { name: caption, label: Chú Thích (tùy chọn), widget: string }
