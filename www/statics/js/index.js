@@ -153,54 +153,53 @@ function ytThumb(id) {
    Push Notifications
 ============================*/
 
-// Listeners (add these outside the function)
-const { PushNotifications } = Capacitor.Plugins;
-
-PushNotifications.addListener("registration", (token) => {
-  console.log("Push token:", token.value);
-  // Copy this token for Firebase single-device test
-});
-
-PushNotifications.addListener("registrationError", (error) => {
-  console.error("Registration error:", error.error);
-});
-
-PushNotifications.addListener("pushNotificationReceived", (notification) => {
-  console.log("Notification received (foreground):", notification);
-  alert(`${notification.title || "Ephata Choir"}\n${notification.body}`);
-});
-
-PushNotifications.addListener("pushNotificationActionPerformed", (action) => {
-  console.log("Notification tapped:", action.notification);
-  // Optional: refresh page or go to events
-});
-
-document.addEventListener("DOMContentLoaded", async () => {
+// Push Notifications — only run on native iOS/Android (Capacitor), not on web
+if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) {
   try {
-    const { PushNotifications } = Capacitor.Plugins; // ← This is the key line!
+    const { PushNotifications } = window.Capacitor.Plugins;
 
-    // Check & request permission
-    let permStatus = await PushNotifications.checkPermissions();
-    console.log("Current permission:", permStatus.receive);
+    PushNotifications.addListener("registration", (token) => {
+      console.log("Push token:", token.value);
+    });
 
-    if (permStatus.receive === "prompt") {
-      permStatus = await PushNotifications.requestPermissions();
-      console.log("After request:", permStatus.receive);
-    }
+    PushNotifications.addListener("registrationError", (error) => {
+      console.error("Registration error:", error.error);
+    });
 
-    if (permStatus.receive !== "granted") {
-      console.log("Permission not granted:", permStatus.receive);
-      // Optional: alert('Enable notifications in Settings for updates');
-      return;
-    }
+    PushNotifications.addListener("pushNotificationReceived", (notification) => {
+      console.log("Notification received (foreground):", notification);
+      alert(`${notification.title || "Ephata Choir"}\n${notification.body}`);
+    });
 
-    // Register to get token
-    await PushNotifications.register();
-    console.log("Registration requested");
+    PushNotifications.addListener("pushNotificationActionPerformed", (action) => {
+      console.log("Notification tapped:", action.notification);
+    });
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      try {
+        let permStatus = await PushNotifications.checkPermissions();
+        console.log("Current permission:", permStatus.receive);
+
+        if (permStatus.receive === "prompt") {
+          permStatus = await PushNotifications.requestPermissions();
+          console.log("After request:", permStatus.receive);
+        }
+
+        if (permStatus.receive !== "granted") {
+          console.log("Permission not granted:", permStatus.receive);
+          return;
+        }
+
+        await PushNotifications.register();
+        console.log("Registration requested");
+      } catch (e) {
+        console.error("Push setup error:", e);
+      }
+    });
   } catch (e) {
-    console.error("Push setup error:", e);
+    console.warn("Push Notifications not available:", e);
   }
-});
+}
 
 /*============================
    External Link Helper (Mobile Safe)
