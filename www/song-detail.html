@@ -119,8 +119,8 @@
                     } else if (song.audio.includes("youtu.be/")) {
                       videoId = song.audio.split("youtu.be/")[1].split("?")[0];
                     }
-                  } catch (e) {}
-                  
+                  } catch (e) { }
+
                   if (videoId) {
                     audioHTML = `
                       <div style="position: relative; width: 100%; max-width: 500px; aspect-ratio: 16/9; margin-top: 15px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
@@ -153,9 +153,9 @@
         let pdfHTML = "";
         if (week.full_pdf) {
           pdfHTML = `
-              <div onclick="openPdfModal('${week.full_pdf}')" style="cursor: pointer; text-decoration: none;">
+              <a href="${week.full_pdf}" target="_blank" style="text-decoration: none; display: block;">
                 <div class="pdf-toggle-btn">📄 XEM TOÀN BỘ PDF TUẦN NÀY (${songs.length} bài hát)</div>
-              </div>
+              </a>
               <embed
                 src="${week.full_pdf}"
                 width="100%"
@@ -174,21 +174,21 @@
     document.addEventListener("DOMContentLoaded", loadSongDetail);
 
     // Modal Logic for PDF Full Screen
-    function openPdfModal(url) {
-      const modal = document.getElementById('pdf-modal');
-      const embed = document.getElementById('pdf-modal-embed');
-      embed.src = url;
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // lock background scrolling
-    }
-    
-    function closePdfModal() {
-      const modal = document.getElementById('pdf-modal');
-      const embed = document.getElementById('pdf-modal-embed');
-      modal.style.display = 'none';
-      embed.src = '';
-      document.body.style.overflow = ''; // restore scrolling
-    }
+    // function openPdfModal(url) {
+    //   const modal = document.getElementById('pdf-modal');
+    //   const embed = document.getElementById('pdf-modal-embed');
+    //   embed.src = url;
+    //   modal.style.display = 'flex';
+    //   document.body.style.overflow = 'hidden'; // lock background scrolling
+    // }
+
+    // function closePdfModal() {
+    //   const modal = document.getElementById('pdf-modal');
+    //   const embed = document.getElementById('pdf-modal-embed');
+    //   modal.style.display = 'none';
+    //   embed.src = '';
+    //   document.body.style.overflow = ''; // restore scrolling
+    // }
   </script>
   <script>
     if ("serviceWorker" in navigator) {
@@ -200,14 +200,20 @@
   </script>
 
   <!-- PDF Full Screen Modal -->
-  <div id="pdf-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f4f4f4; z-index:99999; flex-direction:column;">
-    <div style="background: var(--primary); color: white; padding: env(safe-area-inset-top, 0px) 16px 12px 16px; padding-top: max(env(safe-area-inset-top), 12px); display:flex; justify-content:space-between; align-items:center; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+  <!-- <div id="pdf-modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f4f4f4; z-index:99999; flex-direction:column;">
+    <div
+      style="background: var(--primary); color: white; padding: env(safe-area-inset-top, 0px) 16px 12px 16px; padding-top: max(env(safe-area-inset-top), 12px); display:flex; justify-content:space-between; align-items:center; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
       <div style="font-weight:bold; font-size:1.1rem; flex:1; text-align:center;">Tài Liệu PDF</div>
-      <button onclick="closePdfModal()" style="background:rgba(255,255,255,0.2); border:none; color:white; padding:8px 16px; border-radius:6px; font-weight:bold; cursor:pointer; font-size: 1rem;">Đóng Lại ✖</button>
+      <button onclick="closePdfModal()"
+        style="background:rgba(255,255,255,0.2); border:none; color:white; padding:8px 16px; border-radius:6px; font-weight:bold; cursor:pointer; font-size: 1rem;">Đóng
+        Lại ✖</button>
     </div>
     <div style="flex: 1; -webkit-overflow-scrolling: touch; overflow: auto; width: 100%;">
-      <embed id="pdf-modal-embed" src="" width="100%" height="100%" type="application/pdf" style="min-height: 100vh; display:block;" />
+      <embed id="pdf-modal-embed" src="" width="100%" height="100%" type="application/pdf"
+        style="min-height: 100vh; display:block;" />
     </div>
-  </div>
+  </div> -->
 </body>
+
 </html>
