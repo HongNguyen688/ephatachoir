@@ -21,7 +21,7 @@ const THEME_MAP = {
   'Mùa Vọng': 'purple',
   'Mùa Chay': 'purple',
   'Mùa Giáng Sinh': 'christmas_green',
-  'Mùa Phục Sinh': 'gold_white',
+  'Mùa Phục Sinh': 'christmas_green',
   'Mùa Thường Niên I': 'green',
   'Mùa Thường Niên II': 'green',
   'Các Ngày Lễ Khác': 'red'
@@ -220,11 +220,22 @@ window.openExternalLink = async (url) => {
         }
       }
     }
-    // Fallback: Just open it. On mobile this will usually navigate the webview to the PDF
-    window.open(url, '_blank');
+    // Fallback: Use anchor tag click so Capacitor/WKWebView can intercept it properly
+    // window.open(url, '_blank') replaces the view in iOS, causing a trap.
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   } catch (err) {
     console.error("Link opening failed:", err);
-    window.open(url, '_blank');
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 };
 

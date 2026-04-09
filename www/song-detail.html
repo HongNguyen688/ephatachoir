@@ -128,7 +128,7 @@
         let pdfHTML = "";
         if (week.full_pdf) {
           pdfHTML = `
-              <a href="${week.full_pdf}" onclick="openExternalLink(this.href); return false;" style="text-decoration: none;">
+              <a href="${week.full_pdf}" target="_blank" download style="text-decoration: none;">
                 <div class="pdf-toggle-btn">📄 TẢI TOÀN BỘ PDF TUẦN NÀY (${songs.length} bài hát)</div>
               </a>
               <embed
