@@ -1,6 +1,6 @@
-// CĐ Ephata Service Worker — Offline PWA (v10)
+// CĐ Ephata Service Worker — Offline PWA (v11)
 // ============================================================
-const CACHE_VERSION = 'v10';
+const CACHE_VERSION = 'v11';
 const CACHE_NAME = `ephata-cache-${CACHE_VERSION}`;
 
 // Assets to pre-cache
@@ -13,6 +13,7 @@ const STATIC_SHELL = [
   '/life.html',
   '/about.html',
   '/pdf-viewer.html',
+  '/thongbao.html',
   '/manifest.json',
   '/statics/css/style.css',
   '/statics/css/responsive.css',
@@ -35,6 +36,7 @@ self.addEventListener('install', (event) => {
         // Cache with cache busting to securely get latest on install
         return fetch(url + '?t=' + Date.now()).then(response => {
           if (!response.ok) throw new Error('Failed ' + url);
+          // Store under the clean URL as key
           return cache.put(url, response);
         });
       }).map(p => p.catch(e => console.warn('PWA Pre-cache failed for', e))))
@@ -59,6 +61,7 @@ self.addEventListener('fetch', (event) => {
   if (url.origin !== self.location.origin || req.method !== 'GET' || url.pathname.startsWith('/admin')) return;
 
   // 1. HTML / Navigation: Network-first
+  // Use ignoreSearch: true during match to allow parameterized URLs like song-detail.html?date=...
   if (req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname === '/') {
     event.respondWith(
       fetch(req)
@@ -69,7 +72,11 @@ self.addEventListener('fetch', (event) => {
           }
           return res;
         })
-        .catch(() => caches.match(req).then(cached => cached || caches.match('/index.html')))
+        .catch(() => {
+          return caches.match(req, { ignoreSearch: true }).then(cached => {
+            return cached || caches.match('/index.html');
+          });
+        })
     );
     return;
   }
@@ -85,7 +92,7 @@ self.addEventListener('fetch', (event) => {
           }
           return res;
         })
-        .catch(() => caches.match(req))
+        .catch(() => caches.match(req, { ignoreSearch: true }))
     );
     return;
   }
