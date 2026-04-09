@@ -216,7 +216,8 @@ a:hover {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.08); /* Reduced for Christmas theme */
+  background: rgba(0, 0, 0, 0.08);
+  /* Reduced for Christmas theme */
   pointer-events: none;
 }
 
@@ -225,9 +226,11 @@ a:hover {
   background-image: linear-gradient(135deg, var(--hero-start) 0%, var(--hero-mid) 50%, var(--hero-end) 100%);
   background-size: 100% 100%;
 }
+
 :root[data-theme] .hero::after {
   display: none;
 }
+
 :root[data-theme] .hero::before {
   background: rgba(0, 0, 0, 0.28);
 }
@@ -319,7 +322,9 @@ a:hover {
 .card img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: white;
 }
 
 .card-body {
