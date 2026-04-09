@@ -108,19 +108,44 @@
 
         const songsHTML = songs
           .map(
-            (song) => `
-            <div class="song-item">
-              <h3>${song.part}</h3>
-              <h4>${song.song_title}${song.author ? `<span> - ${song.author}</span>` : ""}</h4>
-              ${song.audio
-                ? `<audio controls playsinline preload="metadata" class="audio-player">
-                <source src="${song.audio}" type="audio/mp4" />
-                Trình duyệt của bạn không hỗ trợ phát âm thanh.
-              </audio>`
-                : ""
+            (song) => {
+              let audioHTML = "";
+              if (song.audio) {
+                if (song.audio.includes("youtube") || song.audio.includes("youtu.be")) {
+                  let videoId = "";
+                  try {
+                    if (song.audio.includes("watch?v=")) {
+                      videoId = new URL(song.audio).searchParams.get("v");
+                    } else if (song.audio.includes("youtu.be/")) {
+                      videoId = song.audio.split("youtu.be/")[1].split("?")[0];
+                    }
+                  } catch (e) {}
+                  
+                  if (videoId) {
+                    audioHTML = `
+                      <div style="position: relative; width: 100%; max-width: 500px; aspect-ratio: 16/9; margin-top: 15px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <iframe style="position: absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>`;
+                  } else {
+                    audioHTML = `<a href="${song.audio}" target="_blank" style="display:inline-block; margin-top:10px; color: #1565C0;">▶️ Xem trên YouTube</a>`;
+                  }
+                } else {
+                  audioHTML = `
+                    <audio controls playsinline preload="metadata" class="audio-player">
+                      <source src="${song.audio}" type="audio/mp4" />
+                      Trình duyệt của bạn không hỗ trợ phát âm thanh.
+                    </audio>`;
+                }
               }
-            </div>
-          `,
+
+              return `
+                <div class="song-item">
+                  <h3>${song.part}</h3>
+                  <h4>${song.song_title}${song.author ? `<span> - ${song.author}</span>` : ""}</h4>
+                  ${audioHTML}
+                </div>
+              `;
+            }
           )
           .join("");
 
