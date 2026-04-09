@@ -9,5 +9,103 @@
   <body>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      var h = window.h;
+      var createClass = window.createClass;
+      
+      // Announcements Preview
+      var AnnouncementsPreview = createClass({
+        render: function() {
+          var entry = this.props.entry;
+          var data = entry.getIn(['data']).toJS();
+          var list = data.announcements || [];
+          var getAsset = this.props.getAsset;
+          
+          return h('div', {style: {padding: "20px", fontFamily: "sans-serif", maxWidth: "800px", margin: "0 auto"}},
+            list.map(function(item, index) {
+              var imageUrl = item.image ? getAsset(item.image) : "";
+              return h('div', {key: index, style: {border: "1px solid #ddd", margin: "15px 0", padding: "20px", borderRadius: "10px", background: "#fff", boxShadow: "0 2px 5px rgba(0,0,0,0.05)"}},
+                imageUrl ? h('div', {style: {textAlign: "center", marginBottom: "15px"}}, 
+                  h('img', {src: imageUrl.toString(), style: {maxWidth: "100%", maxHeight: "300px", objectFit: "contain", border: "1px solid #eee", borderRadius: "8px"}})
+                ) : null,
+                h('h3', {style: {color: "#1B5E20", marginTop: "0"}}, item.title),
+                h('p', {style: {color: "#666", fontSize: "0.9em"}}, item.content),
+                h('p', {style: {fontSize: "0.85em", color: "#888", borderTop: "1px solid #eee", paddingTop: "10px"}}, "Ngày: " + item.date)
+              );
+            })
+          );
+        }
+      });
+
+      // Weeks Preview
+      var WeeksPreview = createClass({
+        render: function() {
+          var data = this.props.entry.getIn(['data']).toJS();
+          var list = data.weeks || [];
+          
+          return h('div', {style: {padding: "20px", fontFamily: "sans-serif"}},
+            list.map(function(item, index) {
+              return h('div', {key: index, style: {border: "2px solid #2e7d32", margin: "20px 0", padding: "20px", borderRadius: "10px", background: "#fafafa"}},
+                h('h2', {style: {margin: "0 0 15px 0", color: "#2e7d32", borderBottom: "2px solid #2e7d32", paddingBottom: "10px"}}, "Tuần: " + (item.title || "Chưa có tiêu đề")),
+                h('div', {style: {display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px", fontSize: "0.9em", color: "#444"}},
+                   h('div', null, h('strong', null, "Chủ đề: "), item.theme),
+                   h('div', null, h('strong', null, "Ngày: "), item.date),
+                   h('div', null, h('strong', null, "Năm PV: "), item.liturgical_year),
+                   h('div', null, h('strong', null, "Mùa: "), item.season)
+                ),
+                h('h4', {style: {borderBottom: "1px solid #ccc", paddingBottom: "5px", marginTop: "0"}}, "Danh Sách Bài Hát:"),
+                h('ul', {style: {listStyle: "none", padding: 0, margin: 0}},
+                   (item.songs || []).map(function(s, i) {
+                     return h('li', {key: i, style: {padding: "10px", borderBottom: "1px solid #eee", display: "flex"}},
+                       h('span', {style: {fontWeight: "bold", width: "120px", color: "#d35400", flexShrink: 0}}, s.part),
+                       h('span', null, h('strong', null, s.song_title), " - ", h('em', null, s.author))
+                     )
+                   })
+                )
+              );
+            })
+          );
+        }
+      });
+
+      // Performances Preview
+      var PerformancesPreview = createClass({
+        render: function() {
+          var data = this.props.entry.getIn(['data']).toJS();
+          var list = data.performances || [];
+          return h('div', {style: {padding: "20px", fontFamily: "sans-serif", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "20px"}},
+            list.map(function(item, index) {
+              return h('div', {key: index, style: {border: "1px solid #ddd", padding: "15px", borderRadius: "10px", background: "#fff", boxShadow: "0 2px 4px rgba(0,0,0,0.1)"}},
+                h('h3', {style: {margin: "0 0 10px 0", color: "#c62828", fontSize: "1.2em"}}, item.title),
+                h('a', {href: item.youtube_url, target: "_blank", style: {color: "#1565c0", wordBreak: "break-all", fontSize: "0.9em"}}, item.youtube_url)
+              );
+            })
+          );
+        }
+      });
+
+      // Life Preview
+      var LifePreview = createClass({
+        render: function() {
+          var data = this.props.entry.getIn(['data']).toJS();
+          var list = data.images || [];
+          var getAsset = this.props.getAsset;
+          return h('div', {style: {padding: "20px", fontFamily: "sans-serif", display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "20px"}},
+            list.map(function(item, index) {
+              var bg = item.image ? getAsset(item.image) : "";
+              return h('div', {key: index, style: {border: "1px solid #ccc", padding: "10px", borderRadius: "10px", textAlign: "center", background: "#fff"}},
+                 bg ? h('img', {src: bg.toString(), style: {maxWidth: "100%", maxHeight: "200px", borderRadius: "6px", objectFit: "cover"}}) : null,
+                 h('p', {style: {marginTop: "10px", fontWeight: "bold", color: "#333"}}, item.caption || "Không có chú thích")
+              );
+            })
+          );
+        }
+      });
+
+      CMS.registerPreviewTemplate("announcements", AnnouncementsPreview);
+      CMS.registerPreviewTemplate("weeks", WeeksPreview);
+      CMS.registerPreviewTemplate("performances", PerformancesPreview);
+      CMS.registerPreviewTemplate("life", LifePreview);
+    </script>
   </body>
 </html>

@@ -4,7 +4,7 @@ backend:
   name: git-gateway
   branch: main
 
-local_backend: true
+local_backend: false
 
 media_folder: www/statics/images/announcements
 public_folder: /statics/images/announcements
@@ -12,8 +12,6 @@ public_folder: /statics/images/announcements
 collections:
   - name: announcements
     label: Announcements / Thông Báo
-    editor:
-      preview: false
     files:
       - file: www/data/announcements.json
         label: Danh Sách Thông Báo
@@ -49,8 +47,6 @@ collections:
                 }
   - name: weeks
     label: Bài Hát Hàng Tuần
-    editor:
-      preview: false
     files:
       - file: www/data/weeks.json
         label: Tuần Lễ Phụng Vụ
@@ -134,8 +130,6 @@ collections:
 
   - name: performances
     label: Lời Ca Tiếng Hát / Performances
-    editor:
-      preview: false
     files:
       - file: www/data/performances.json
         label: YouTube Links
@@ -158,8 +152,6 @@ collections:
 
   - name: life
     label: Đời Sống / Life Page Pictures
-    editor:
-      preview: false
     files:
       - file: www/data/life.json
         label: Choir Pictures
