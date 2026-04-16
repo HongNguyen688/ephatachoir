@@ -64,39 +64,127 @@
   margin: 0.2rem 0;
 }
 
-.pdf-toggle-btn {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 1rem;
-  padding: 0.75rem 1.8rem;
-  background: #000000;
-  color: white;
-  font-weight: 600;
-  font-size: 1.75rem;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: all 0.35s ease;
-}
-.pdf-toggle-btn:hover {
-  background: #333333;
-  transform: translateY(-4px);
-}
-.pdf-viewer {
-  width: 100%;
-  height: 99vh; /* Or 100vh for almost full screen */
-  min-height: 600px; /* Minimum for small screens */
-  border: none;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px var(--card-shadow);
+/* ======================= 
+  Practice Layout (Split View)
+======================== */
+.practice-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
   margin-top: 1rem;
-  margin-bottom: 1.5rem;
-  display: none;
 }
-.pdf-viewer.active {
+
+.songs-column {
+  min-width: 0; /* prevent grid breakout */
+}
+
+.pdf-column {
+  position: sticky;
+  top: 2rem;
+  height: calc(100vh - 4rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-column-header {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pdf-new-page-btn {
+  background: var(--primary);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+}
+
+.pdf-new-page-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ======================= 
+  PDF Viewer Section
+======================== */
+.pdf-container {
+  margin: 3rem 1rem;
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px var(--card-shadow);
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-toggle-btn {
+  background: linear-gradient(135deg, var(--hero-start), var(--primary));
+  color: white;
+  padding: 1.2rem 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pdf-toggle-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--accent-shadow);
+}
+
+.pdf-toggle-btn i {
+  font-size: 1.4rem;
+}
+
+.pdf-inline-viewer {
+  width: 100%;
+  height: 80vh;
+  border: none;
+  background: #f4f4f4;
   display: block;
 }
-/* Force full-width PDF content */
-.pdf-viewer::-webkit-pdf-viewer {
-  width: 100% !important;
+
+.pdf-fallback-msg {
+  padding: 3rem;
+  text-align: center;
+  background: #fff;
+}
+
+.pdf-fallback-msg p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .practice-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .pdf-column {
+    position: static;
+    height: 80vh;
+    order: -1; /* PDF on top for mobile practice */
+    margin-bottom: 2rem;
+  }
+
+  .pdf-inline-viewer {
+    height: 60vh;
+  }
 }

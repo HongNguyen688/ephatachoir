@@ -149,10 +149,26 @@
           )
           .join("");
 
-        // Build PDF section — download button + inline embed (matches archive pages)
+        // Build PDF section — button + inline viewer
         let pdfHTML = "";
         if (week.full_pdf) {
+          const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+          let viewerHTML = "";
+          if (isIOS) {
+            // Fallback for iOS since iframe PDFs are problematic
+            viewerHTML = `
+              <div class="pdf-fallback-msg">
+                <p>📄 Bạn có thể xem tài liệu PDF trực tiếp bằng cách nhấn nút bên dưới.</p>
+                <a href="${week.full_pdf}" class="pdf-toggle-btn" style="text-decoration:none;">Mở PDF Trực Tiếp</a>
+              </div>`;
+          } else {
+            // Embed for Desktop/Android
+            viewerHTML = `<iframe class="pdf-inline-viewer" src="${week.full_pdf}" allowfullscreen></iframe>`;
+          }
+
           pdfHTML = `
+<<<<<<< HEAD
               <a href="./pdf-viewer?file=${week.full_pdf}" style="text-decoration: none; display: block;">
                 <div class="pdf-toggle-btn">📄 XEM HOẶC TẢI PDF TRONG CỬA SỔ MỚI</div>
               </a>
@@ -168,6 +184,15 @@
                 </object>
               </div>
             `;
+=======
+            <div class="pdf-container">
+              <a href="pdf-viewer?file=${encodeURIComponent(week.full_pdf)}" style="text-decoration: none;">
+                <div class="pdf-toggle-btn">📄 XEM TOÀN BỘ PDF TUẦN NÀY (${songs.length} bài hát)</div>
+              </a>
+              ${viewerHTML}
+            </div>
+          `;
+>>>>>>> eef34be (feat: implement responsive PDF viewer with iOS fallback and rename navigation menu item to Liên Lạc)
         }
 
         container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
