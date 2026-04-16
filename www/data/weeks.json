@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật III Phục Sinh",
+      "season": "Mùa Phục Sinh",
+      "date": "2026-04-19",
+      "theme": "Họ Nhận Ra Người Lúc Bẻ Bánh",
+      "full_pdf": "/statics/pdf/bài-hát-cn-3-phục-sinh-4-19-2026.pdf",
+      "songs": [
+        {
+          "part": "Kết Lễ",
+          "song_title": "Chúa nay thực đã phục sinh",
+          "author": "Kim Long",
+          "audio": "/statics/mp4/chúa-nay-thực-đã-phục-sinh-linh-mục-kim-long.-ca-nhập-lễ-kết-lễ-mùa-phục-sinh..m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Trên đường Emmau",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/trên-đường-emmau-tác-giả-lm-thành-tâm.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Tiến ca phục sinh 2",
+          "author": "Cát Minh",
+          "audio": "/statics/mp4/tiến-ca-phục-sinh-vũ-đình-ân-dâng-lễ-mùa-phục-sinh-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 15",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-15-chúa-nhật-3-phục-sinh-năm-a-tác-giả-thanh-lâm.m4a"
+        },
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Khải hoàn ca 1",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/♫-khải-hoàn-ca-st-lm.-nguyễn-duy-tốp-ca-ca-đoàn-đồng-tâm.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật II Phục Sinh",
       "season": "Mùa Phục Sinh",
       "date": "2026-04-12",
