@@ -110,16 +110,25 @@ document.getElementById("lightbox")?.addEventListener("click", (e) => {
 });
 
 /*============================
-   Pause other audios
+   Audio Management (One at a time)
 ============================*/
-document.querySelectorAll("audio").forEach(
-  (a) =>
-  (a.onplay = () => {
-    document.querySelectorAll("audio").forEach((o) => {
-      if (o !== a) o.pause();
+// 1. One audio at a time
+document.addEventListener('play', (event) => {
+  if (event.target.tagName === 'AUDIO') {
+    document.querySelectorAll('audio').forEach(audio => {
+      if (audio !== event.target) {
+        audio.pause();
+      }
     });
-  }),
-);
+  }
+}, true); // Capture phase required as 'play' doesn't bubble
+
+// 2. Pause when page hidden (switching tabs/going home)
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    document.querySelectorAll('audio').forEach(audio => audio.pause());
+  }
+});
 
 /*=============================
    Sort weeklysongs by date

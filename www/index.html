@@ -93,6 +93,415 @@
       line-height: 1.6;
     }
 
+    /* ================================
+       PREMIUM HISTORY TIMELINE
+    ================================ */
+    .history-section {
+      margin: 5rem 0;
+      position: relative;
+    }
+
+    /* Section Header */
+    .history-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .history-header-subtitle {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 0.8rem;
+      position: relative;
+    }
+
+    .history-header-subtitle::before,
+    .history-header-subtitle::after {
+      content: '✦';
+      margin: 0 0.8rem;
+      opacity: 0.5;
+    }
+
+    .history-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .history-header h2::after {
+      display: none;
+    }
+
+    .history-header-line {
+      width: 120px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--primary), var(--accent), transparent);
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+
+    /* Hero Image */
+    .history-hero {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+      box-shadow: 0 20px 60px var(--card-shadow);
+    }
+
+    .history-hero img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7);
+    }
+
+    .history-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--primary-dark) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem;
+    }
+
+    .history-hero-overlay h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .history-hero-overlay p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.1rem;
+      max-width: 600px;
+    }
+
+    /* Timeline Spine */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, transparent, var(--primary), var(--accent), var(--primary), transparent);
+      transform: translateX(-50%);
+    }
+
+    /* Timeline Item */
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 100px;
+      /* gap for the center spine + node */
+      margin-bottom: 4rem;
+      /* Scroll reveal */
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .timeline-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* All items flow left-to-right; DOM order controls which side gets content vs image */
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+      flex-direction: row;
+    }
+
+    /* Timeline Node – the glowing dot */
+    .timeline-node {
+      position: absolute;
+      left: 50%;
+      top: 2.2rem;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    .timeline-node-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      border: 4px solid var(--background);
+      box-shadow: 0 0 0 4px var(--primary), 0 0 20px var(--accent-shadow);
+      animation: nodePulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes nodePulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 4px var(--primary), 0 0 20px var(--accent-shadow);
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px var(--accent), 0 0 35px var(--accent-shadow-hover);
+      }
+    }
+
+    .timeline-node-year {
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+
+    /* Timeline Content Card */
+    .timeline-content {
+      width: calc(50% - 50px);
+      flex-shrink: 0;
+      background: var(--header-bg, #fff);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 12px 40px var(--card-shadow);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px var(--card-hover-shadow);
+    }
+
+    /* Arrow pointer toward the spine */
+    .timeline-item:nth-child(odd) .timeline-content::after {
+      content: '';
+      position: absolute;
+      right: -12px;
+      top: 2.2rem;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 12px solid var(--card-border);
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::after {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 2.2rem;
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-right: 12px solid var(--card-border);
+    }
+
+    /* Card Icon */
+    .timeline-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 6px 20px var(--accent-shadow);
+    }
+
+    /* Card Title */
+    .timeline-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    /* Card Body */
+    .timeline-content p {
+      color: var(--text-main);
+      font-size: 1.02rem;
+      line-height: 1.85;
+      margin: 0;
+      opacity: 0.88;
+    }
+
+    .timeline-content p+p {
+      margin-top: 1rem;
+    }
+
+    .timeline-content em {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Timeline Image – opposite side panel */
+    .timeline-image {
+      width: calc(50% - 50px);
+      flex-shrink: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px var(--card-shadow);
+      position: relative;
+    }
+
+    .timeline-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .timeline-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Dramatic Closing Banner */
+    .history-closing-banner {
+      margin-top: 3rem;
+      padding: 4rem 2rem;
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--accent-dark));
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      /* Scroll reveal */
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .history-closing-banner.revealed {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .history-closing-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 20px);
+      pointer-events: none;
+    }
+
+    .history-closing-banner p {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .history-closing-banner .closing-sparkle {
+      display: block;
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      letter-spacing: 8px;
+      opacity: 0.7;
+    }
+
+    /* ================================
+       RESPONSIVE TIMELINE
+    ================================ */
+    @media (max-width: 1100px) {
+      .timeline::before {
+        left: 24px;
+      }
+
+      .timeline-item,
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        flex-direction: column;
+        padding-left: 60px;
+        gap: 1rem;
+      }
+
+      .timeline-node {
+        left: 24px;
+        top: 0;
+      }
+
+      .timeline-content {
+        width: 100%;
+        order: 1;
+      }
+
+      .timeline-image {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        max-height: 600px;
+        order: 2;
+      }
+
+      .timeline-image img.img-group {
+        object-position: top center;
+      }
+
+      .timeline-image img.img-banner {
+        object-position: left center;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::after,
+      .timeline-item:nth-child(even) .timeline-content::after {
+        left: -12px;
+        right: auto;
+        border-left: none;
+        border-right: 12px solid var(--card-border);
+      }
+
+      .history-header h2 {
+        font-size: 2.2rem;
+      }
+
+      .history-hero img {
+        height: 220px;
+      }
+
+    /* Transition state for medium laptops */
+    @media (min-width: 1101px) and (max-width: 1300px) {
+      .timeline-item {
+        gap: 40px;
+      }
+    }
+
+      .history-hero-overlay h3 {
+        font-size: 1.6rem;
+      }
+
+      .history-closing-banner p {
+        font-size: 1.6rem;
+      }
+    }
+
     .cta-section {
       text-align: center;
       padding: 5rem 2rem;
@@ -171,6 +580,127 @@
       </p>
     </div>
 
+    <!-- Lịch Sử Ca Đoàn – Premium Timeline -->
+    <section class="history-section" id="lich-su">
+
+      <!-- Section Header -->
+      <div class="history-header">
+        <div class="history-header-subtitle">Nhà Thờ Christ The King</div>
+        <h2>Lịch Sử Ca Đoàn EPHATA</h2>
+        <div class="history-header-line"></div>
+      </div>
+
+      <!-- Hero Banner -->
+      <div class="history-hero">
+        <img src="./statics/images/history_roots.png" alt="Ca Đoàn Ephata – Thành Lập 2006" />
+        <div class="history-hero-overlay">
+          <h3>Từ Năm 2006 Đến Nay</h3>
+          <p>Hành trình gần 20 năm phụng sự Chúa qua lời ca tiếng hát tại Giáo Xứ Christ The King, San Jose.</p>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+
+        <!-- 1. Thành Lập -->
+        <div class="timeline-item">
+          <div class="timeline-node">
+            <div class="timeline-node-year">2006</div>
+            <div class="timeline-node-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-icon">⛪</div>
+            <h3>Thành Lập & Sứ Mạng</h3>
+            <p>
+              Ca Đoàn EPHATA được thành lập vào năm 2006 khi Cha Cố Phaolo Phan Quang Cường được bổ nhiệm về giáo xứ
+              Christ The King để xây dựng Cộng Đoàn Việt Nam ở đó. Và Ngài đã thành lập ca đoàn EPHATA để đáp ứng nhu
+              cầu của giáo xứ cho cộng đoàn dân Chúa tham dự Thánh Lễ chiều Thứ Bảy hàng tuần.
+            </p>
+          </div>
+          <div class="timeline-image">
+            <img src="./statics/images/ChristTheKingChurch.png" alt="Nhà Thờ Christ The King" />
+          </div>
+        </div>
+
+        <!-- 2. Ý Nghĩa Tên Gọi -->
+        <div class="timeline-item">
+          <div class="timeline-node">
+            <div class="timeline-node-year">EPHATA</div>
+            <div class="timeline-node-dot"></div>
+          </div>
+          <div class="timeline-image">
+            <img src="./statics/images/ephatameaning.jpg" alt="Ephata – Hãy Mở Ra" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-icon">🕊️</div>
+            <h3>Ý Nghĩa Tên Gọi — <em>"Hãy Mở Ra"</em></h3>
+            <p>
+              <strong>EPHATA</strong> là tên của Ca Đoàn, nghĩa là <em>"Hãy mở ra"</em>, cũng chính là linh đạo cho mọi
+              thành viên trong ca đoàn — biết dùng lời ca tiếng hát từ những rung cảm của trái tim, để giúp cộng đoàn
+              dân Chúa biết mở tai để nghe tiếng Chúa, mở mắt để chiêm ngưỡng kỳ công của Chúa, mở tâm trí để hiểu
+              được Thánh Ý Chúa cho cuộc đời mình, và mở rộng trái tim để đón Chúa vào lòng, cũng như yêu thương tha
+              nhân như chính mình.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. Bổn Mạng -->
+        <div class="timeline-item">
+          <div class="timeline-node">
+            <div class="timeline-node-year">8 / 9</div>
+            <div class="timeline-node-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-icon">🌹</div>
+            <h3>Bổn Mạng — Sinh Nhật Đức Mẹ</h3>
+            <p>
+              Bổn mạng của ca đoàn EPHATA là ngày Sinh Nhật Đức Mẹ (ngày 8 tháng 9), là ngày Mẹ đi vào thế gian để
+              lãnh nhận sứ mạng cưu mang Chúa Giêsu Nhập Thể để cứu chuộc muôn loài. Các ca viên của ca đoàn EPHATA
+              luôn học nơi Mẹ nhân đức khiêm nhường và tinh thần phục vụ dấn thân trong thầm lặng, không phô trương,
+              không hát để được khen hay, nhưng hát để giúp cộng đoàn dân Chúa mở lòng cùng nhau ca ngợi và chúc tụng
+              Chúa trong các Thánh Lễ.
+            </p>
+          </div>
+          <div class="timeline-image">
+            <img src="./statics/images/snducme.jpg" alt="Sinh Nhật Đức Mẹ – Bổn Mạng Ca Đoàn" class="img-banner" />
+          </div>
+        </div>
+
+        <!-- 4. Tinh Thần Ca Viên -->
+        <div class="timeline-item">
+          <div class="timeline-node">
+            <div class="timeline-node-year">♪ ♫</div>
+            <div class="timeline-node-dot"></div>
+          </div>
+          <div class="timeline-image">
+            <img src="./statics/images/ephata.png" alt="Tinh Thần Ca Viên Ephata" class="img-group" />
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-icon">🎵</div>
+            <h3>Tinh Thần Ca Viên</h3>
+            <p>
+              Là thành viên của ca đoàn EPHATA, chúng ta hãnh diện trong Chúa về tinh thần phục vụ hăng say, nhiệt
+              thành, khiêm nhường và yêu thương, để từng lời ca tiếng hát không còn trên môi miệng chúng ta, mà đã in
+              sâu vào trong trái tim của từng ca viên.
+            </p>
+            <p>
+              Để lời ca là một lời cầu nguyện, một tâm tình, một lời động viên, một lời khuyên, một lời xin lỗi, một
+              lời tạ ơn Thiên Chúa — không chỉ thể hiện trong Thánh Lễ, mà trong cả một đời của từng ca viên ca đoàn
+              EPHATA.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /.timeline -->
+
+      <!-- Closing Banner -->
+      <div class="history-closing-banner">
+        <p>EPHATA, hãy mở, mở ra…<br>EPHATA, EPHATA!</p>
+        <span class="closing-sparkle">✦ ✦ ✦ ✦ ✦</span>
+      </div>
+
+    </section>
+
     <div class="discovery-grid">
       <a href="./thongbao.html" class="discovery-card">
         <div class="discovery-icon">📢</div>
@@ -210,12 +740,41 @@
 
   <script src="./statics/js/index.js" defer></script>
   <script>
+    // Service Worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then(() => console.log('SW registered'))
         .catch((err) => console.log('SW error', err));
     }
+
+    // Scroll Reveal – Intersection Observer for timeline items + closing banner
+    document.addEventListener('DOMContentLoaded', function () {
+      const revealTargets = document.querySelectorAll('.timeline-item, .history-closing-banner');
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -60px 0px'
+        });
+
+        revealTargets.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback: reveal all immediately
+        revealTargets.forEach(function (el) {
+          el.classList.add('revealed');
+        });
+      }
+    });
   </script>
 </body>
 
