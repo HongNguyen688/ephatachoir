@@ -168,31 +168,13 @@
           }
 
           pdfHTML = `
-<<<<<<< HEAD
-              <a href="./pdf-viewer?file=${week.full_pdf}" style="text-decoration: none; display: block;">
-                <div class="pdf-toggle-btn">📄 XEM HOẶC TẢI PDF TRONG CỬA SỔ MỚI</div>
-              </a>
-              <div style="margin-top: 25px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.15); background: white; height: 85vh; min-height: 600px; width: 100%;">
-                <object data="${week.full_pdf}" type="application/pdf" width="100%" height="100%">
-                  <iframe src="${week.full_pdf}" width="100%" height="100%" style="border: none;">
-                    <div style="padding: 2rem; text-align: center;">
-                      <p>Trình duyệt của bạn không hỗ trợ xem PDF trực tiếp.</p>
-                      <br/>
-                      <a href="${week.full_pdf}" target="_blank" style="color: var(--primary); text-decoration: underline; font-weight: bold;">Tải xuống tài liệu tại đây</a>
-                    </div>
-                  </iframe>
-                </object>
-              </div>
-            `;
-=======
             <div class="pdf-container">
-              <a href="pdf-viewer?file=${encodeURIComponent(week.full_pdf)}" style="text-decoration: none;">
-                <div class="pdf-toggle-btn">📄 XEM TOÀN BỘ PDF TUẦN NÀY (${songs.length} bài hát)</div>
+              <a href="./pdf-viewer?file=${encodeURIComponent(week.full_pdf)}" style="text-decoration: none; display: block;">
+                <div class="pdf-toggle-btn">📄 XEM HOẶC TẢI PDF TRONG CỬA SỔ MỚI</div>
               </a>
               ${viewerHTML}
             </div>
           `;
->>>>>>> eef34be (feat: implement responsive PDF viewer with iOS fallback and rename navigation menu item to Liên Lạc)
         }
 
         container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
