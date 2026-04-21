@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "season": "Mùa Phục Sinh",
+      "title": "Chúa Nhật IV Phục Sinh",
+      "date": "2026-04-26",
+      "theme": "Ta Là Cửa Chuồn Chiên.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-4-ps-4-26-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Chúa Là Mục Tử",
+          "author": "Nguyễn Duy Vi",
+          "audio": "/statics/mp4/chúa-là-mục-tử-nguyễn-duy-vi.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 22",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-22-chúa-nhật-4-mùa-chay-năm-a-thanh-lâm-x-nguyễn-vinh-sơn.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Trên Đĩa Thánh",
+          "author": "Mi Trầm",
+          "audio": "/statics/mp4/trên-đĩa-thánh-mi-trầm-.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Đồng Xanh Thơ",
+          "author": "Cao Huy Hoàng",
+          "audio": "/statics/mp4/đồng-xanh-thơ-nhạc-sỹ-cao-huy-hoàng.-c-hiệp-lễ..m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Tạ Ơn Chúa Với Mẹ",
+          "author": "Thy Yên",
+          "audio": "/statics/mp4/tạ-ơn-chúa-với-mẹ-sáng-tác-thy-yên-.-liên-ca-đoàn-các-thánh-tử-đạo-vn-tổng-giáo-melbourne..m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật III Phục Sinh",
       "season": "Mùa Phục Sinh",
       "date": "2026-04-19",
