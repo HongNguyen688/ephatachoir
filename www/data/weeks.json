@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật V Phục Sinh",
+      "season": "Mùa Phục Sinh",
+      "date": "2026-05-03",
+      "theme": "Thầy Là Đường Là Sự Thật và Là Sự Sống.",
+      "full_pdf": "/statics/pdf/bai-hat-cn-5-ps-5-3-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Hãy Hát Lên Đi",
+          "author": "Thiên Duyên",
+          "audio": "/statics/mp4/hãy-hát-lên-đi-thiên-duyên-trình-bày-cđ-vn-seoul-hàn-quốc.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 32",
+          "author": "Thái Nguyên",
+          "audio": "/statics/mp4/thánh-vịnh-32-lm.-thái-nguyên.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Khúc Tình Hiến Dâng",
+          "author": "Phùng Minh Mẫn",
+          "audio": "/statics/mp4/khúc-tình-hiến-dâng-phùng-minh-mẫn-thực-hiện-thánh-ca-graceful-sounds..m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Chúa Là Con Đường",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/chúa-là-con-đường-sáng-tác-phanxico-ca-đoàn-gloria-san-jose-ca.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": " Ngàn Hoa Đẹp Tươi",
+          "author": " Kim Long",
+          "audio": "/statics/mp4/ngàn-hoa-đẹp-tươi.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "season": "Mùa Phục Sinh",
       "title": "Chúa Nhật IV Phục Sinh",
       "date": "2026-04-26",
