@@ -153,6 +153,14 @@
       // Set fallback direct open button
       document.getElementById('open-direct-btn').href = file;
 
+      // iOS Safari cannot scroll inside a PDF iframe — only the first page shows.
+      // Navigate directly so Safari's native PDF viewer loads all pages.
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+      if (isIOS) {
+        window.location.replace(file);
+        return;
+      }
+
       const frame = document.getElementById('pdf-frame');
       frame.src = file;
       frame.onerror = () => {
