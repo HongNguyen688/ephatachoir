@@ -153,30 +153,12 @@
       // Set fallback direct open button
       document.getElementById('open-direct-btn').href = file;
 
-      // Check if we're on iOS — <iframe> for PDF doesn't work well on iOS Safari
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-      if (isIOS) {
-        // On iOS, navigate directly to the PDF URL — Safari handles it natively
-        window.location.replace(file);
-      } else {
-        // On desktop/Android, embed in iframe with Google Docs viewer fallback
-        const frame = document.getElementById('pdf-frame');
-
-        // Try direct embed first
-        if (file.startsWith('http')) {
-          // Remote PDF: use Google Docs viewer so it works everywhere
-          frame.src = 'https://docs.google.com/gviewer?embedded=true&url=' + encodeURIComponent(file);
-        } else {
-          frame.src = file;
-        }
-
-        // If iframe fails to load, show error fallback
-        frame.onerror = () => {
-          frame.style.display = 'none';
-          document.getElementById('error-msg').style.display = 'flex';
-        };
-      }
+      const frame = document.getElementById('pdf-frame');
+      frame.src = file;
+      frame.onerror = () => {
+        frame.style.display = 'none';
+        document.getElementById('error-msg').style.display = 'flex';
+      };
     });
 
     // Service Worker (without index.js to avoid Capacitor crash on web)

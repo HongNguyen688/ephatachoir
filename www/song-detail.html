@@ -153,20 +153,7 @@
         // Build PDF section — button + inline viewer
         let pdfHTML = "";
         if (week.full_pdf) {
-          const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-          let viewerHTML = "";
-          if (isIOS) {
-            // Fallback for iOS since iframe PDFs are problematic
-            viewerHTML = `
-              <div class="pdf-fallback-msg">
-                <p>📄 Bạn có thể xem tài liệu PDF trực tiếp bằng cách nhấn nút bên dưới.</p>
-                <a href="${week.full_pdf}" class="pdf-toggle-btn" style="text-decoration:none;">Mở PDF Trực Tiếp</a>
-              </div>`;
-          } else {
-            // Embed for Desktop/Android
-            viewerHTML = `<iframe class="pdf-inline-viewer" src="${week.full_pdf}" allowfullscreen></iframe>`;
-          }
+          const viewerHTML = `<iframe class="pdf-inline-viewer" src="${week.full_pdf}" allowfullscreen></iframe>`;
 
           pdfHTML = `
             <div class="pdf-container">
