@@ -142,7 +142,7 @@
               return `
                 <div class="song-item">
                   <h3>${song.part}</h3>
-                  <h4>${song.song_title}${song.author ? '<span> - ' + song.author + '</span>' : ""}</h4>
+                  <h4>${song.song_title}${song.author ? `<span> - ${song.author}</span>` : ""}</h4>
                   ${audioHTML}
                 </div>
               `;
@@ -153,27 +153,15 @@
         // Build PDF section — button + inline viewer
         let pdfHTML = "";
         if (week.full_pdf) {
-          const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-          // iOS Safari cannot scroll inside a PDF iframe — only the first page shows.
-          // Navigate directly so Safari's native PDF viewer loads all pages.
-          const viewerHTML = isIOS
-            ? `<a href="${week.full_pdf}" class="pdf-toggle-btn" style="text-decoration:none; display:block; text-align:center; margin-top:1rem;">
-                 📄 Xem Toàn Bộ PDF (Tất Cả Trang)
-               </a>`
-            : `<iframe class="pdf-inline-viewer" src="${week.full_pdf}" allowfullscreen></iframe>`;
-
           pdfHTML = `
             <div class="pdf-container">
-              <a href="./pdf-viewer?file=${encodeURIComponent(week.full_pdf)}" style="text-decoration: none; display: block;">
-                <div class="pdf-toggle-btn">📄 XEM HOẶC TẢI PDF TRONG CỬA SỔ MỚI</div>
+              <a href="./pdf-viewer.html?file=${encodeURIComponent(week.full_pdf)}" style="text-decoration: none; display: block; color: white;">
+                <div class="pdf-toggle-btn">TẢI TOÀN BỘ PDF TUẦN NÀY (5 bài hát)</div>
               </a>
-              ${viewerHTML}
+              <iframe src="./pdf-viewer.html?file=${encodeURIComponent(week.full_pdf)}" width="100%" height="868px" style="margin-top: 15px; border-radius: 8px; border: none; background: #1a1a1a;" allowfullscreen></iframe>
             </div>
           `;
         }
-
-
         container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
       } catch (error) {
         console.error("Error loading week:", error);

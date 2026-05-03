@@ -7,16 +7,17 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#d35400" />
   <title>Tài Liệu PDF • CĐ Ephata</title>
+  <script src="./statics/js/pdf.min.js"></script>
+  <script src="./statics/js/pdf.worker.min.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       display: flex;
       flex-direction: column;
-      height: 100dvh; /* dynamic viewport height — works on iOS */
+      height: 100dvh;
       background: #1a1a1a;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      overflow: hidden;
     }
 
     .top-bar {
@@ -29,6 +30,9 @@
       background: #d35400;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       gap: 12px;
+      z-index: 10;
+      position: sticky;
+      top: 0;
     }
 
     .back-btn {
@@ -72,42 +76,38 @@
       flex-shrink: 0;
     }
 
-    .pdf-frame {
+    #pdf-container {
       flex: 1;
-      width: 100%;
-      border: none;
-      display: block;
-      background: #1a1a1a;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      background: white;
+    }
+
+    #loading {
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.1rem;
     }
 
     #error-msg {
       display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
       color: white;
       text-align: center;
       padding: 2rem;
-      gap: 1.5rem;
-    }
-
-    #error-msg p {
-      font-size: 1.1rem;
-      opacity: 0.85;
-      line-height: 1.6;
-    }
-
-    #open-direct-btn {
-      display: inline-block;
-      background: #d35400;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      box-shadow: 0 4px 15px rgba(211,84,0,0.4);
     }
   </style>
 </head>
@@ -115,15 +115,13 @@
 <body>
   <div class="top-bar">
     <button class="back-btn" onclick="goBack()">← Trở Lại</button>
-    <div class="title">Tài Liệu PDF</div>
+    <div class="title" id="page-info">Tài Liệu PDF</div>
     <a id="open-link" class="open-btn" href="#" target="_blank">Mở ↗</a>
   </div>
 
-  <iframe id="pdf-frame" class="pdf-frame" src="" allowfullscreen></iframe>
-
-  <div id="error-msg">
-    <p>📄 Không thể hiển thị PDF trực tiếp.<br>Nhấn nút bên dưới để mở tài liệu.</p>
-    <a id="open-direct-btn" href="#">Mở PDF</a>
+  <div id="pdf-container">
+    <div id="loading">Đang tải tài liệu PDF...</div>
+    <div id="error-msg">Không thể tải PDF.</div>
   </div>
 
   <script>
@@ -136,45 +134,106 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+      // Add global error handler for debugging
+      window.addEventListener("error", function (e) {
+        console.error("Global JS Error: ", e.message);
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error-msg').style.display = 'block';
+        document.getElementById('error-msg').innerHTML = 'Lỗi JS: ' + e.message;
+      });
+
       const params = new URLSearchParams(window.location.search);
-      const file = params.get('file');
+      let file = params.get('file');
 
       if (!file) {
-        document.querySelector('.top-bar').style.display = 'none';
-        document.getElementById('error-msg').style.display = 'flex';
-        document.getElementById('error-msg').querySelector('p').textContent = 'Không tìm thấy tài liệu PDF.';
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('error-msg').style.display = 'block';
+        document.getElementById('error-msg').textContent = 'Không tìm thấy tài liệu PDF.';
         return;
       }
 
-      // Set the open link (top-right button)
-      const openLink = document.getElementById('open-link');
-      openLink.href = file;
-
-      // Set fallback direct open button
-      document.getElementById('open-direct-btn').href = file;
-
-      // iOS Safari cannot scroll inside a PDF iframe — only the first page shows.
-      // Navigate directly so Safari's native PDF viewer loads all pages.
-      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      if (isIOS) {
-        window.location.replace(file);
-        return;
+      // Fix paths for Capacitor
+      if (file.startsWith('statics/')) {
+        file = './' + file;
       }
 
-      const frame = document.getElementById('pdf-frame');
-      frame.src = file;
-      frame.onerror = () => {
-        frame.style.display = 'none';
-        document.getElementById('error-msg').style.display = 'flex';
-      };
+      document.getElementById('open-link').href = file;
+
+      const container = document.getElementById('pdf-container');
+      const loading = document.getElementById('loading');
+
+      // Workaround for iOS WKWebView Web Worker CORS restrictions:
+      // Fetch the worker locally, convert to Blob, and load from Blob URL.
+      fetch('./statics/js/pdf.worker.min.js')
+        .then(response => {
+          if (!response.ok) throw new Error("Không thể tải worker");
+          return response.text();
+        })
+        .then(workerText => {
+          const blob = new Blob([workerText], { type: 'text/javascript' });
+          pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(blob);
+
+          const loadingTask = pdfjsLib.getDocument(file);
+          loadingTask.promise.then(pdf => {
+            loading.style.display = 'none';
+            document.getElementById('page-info').textContent = `Tài Liệu PDF (${pdf.numPages} trang)`;
+            
+            // Render each page into a canvas
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+              pdf.getPage(pageNum).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 }); // High resolution for sharp text on mobile
+                
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                  canvasContext: context,
+                  viewport: viewport
+                };
+                
+                // Wrapper div to maintain sequential order
+                const wrapper = document.createElement('div');
+                wrapper.id = 'page-' + pageNum;
+                wrapper.style.width = '100%';
+                wrapper.style.display = 'flex';
+                wrapper.style.justifyContent = 'center';
+                wrapper.appendChild(canvas);
+                
+                // Insert in correct order since promises resolve asynchronously
+                let inserted = false;
+                for (const child of container.children) {
+                  if (child.id && child.id.startsWith('page-') && parseInt(child.id.split('-')[1]) > pageNum) {
+                    container.insertBefore(wrapper, child);
+                    inserted = true;
+                    break;
+                  }
+                }
+                if (!inserted) {
+                  container.appendChild(wrapper);
+                }
+
+                page.render(renderContext);
+              });
+            }
+          }).catch(err => {
+            console.error('Error loading PDF:', err);
+            loading.style.display = 'none';
+            document.getElementById('error-msg').style.display = 'block';
+            document.getElementById('error-msg').innerHTML = 'Không thể tải PDF. <br><small>' + err.message + '</small>';
+          });
+        })
+        .catch(err => {
+          console.error('Error fetching worker:', err);
+          loading.style.display = 'none';
+          document.getElementById('error-msg').style.display = 'block';
+          document.getElementById('error-msg').innerHTML = 'Lỗi WebKit: ' + err.message;
+        });
     });
 
-    // Service Worker (without index.js to avoid Capacitor crash on web)
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/service-worker.js")
-        .then(() => console.log("SW registered"))
-        .catch((err) => console.warn("SW error", err));
+      navigator.serviceWorker.register("/service-worker.js").catch(err => console.warn(err));
     }
   </script>
 </body>
