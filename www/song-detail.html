@@ -142,7 +142,7 @@
               return `
                 <div class="song-item">
                   <h3>${song.part}</h3>
-                  <h4>${song.song_title}${song.author ? `<span> - ${song.author}</span>` : ""}</h4>
+                  <h4>${song.song_title}${song.author ? '<span> - ' + song.author + '</span>' : ""}</h4>
                   ${audioHTML}
                 </div>
               `;
@@ -172,6 +172,7 @@
             </div>
           `;
         }
+
 
         container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
       } catch (error) {
