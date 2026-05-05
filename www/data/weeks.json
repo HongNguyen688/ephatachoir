@@ -2,6 +2,52 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật VI Phục Sinh",
+      "season": "Mùa Phục Sinh",
+      "date": "2026-05-10",
+      "theme": "Nếu Anh Em Yêu Mến Thầy",
+      "full_pdf": "/statics/pdf/bài-hát-cn-6-phục-sinh-05-10-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Chúa Đã Sống Lại",
+          "author": "Phương Anh",
+          "audio": "/statics/mp4/chúa-đã-sống-lại-lm-phương-anh-trình-bày-cđ-việt-linh-a-nl-ps-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 65",
+          "author": "Bùi Ninh",
+          "audio": "/statics/mp4/thánh-vịnh-65-chúa-nhật-14-thường-niên-năm-c-lm.-bùi-ninh-x-nguyễn-vinh-sơn.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Nhạc Khúc Yêu Thương",
+          "author": "Từ Duyên",
+          "audio": "/statics/mp4/thánh-ca-nhạc-khúc-yêu-thương-lm.-từ-duyên-ca-đoàn-phanxico-gx-thánh-tâm.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Luật Yêu Thương",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/luật-yêu-thương-lm-nguyễn-duy-.m4a"
+        },
+        {
+          "part": "Phần Khác",
+          "song_title": "Tình Mẹ Bao La",
+          "author": "Mi Trầm",
+          "audio": "/statics/mp4/tinh-mẹ-bao-la-st-mi-trầm-ca-đoàn-đức-mẹ-la-vang-las-vegas.-ttpp.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Vòng Hoa Dâng Mẹ",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/vòng-hoa-dâng-mẹ-phanxico-ca-đoàn-mông-triệu-gx.-fatima-bình-triệu.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật V Phục Sinh",
       "season": "Mùa Phục Sinh",
       "date": "2026-05-03",
