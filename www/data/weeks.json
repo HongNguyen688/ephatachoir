@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "CN Lễ Chúa Lên Trời",
+      "season": "Mùa Phục Sinh",
+      "date": "2026-05-17",
+      "theme": "Mọi Quyền Năng Trên Trời Dưới Đất Đã Được Ban Cho Thầy.",
+      "full_pdf": "/statics/pdf/bai-hat-le-chua-len-trời-05-17-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Hôm Nay Mừng Chúa Lên Trời",
+          "author": "Mi Trầm",
+          "audio": "/statics/mp4/hôm-nay-mừng-chúa-lên-trời-shorts.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 46",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/đáp-ca-lễ-chúa-lên-trời-thánh-vịnh-46-thanh-lâm-supon-music.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Ca Khúc Trầm Hương",
+          "author": "Mi Trầm",
+          "audio": "/statics/mp4/ca-doàn-đắc-lộ-1978-ca-khúc-trầm-hương.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Chúa Lên Trời",
+          "author": "Hải Nguyễn",
+          "audio": "/statics/mp4/hiệp-lễ-chúa-lên-trời-hải-nguyễn-thánh-ca-dân-chúa.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Mùa Hoa Về Rồi",
+          "author": "Trầm Hương",
+          "audio": "/statics/mp4/gloria-3-mai-thiên-vân-mùa-hoa-về-rồi.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật VI Phục Sinh",
       "season": "Mùa Phục Sinh",
       "date": "2026-05-10",
