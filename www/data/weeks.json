@@ -6,7 +6,7 @@
       "season": "Mùa Phục Sinh",
       "date": "2026-05-17",
       "theme": "Mọi Quyền Năng Trên Trời Dưới Đất Đã Được Ban Cho Thầy.",
-      "full_pdf": "/statics/pdf/bai-hat-le-chua-len-trời-05-17-2026.pdf",
+      "full_pdf": "/statics/pdf/bai-hat-cn-chua-len-trời-05-17-2026.pdf",
       "songs": [
         {
           "part": "Nhập Lễ",
@@ -28,9 +28,9 @@
         },
         {
           "part": "Hiệp Lễ",
-          "song_title": "Chúa Lên Trời",
-          "author": "Hải Nguyễn",
-          "audio": "/statics/mp4/hiệp-lễ-chúa-lên-trời-hải-nguyễn-thánh-ca-dân-chúa.m4a"
+          "song_title": "Chúa Đã Lên Trời",
+          "author": "Phanxicô",
+          "audio": "/statics/mp4/hiệp-lễ-chúa-đã-lên-trời-phanxico-nguyễn-vinh-sơn.m4a"
         },
         {
           "part": "Kết Lễ",
