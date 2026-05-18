@@ -2,6 +2,52 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "theme": "Các Con Hãy Nhận Lấy Thánh Thần",
+      "title": "CN Lễ Chúa Thánh Thần Hiện Xuống",
+      "season": "Mùa Phục Sinh",
+      "full_pdf": "/statics/pdf/bai-hat-le-chua-thanh-thần-5-24-2026-2-.pdf",
+      "date": "2026-05-24",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Thánh Thần Hãy Đến",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/thánh-thần-hãy-đến-thành-tâm-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 103",
+          "author": "Thái Nguyên",
+          "audio": "/statics/mp4/thánh-vịnh-103-lm.-thái-nguyên-lễ-chúa-thánh-thần-hiện-xuống.m4a"
+        },
+        {
+          "part": "Phần Khác",
+          "song_title": " Lạy Thánh Linh",
+          "author": "Trần Mừng",
+          "audio": "/statics/mp4/lạy-thánh-linh-trần-mừng🎵ca-đoàn-gioan-phaolo-ii.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Dâng Niềm Cảm Mến",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/dâng-niềm-cảm-mến-phanxicô.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Lửa Hồng Ngàn Đời",
+          "author": "Trầm Hương",
+          "audio": "/statics/mp4/lửa-hồng-ngàn-đời-sr.-trầm-hương-ca-đoàn-mông-triệu-giáo-xứ-fatima-bình-triệu.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Này Chính Chúa",
+          "author": "Nguyễn Đức Tuấn",
+          "audio": "/statics/mp4/này-chính-chúa-nguyễn-đức-tuấn-ca-đoàn-hallelujah-gx.-tân-việt-.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "CN Lễ Chúa Lên Trời",
       "season": "Mùa Phục Sinh",
       "date": "2026-05-17",
