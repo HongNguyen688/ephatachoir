@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "CN Lễ Chúa Ba Ngôi",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-05-31",
+      "theme": "Thiên Chúa Đã Sai Chúa Con Đến Để Thế Gian Nhờ Người Mà Được Cứu Độ",
+      "full_pdf": "/statics/pdf/bai-hat-le-chua-ba-ngôi-5-31-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Vinh Danh Ba Ngôi",
+          "author": "Đỗ Vy Hạ",
+          "audio": "/statics/mp4/vinh-danh-ba-ngoi-do-vy-ha-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Lễ  Chúa Ba Ngôi A",
+          "author": "Huy Hoàng",
+          "audio": "/statics/mp4/học-hát-đáp-ca-lễ-chúa-ba-ngôi-năm-a-lm.-huy-hoàng.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Thượng Tiến Lên Ba Ngôi",
+          "author": "Nguyễn Quang Hưng",
+          "audio": "/statics/mp4/thượng-tiến-lên-ba-ngôi-nguyễn-quang-hưng-.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Một Giọt Sương",
+          "author": "Hùng Lân",
+          "audio": "/statics/mp4/một-giọt-sương-hùng-lân.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Tràng Hoa Mân Côi",
+          "author": "Phạm Xuân Chiến",
+          "audio": "/statics/mp4/tràng-hoa-mân-côi-anton-studio-hải-nam.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "theme": "Các Con Hãy Nhận Lấy Thánh Thần",
       "title": "CN Lễ Chúa Thánh Thần Hiện Xuống",
       "season": "Mùa Phục Sinh",
