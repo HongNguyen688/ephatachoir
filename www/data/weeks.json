@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "CN Lễ Mình Máu Thánh Chúa",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-06-07",
+      "theme": "Ta Là Bánh Hằng Sống Từ Trời Xuống, Ai Ăn Bánh Này, Thì Sẽ Sống Đời Đời.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-mình-máu-thánh-6-7-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Dự Tiệc Thánh",
+          "author": "Vũ Kim",
+          "audio": "/statics/mp4/dự-tiệc-thánh-vũ-kim-trình-bày-cđ-thánh-linh-kansas-hl-lễ-mình-máu-chúa-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 147",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/đáp-ca-alleluia-thánh-vịnh-147-lễ-mình-máu-thánh-chúa-năm-a-thanh-lâm-x-nguyên-vinh-sơn.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Dâng Lễ 1",
+          "author": "Phạm Liên Hùng",
+          "audio": "/statics/mp4/dâng-lễ-1-lm-phạm-liên-hùng-trọng-văn-trình-bày-cđ-thánh-gia.m4a"
+        },
+        {
+          "song_title": "Chính Mình Máu Chúa",
+          "part": "Hiệp Lễ",
+          "author": "Tri Văn Vinh",
+          "audio": "/statics/mp4/chính-mình-máu-chúa-tri-văn-vinh-ca-đoàn-gx-chánh-tòa-phú-cường..m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Thánh Tâm Giêsu Vua",
+          "author": "Hoài Đức",
+          "audio": "/statics/mp4/thánh-tâm-giêsu-vua-hoài-đức-.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "CN Lễ Chúa Ba Ngôi",
       "season": "Mùa Thường Niên II",
       "date": "2026-05-31",
