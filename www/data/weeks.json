@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XI Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-06-14",
+      "theme": "Sau khi triệu tập mười hai môn đệ, Người sai các ông đi.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-11-tn-06-14-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Cảm tạ Hồng ân",
+          "author": "Hồng Trần",
+          "audio": "/statics/mp4/cảm-tạ-hồng-ân-lm.-duy-thiên-ca-đoàn-mông-triệu-giáo-xứ-fatima-bình-triệu.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 99-Toàn thể địa cầu",
+          "author": "Bùi Ninh",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-99-chúa-nhật-11-thường-niên-a-lm-bùi-ninh-x-nguyễn-vinh-sơn.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Trọn đời con dâng",
+          "author": "Fale",
+          "audio": "/statics/mp4/trọn-đời-con-dâng-st-falê-.-thánh-ca-tuyển-chọn-tuyệt-hay.-th-graceful-sounds..m4a"
+        },
+        {
+          "song_title": "Có Một Điều",
+          "part": "Hiệp Lễ",
+          "author": "Ân Đức",
+          "audio": "/statics/mp4/có-một-điều-lm-ân-đức-ft-ca-đoàn-maria-goretti.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Thánh Tâm Chúa Giê-su",
+          "author": "Huyền Linh",
+          "audio": "/statics/mp4/thánh-tâm-chúa-giêsu-huyền-linh-ca-đoàn-thiên-ca-đtccnvlc-t6-2025.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "CN Lễ Mình Máu Thánh Chúa",
       "season": "Mùa Thường Niên II",
       "date": "2026-06-07",
