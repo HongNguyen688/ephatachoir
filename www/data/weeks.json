@@ -2,6 +2,52 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-06-21",
+      "theme": "Các Con Đừng Sợ Những Kẻ Giết Được Thân Xác.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-12-tn-06-21-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Chung Lời Tạ Ơn",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/chung-lời-tạ-ơn-lm.-nguyễn-duy.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "TV 68",
+          "author": "Thái Nguyên",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-68-cn-12-tn-a-lm-thái-nguyên.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Dâng Niềm Tin Yêu",
+          "audio": "/statics/mp4/dâng-niềm-tin-yêu..m4a",
+          "author": "Khuyết Danh"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Con Tin Chúa Ơi",
+          "author": "Duy Thiên",
+          "audio": "/statics/mp4/con-tin-chúa-ơi-lm-duy-thiên-ft-ca-đoàn-maria-goretti.m4a"
+        },
+        {
+          "part": "Phần Khác",
+          "song_title": "Ơn Cha",
+          "author": "Y Vân",
+          "audio": "/statics/mp4/ơn-cha-y-vân-🎶ca-đoàn-dominique-savio-nhà-nguyện-regina-mundi.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": " Lạy Trái Tim Chúa",
+          "author": "Hoài Đức",
+          "audio": "/statics/mp4/lạy-trái-tim-chúa-kết-lễ-——-nhạc-lm.-hoài-đức.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XI Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-06-14",
