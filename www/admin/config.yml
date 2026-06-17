@@ -107,6 +107,7 @@ collections:
                       - Phần Khác
                       - Dâng Lễ
                       - Hiệp Lễ
+                      - Hát Tặng
                       - Kết Lễ
                     required: true
                   - {

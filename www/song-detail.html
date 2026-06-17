@@ -1,118 +1,124 @@
 <!doctype html>
 <html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./statics/images/logo.png" />
+    <meta name="theme-color" content="#d35400" />
+    <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
+    <title>Chi Tiết Phụng Vụ • CĐ Ephata</title>
+    <link rel="stylesheet" href="./statics/css/style.css" />
+    <link rel="stylesheet" href="./statics/css/responsive.css" />
+    <link rel="stylesheet" href="./statics/css/detailweeklysongs.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="manifest" href="./manifest.json" />
-  <link rel="apple-touch-icon" href="./statics/images/logo.png" />
-  <meta name="theme-color" content="#d35400" />
-  <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
-  <title>Chi Tiết Phụng Vụ • CĐ Ephata</title>
-  <link rel="stylesheet" href="./statics/css/style.css" />
-  <link rel="stylesheet" href="./statics/css/responsive.css" />
-  <link rel="stylesheet" href="./statics/css/detailweeklysongs.css" />
-</head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="./index.html">
+          <div class="logo">
+            <div>
+              <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
+            </div>
+            <div>
+              <p>CĐ Ephata</p>
+            </div>
+          </div>
+        </a>
+        <ul class="nav-menu">
+          <li><a href="./index.html">Trang Chủ</a></li>
+          <li><a href="./thongbao.html">Thông Báo</a></li>
+          <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
+          <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
+          <li><a href="./life.html">Đời Sống</a></li>
+          <li><a href="./about.html">Liên Lạc</a></li>
+        </ul>
+        <div class="hamburger">☰</div>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <nav class="navbar">
-      <a href="./index.html">
-        <div class="logo">
-          <div>
-            <img alt="CĐ Ephata Logo" src="./statics/images/logo.png" />
-          </div>
-          <div>
-            <p>CĐ Ephata</p>
-          </div>
+    <div class="page-wrapper">
+      <!-- Hero Section (filled by JS) -->
+      <section class="hero" id="hero-section" style="display: none">
+        <div class="container" style="text-align: center">
+          <h1 class="super-title" id="hero-title"></h1>
+          <p id="hero-theme"></p>
+          <br />
         </div>
-      </a>
-      <ul class="nav-menu">
-        <li><a href="./index.html">Trang Chủ</a></li>
-        <li><a href="./thongbao.html">Thông Báo</a></li>
-        <li><a href="./weeklysongs.html">Bài Hát Hàng Tuần</a></li>
-        <li><a href="./performance.html">Lời Ca Tiếng Hát</a></li>
-        <li><a href="./life.html">Đời Sống</a></li>
-        <li><a href="./about.html">Liên Lạc</a></li>
-      </ul>
-      <div class="hamburger">☰</div>
-    </nav>
-  </header>
+      </section>
 
-  <div class="page-wrapper">
-    <!-- Hero Section (filled by JS) -->
-    <section class="hero" id="hero-section" style="display: none">
-      <div class="container" style="text-align: center">
-        <h1 class="super-title" id="hero-title"></h1>
-        <p id="hero-theme"></p>
-        <br />
-      </div>
-    </section>
+      <main class="container song-detail" id="songs-container">
+        <p style="text-align: center; padding: 3rem">Đang tải thông tin...</p>
+      </main>
 
-    <main class="container song-detail" id="songs-container">
-      <p style="text-align: center; padding: 3rem">Đang tải thông tin...</p>
-    </main>
+      <div class="footer-push"></div>
+    </div>
 
-    <div class="footer-push"></div>
-  </div>
+    <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
+    <script src="./statics/js/index.js" defer></script>
 
-  <footer>© 2025 HN - CĐ Ephata - San Jose</footer>
-  <script src="./statics/js/index.js" defer></script>
+    <script>
+      async function loadSongDetail() {
+        const params = new URLSearchParams(window.location.search);
+        const date = params.get("date");
 
-  <script>
-    async function loadSongDetail() {
-      const params = new URLSearchParams(window.location.search);
-      const date = params.get("date");
-
-      if (!date) {
-        document.getElementById("songs-container").innerHTML =
-          '<p style="text-align:center; padding: 3rem;">Không tìm thấy thông tin cho ngày này.</p>';
-        return;
-      }
-
-      try {
-        const response = await fetch("data/weeks.json", { cache: "no-cache" });
-        const data = await response.json();
-        const week = (data.weeks || []).find((w) => w.date === date);
-        const container = document.getElementById("songs-container");
-
-        if (!week) {
-          container.innerHTML =
+        if (!date) {
+          document.getElementById("songs-container").innerHTML =
             '<p style="text-align:center; padding: 3rem;">Không tìm thấy thông tin cho ngày này.</p>';
           return;
         }
 
-        // Fill hero section
-        const heroSection = document.getElementById("hero-section");
-        const heroTitle = document.getElementById("hero-title");
-        const heroTheme = document.getElementById("hero-theme");
-        heroSection.style.display = "";
-        heroTitle.innerHTML = `${week.title}<br/><span>${new Date(week.date + "T12:00:00").toLocaleDateString("vi-VN")}</span>`;
-        heroTheme.textContent = week.theme ? `Chủ đề: ${week.theme}` : "";
+        try {
+          const response = await fetch("data/weeks.json", {
+            cache: "no-cache",
+          });
+          const data = await response.json();
+          const week = (data.weeks || []).find((w) => w.date === date);
+          const container = document.getElementById("songs-container");
 
-        // Build songs list
-        const SONG_PART_ORDER = [
-          "Nhập Lễ",
-          "Đáp Ca",
-          "Phần Khác",
-          "Dâng Lễ",
-          "Hiệp Lễ",
-          "Kết Lễ"
-        ];
+          if (!week) {
+            container.innerHTML =
+              '<p style="text-align:center; padding: 3rem;">Không tìm thấy thông tin cho ngày này.</p>';
+            return;
+          }
 
-        const songs = (week.songs || []).sort((a, b) => {
-          const indexA = SONG_PART_ORDER.indexOf(a.part);
-          const indexB = SONG_PART_ORDER.indexOf(b.part);
-          return (indexA === -1 ? 99 : indexA) - (indexB === -1 ? 99 : indexB);
-        });
+          // Fill hero section
+          const heroSection = document.getElementById("hero-section");
+          const heroTitle = document.getElementById("hero-title");
+          const heroTheme = document.getElementById("hero-theme");
+          heroSection.style.display = "";
+          heroTitle.innerHTML = `${week.title}<br/><span>${new Date(week.date + "T12:00:00").toLocaleDateString("vi-VN")}</span>`;
+          heroTheme.textContent = week.theme ? `Chủ đề: ${week.theme}` : "";
 
-        const songsHTML = songs
-          .map(
-            (song) => {
+          // Build songs list
+          const SONG_PART_ORDER = [
+            "Nhập Lễ",
+            "Đáp Ca",
+            "Phần Khác",
+            "Dâng Lễ",
+            "Hiệp Lễ",
+            "Hát Tặng",
+            "Kết Lễ",
+          ];
+
+          const songs = (week.songs || []).sort((a, b) => {
+            const indexA = SONG_PART_ORDER.indexOf(a.part);
+            const indexB = SONG_PART_ORDER.indexOf(b.part);
+            return (
+              (indexA === -1 ? 99 : indexA) - (indexB === -1 ? 99 : indexB)
+            );
+          });
+
+          const songsHTML = songs
+            .map((song) => {
               let audioHTML = "";
               if (song.audio) {
-                if (song.audio.includes("youtube") || song.audio.includes("youtu.be")) {
+                if (
+                  song.audio.includes("youtube") ||
+                  song.audio.includes("youtu.be")
+                ) {
                   let videoId = "";
                   try {
                     if (song.audio.includes("watch?v=")) {
@@ -120,7 +126,7 @@
                     } else if (song.audio.includes("youtu.be/")) {
                       videoId = song.audio.split("youtu.be/")[1].split("?")[0];
                     }
-                  } catch (e) { }
+                  } catch (e) {}
 
                   if (videoId) {
                     audioHTML = `
@@ -146,14 +152,13 @@
                   ${audioHTML}
                 </div>
               `;
-            }
-          )
-          .join("");
+            })
+            .join("");
 
-        // Build PDF section — button + inline viewer
-        let pdfHTML = "";
-        if (week.full_pdf) {
-          pdfHTML = `
+          // Build PDF section — button + inline viewer
+          let pdfHTML = "";
+          if (week.full_pdf) {
+            pdfHTML = `
             <div class="pdf-container">
               <a href="./pdf-viewer.html?file=${encodeURIComponent(week.full_pdf)}" style="text-decoration: none; display: block; color: white;">
                 <div class="pdf-toggle-btn">TẢI TOÀN BỘ PDF TUẦN NÀY (5 bài hát)</div>
@@ -161,43 +166,43 @@
               <iframe src="./pdf-viewer.html?file=${encodeURIComponent(week.full_pdf)}" width="100%" height="868px" style="margin-top: 15px; border-radius: 8px; border: none; background: #1a1a1a;" allowfullscreen></iframe>
             </div>
           `;
+          }
+          container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
+        } catch (error) {
+          console.error("Error loading week:", error);
         }
-        container.innerHTML = `<div class="songs-list">${songsHTML}${pdfHTML}</div>`;
-      } catch (error) {
-        console.error("Error loading week:", error);
       }
-    }
 
-    document.addEventListener("DOMContentLoaded", loadSongDetail);
+      document.addEventListener("DOMContentLoaded", loadSongDetail);
 
-    // Modal Logic for PDF Full Screen
-    // function openPdfModal(url) {
-    //   const modal = document.getElementById('pdf-modal');
-    //   const embed = document.getElementById('pdf-modal-embed');
-    //   embed.src = url;
-    //   modal.style.display = 'flex';
-    //   document.body.style.overflow = 'hidden'; // lock background scrolling
-    // }
+      // Modal Logic for PDF Full Screen
+      // function openPdfModal(url) {
+      //   const modal = document.getElementById('pdf-modal');
+      //   const embed = document.getElementById('pdf-modal-embed');
+      //   embed.src = url;
+      //   modal.style.display = 'flex';
+      //   document.body.style.overflow = 'hidden'; // lock background scrolling
+      // }
 
-    // function closePdfModal() {
-    //   const modal = document.getElementById('pdf-modal');
-    //   const embed = document.getElementById('pdf-modal-embed');
-    //   modal.style.display = 'none';
-    //   embed.src = '';
-    //   document.body.style.overflow = ''; // restore scrolling
-    // }
-  </script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("/service-worker.js")
-        .then(() => console.log("SW registered"))
-        .catch((err) => console.log("SW error", err));
-    }
-  </script>
+      // function closePdfModal() {
+      //   const modal = document.getElementById('pdf-modal');
+      //   const embed = document.getElementById('pdf-modal-embed');
+      //   modal.style.display = 'none';
+      //   embed.src = '';
+      //   document.body.style.overflow = ''; // restore scrolling
+      // }
+    </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("SW registered"))
+          .catch((err) => console.log("SW error", err));
+      }
+    </script>
 
-  <!-- PDF Full Screen Modal -->
-  <!-- <div id="pdf-modal"
+    <!-- PDF Full Screen Modal -->
+    <!-- <div id="pdf-modal"
     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:#f4f4f4; z-index:99999; flex-direction:column;">
     <div
       style="background: var(--primary); color: white; padding: env(safe-area-inset-top, 0px) 16px 12px 16px; padding-top: max(env(safe-area-inset-top), 12px); display:flex; justify-content:space-between; align-items:center; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
@@ -211,6 +216,5 @@
         style="min-height: 100vh; display:block;" />
     </div>
   </div> -->
-</body>
-
+  </body>
 </html>

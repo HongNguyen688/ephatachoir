@@ -44,6 +44,27 @@ Then rebuild in Xcode (`Cmd+R`) or Android Studio.
 
 ---
 
+## Page Architecture
+
+Each HTML page is self-contained: it contains an inline `<script>` at the bottom of `<body>` that fetches its JSON data source and builds the DOM dynamically. There is no shared page-controller JS — only `index.js` (loaded on every page via `<script src="./statics/js/index.js">`), which handles cross-cutting concerns: theme, audio management, hamburger menu, lightbox, external link helper, service worker registration, and push notifications.
+
+CSS is split by page. `style.css` + `responsive.css` are loaded everywhere. Each page loads its own additional stylesheet:
+
+| Page | Extra CSS |
+|------|-----------|
+| `weeklysongs.html` | `weeklysong.css` |
+| `song-detail.html` | `detailweeklysongs.css` |
+| `performance.html` | `performance.css` |
+| `life.html` | `life.css` |
+
+### Shared JS Utilities
+
+`www/statics/js/pagination.js` exposes `window.setupPagination(items, container, paginationEl, itemsPerPage, renderItem)`. Loaded by pages that need it (performance, life). Renders page controls only when item count exceeds `itemsPerPage` (default 12).
+
+`www/statics/js/pdf.min.js` + `pdf.worker.min.js` are a bundled copy of PDF.js, used by `pdf-viewer.html` for desktop/Android rendering.
+
+---
+
 ## Data Layer
 
 All data lives in `www/data/` as JSON files. No backend.
@@ -107,6 +128,9 @@ Cache name: `ephata-cache-vN` — **bump N whenever cached assets change** to fo
 Strategy:
 - Network-first: HTML pages, JSON data files
 - Cache-first: audio (`.m4a`), PDFs, images
+- Stale-while-revalidate: CSS, JS, other assets
+
+When adding a new HTML page or static asset, also add it to the `STATIC_SHELL` array in `service-worker.js` so it pre-caches on install.
 
 ---
 
@@ -140,6 +164,8 @@ Media upload paths:
 | `/about.html` | `about.html` | — |
 | `/settings.html` | `settings.html` | localStorage |
 
+`www/archives/` contains legacy static HTML pages (hardcoded song lists, no JSON) from before the data-driven system. They are served but not linked from the main nav.
+
 ---
 
 ## Platform Quirks
@@ -159,13 +185,3 @@ Register as `/service-worker.js` (absolute path), not `./service-worker.js` — 
 
 **Push notifications**
 The push notification setup in `index.js` is guarded by `window.Capacitor.isNativePlatform()` — it only runs inside the iOS/Android app, never on the web.
-
----
-
-## Asset Counts (approximate)
-
-| Type | Location | Count |
-|------|----------|-------|
-| Audio | `www/statics/mp4/` | 136+ `.m4a` files |
-| PDFs | `www/statics/pdf/` | 28+ files |
-| Images | `www/statics/images/` | 50+ files |
