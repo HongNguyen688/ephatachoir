@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XIII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "theme": "Ai Không Vác Thập Giá Mình Mà Theo Thầy, Thì Không Xứng Đáng Với Thầy.",
+      "full_pdf": "/statics/pdf/bai-hat-cn-13-tn-06-28-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Về Nơi Đây",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/về-nơi-đây-nguyễn-duy.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "TV 88-CN 13A",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/thánh-vịnh-88-cn-13-thường-niên-năm-a-thanh-lâm.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Lời Dâng 1",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/lời-dâng-1-lm-nguyễn-duy-.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Theo Chúa",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/theo-chúa-lm.-thành-tâm.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Xin Vâng 2",
+          "author": "Mi Trầm",
+          "audio": "/statics/mp4/xin-vâng-2.m4a"
+        }
+      ],
+      "date": "2026-06-28"
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XII Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-06-21",
