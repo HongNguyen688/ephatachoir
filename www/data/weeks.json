@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Tuần: Chúa Nhật XIV Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-07-05",
+      "theme": "Hãy Đến Cùng Ta.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-14-tn-07-05-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Ngợi Ca",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/ngợi-ca-lm-nguyễn-duy-.m4a"
+        },
+        {
+          "song_title": "TV 144-Chúc Tụng Danh Chúa",
+          "author": "Tường Ân",
+          "part": "Đáp Ca",
+          "audio": "/statics/mp4/chúc-tụng-danh-chúa-thánh-vịnh-144.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "  Dâng Chúa",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/dâng-chúa-phanxicô.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Chúng con cần đến chúa",
+          "author": "Phanxicô",
+          "audio": "/statics/mp4/chúng-con-cần-đến-chúa-phanxicô-ca-đoàn-mông-triệu-giáo-xứ-fatima-bình-triệu.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Mẹ Đẹp Tươi",
+          "author": "Kim Long",
+          "audio": "/statics/mp4/mẹ-đẹp-tươi-lm.-kim-long-ca-đoàn-đức-mẹ-vô-nhiễm-gx.-fatima-bình-triệu.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XIII Thường Niên",
       "season": "Mùa Thường Niên II",
       "theme": "Ai Không Vác Thập Giá Mình Mà Theo Thầy, Thì Không Xứng Đáng Với Thầy.",
