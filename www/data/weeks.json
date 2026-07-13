@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XVI Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-07-19",
+      "theme": "Hãy Cứ Để Cả Hai Mọc Lên Cho Đến Mùa Gặt. ",
+      "full_pdf": "/statics/pdf/bài-hát-cn-16-tn-7-19-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "audio": "/statics/mp4/ca-nhập-lễ-2-lm.-nguyễn-văn-trinh.m4a",
+          "song_title": "Ca Nhập Lễ 2",
+          "author": "Nguyễn Vân Trinh"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh vịnh 85",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-85-chúa-nhật-16-thường-niên-năm-a-tác-giả-thanh-lâm-x-nguyễn-vinh-sơn.m4a"
+        },
+        {
+          "song_title": "Lễ Vật Giao Hòa",
+          "part": "Dâng Lễ",
+          "author": "Nguyên Kha",
+          "audio": "/statics/mp4/lễ-vật-giao-hòa-nguyên-kha.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Lúa và cỏ lùng",
+          "audio": "/statics/mp4/lúa-và-cỏ-lùng-lm.-nguyễn-hùng-cường-viễn-xứ.m4a",
+          "author": "Nguyễn Hùng Cường & Viễn Xứ"
+        },
+        {
+          "audio": "/statics/mp4/hoan-ca-maria-lm-kimlong.m4a",
+          "song_title": "Hoan Ca Maria",
+          "author": "Kim Long",
+          "part": "Kết Lễ"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XV Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-07-12",
