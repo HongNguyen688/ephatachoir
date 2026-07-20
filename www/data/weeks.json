@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "theme": "Anh Bán Tất Cả Những Gì Anh Có Mà Mua Thửa Ruộng Đó",
+      "title": "Chúa Nhật XVII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-07-26",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Tôi Chỉ Ước Trông",
+          "author": "Hoàng Khánh & Kim Long",
+          "audio": "/statics/mp4/toi-chi-uoc-trong-hoang-khanh-kim-long-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 118",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-118-chúa-nhật-17-thường-niên-năm-a-thanh-lâm-học-hát-4-bè.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Lễ Dâng",
+          "author": "Thu Hương",
+          "audio": "/statics/mp4/lễ-dâng-thu-hương.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Nước Trời",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/nước-trời-phanxicô-.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Đền Tạ Trái Tim Mẹ",
+          "author": "Nguyễn Khắc Tuần",
+          "audio": "/statics/mp4/đền-tạ-trái-tim-mẹ-nguễn-khắc-tuần-.m4a"
+        }
+      ],
+      "full_pdf": "/statics/pdf/bài-hát-cn-17-tn-07-26-2026.pdf"
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XVI Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-07-19",
