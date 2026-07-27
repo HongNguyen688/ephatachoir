@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XVIII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-08-02",
+      "theme": "Mọi Người Đều Ăn No.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-18-tn-a-8-2-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Lên Đền Thánh",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/lên-đền-thánh-st-lm-thành-tâm-ca-đoàn-di-dân-gp-hà-tĩnh-tại-mn-anton-music.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Xin mở tay Ngài",
+          "author": "Tường Ân",
+          "audio": "/statics/mp4/thánh-vịnh-144-xin-mở-tay-ngài-đáp-ca-chúa-nhật-18-thường-niên-năm-a-ns.-tường-ân-thanh-vân.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Tiến dâng Cha",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/offering-tiến-dâng-cha-lm-thành-tâm.-arr-bạch-đằng-.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Vào đời",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/mv-vào-đời-giới-trẻ-thừa-sai-chúa-cứu-thế-miền-nam-official-.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Kìa bà nào",
+          "author": "Hoàng Diệp",
+          "audio": "/statics/mp4/kìa-bà-nào-lm.-hoàng-diệp.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "theme": "Anh Bán Tất Cả Những Gì Anh Có Mà Mua Thửa Ruộng Đó",
       "title": "Chúa Nhật XVII Thường Niên",
       "season": "Mùa Thường Niên II",
