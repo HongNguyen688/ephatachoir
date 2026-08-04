@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XIX Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-08-09",
+      "theme": "Xin Truyền Cho Con Đi Trên Mặt Nước Và Đến Cùng Thầy.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-19-qn-08092026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Hát Lên Bài Ca",
+          "author": "Kim Long",
+          "audio": "/statics/mp4/hát-lên-bài-ca-lm.-kim-long-ca-đoàn-mông-triệu-giáo-xứ-fatima-bình-triệu.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 84",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/học-hát-4-bè-thánh-vịnh-84-–-chúa-nhật-19-thường-niên-năm-a-–-tg-thanh-lâm.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Tựa Làn Trầm Hương",
+          "author": "Đỗ Vy Hạ",
+          "audio": "/statics/mp4/tựa-làn-trầm-hương-đỗ-vy-hạ.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Con Tin Thưa Thầy",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/con-tin-thưa-thầy-thành-tâm-.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Mẹ Là Bóng Mát",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/mẹ-là-bóng-mát-mai-thiên-vân-phanxico-trần-kim-tuyến..m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XVIII Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-08-02",
