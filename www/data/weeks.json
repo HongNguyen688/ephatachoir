@@ -9,6 +9,30 @@
       "theme": "Này Bà, Bà Có Lòng Mạnh Tinh.",
       "songs": [
         {
+          "part": "Nhập Lễ",
+          "audio": "/statics/mp4/tôi-muốn-hát-một-bài-ca-lm-kim-long-ca-đoàn-cecilia-dòng-chúa-cứu-thế.m4a",
+          "song_title": "Tôi Muốn Hát Bài Ca",
+          "author": "Kim Long"
+        },
+        {
+          "song_title": "Thánh Vịnh 66",
+          "part": "Đáp Ca",
+          "author": "Thái Nguyên",
+          "audio": "/statics/mp4/học-hát-2-bè-thánh-vịnh-66-chúa-nhật-20-thường-niên-năm-a-lm.-thái-nguyên-x-nguyễn-vinh-sơn.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Dâng Trọn Cuộc Đời",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/dâng-trọn-cuộc-đời-phanxico.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "audio": "/statics/mp4/cho-con-vững-tin-lm.-nguyễn-duy-ca-đoàn-mông-triệu-gx.-fatima-bình-triệu.m4a",
+          "song_title": "Cho Con Vững Tin",
+          "author": "Nguyễn Duy"
+        },
+        {
           "part": "Kết Lễ",
           "song_title": "Những Người Hành Hương Của Hy Vọng",
           "author": "Bài hát Năm Thánh 2025",
