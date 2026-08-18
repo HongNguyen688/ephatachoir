@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXI Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-08-23",
+      "theme": "Con Là Đá, Thầy Sẽ Ban Cho Con Chìa Khoá Nước Trời.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-21-tn-08-23-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Ta Cùng Vui Lên",
+          "author": "Kim Long-Trọng Văn",
+          "audio": "/statics/mp4/ta-cùng-vui-lên-lm.-kim-long-lời-trọng-văn-3-bè-guitar-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "TV 137",
+          "author": "Thanh lâm",
+          "audio": "/statics/mp4/thánh-vịnh-137-đáp-ca-chúa-nhật-21-thường-niên-năm-a-ns.-thanh-lâm-thanh-vân-dapca-thanhca.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Sứ Thần Hiệp Dâng",
+          "author": "Hồng Trần",
+          "audio": "/statics/mp4/sứ-thần-hiệp-dâng-thanh-ca-dâng-lễ-hồng-trần-phạm-đình-đài.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Cho Con Đến Với Ngài",
+          "author": "Hồng Trần",
+          "audio": "/statics/mp4/cho-con-đến-với-ngài-hồng-trần-phạm-đình-đài-hiệp-lễ-chúa-nhật-21-22-thường-niên-a-.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Dao Ca Mẹ Dịu Hiền ",
+          "author": "Văn Chi",
+          "audio": "/statics/mp4/ca-dao-mẹ-dịu-hiền-sáng-tác-văn-chi-tb-phó-tế-nguyễn-minh-tâm-thánh-ca-mẹ-mân-côi.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XX Thường Niên",
       "full_pdf": "/statics/pdf/bài-hát-cn-20-tn-08-16-2026.pdf",
       "season": "Mùa Thường Niên II",
