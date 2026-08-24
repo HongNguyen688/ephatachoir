@@ -4,6 +4,46 @@
       "liturgical_year": "A",
       "title": "Chúa Nhật XXI Thường Niên",
       "season": "Mùa Thường Niên II",
+      "date": "2026-08-30",
+      "theme": "Nếu Ai Muốn Theo Thầy, Thì Hãy Từ Bỏ Mình",
+      "full_pdf": "/statics/pdf/bài-hát-cn-22-qn-09-03-2023.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Bước Vào",
+          "author": "Phạm Liên Hùng",
+          "audio": "/statics/mp4/bước-vào-lm.-phạm-liên-hùng.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh vịnh 62",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/thánh-vịnh-62-cn-22-thường-niên-năm-a-thanh-lâm.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Bánh Thơm Rượu Nồng",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/bánh-thơm-rượu-nồng-lm.-nguyễn-duy-.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Hãy Từ Bỏ Mình",
+          "author": "Huỳnh Minh Kỳ & Đinh Công Huỳnh",
+          "audio": "/statics/mp4/hãy-từ-bỏ-mình-huỳnh-minh-kỳ-đinh-công-huỳnh-cadoanhongansatx.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Tận Hiến Cho Mẹ",
+          "author": "Huyền Linh",
+          "audio": "/statics/mp4/tận-hiến-cho-mẹ-huyền-linh.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
+      "title": "Chúa Nhật XXI Thường Niên",
+      "season": "Mùa Thường Niên II",
       "date": "2026-08-23",
       "theme": "Con Là Đá, Thầy Sẽ Ban Cho Con Chìa Khoá Nước Trời.",
       "full_pdf": "/statics/pdf/bài-hát-cn-21-tn-08-23-2026.pdf",
