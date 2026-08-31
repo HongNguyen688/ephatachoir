@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXIII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-09-06",
+      "theme": "Nếu Nó Nghe Ngươi, Thì Ngươi Đã Lợi Được Người Anh Em.",
+      "full_pdf": "/statics/pdf/bai-hat-cn-23-thuon-g-niên-9-6-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Niềm vui thiết tha",
+          "author": "Phanxico",
+          "audio": "/statics/mp4/niềm-vui-thiết-tha-ca-đoàn-thiên-ca-thánh-lễ-truyền-chức-linh-mục-dòng-thánh-tâm-chúa-giêsu.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Đừng Cứng Lòng",
+          "author": "Tường Ân",
+          "audio": "/statics/mp4/đừng-cứng-lòng-thánh-vịnh-94-sáng-tác-tường-ân-ca-len-di-lyrics.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Dâng tiến",
+          "author": "Hoàng Nam",
+          "audio": "/statics/mp4/dâng-tiến-hoàng-nam-trình-bày-ai-dl-.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "audio": "/statics/mp4/về-bên-chúa-angelo-choir-angelo-band-mv-4k-official-.m4a",
+          "song_title": " Về Bên Chúa",
+          "author": "Phùng Minh Mẫn"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Mẹ Hằng Cứu Giúp",
+          "author": "Hoài Chiên",
+          "audio": "/statics/mp4/nhạc-thánh-ca-maria-mẹ-hằng-cứu-giúp-hoài-chiên.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXII Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-08-30",
