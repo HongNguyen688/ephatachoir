@@ -2,6 +2,52 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXIV Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-09-13",
+      "theme": "Mừng Bổn Mạng và Kỷ Niệm 20 Năm Thành Lập Ca Đoàn Ephata.",
+      "full_pdf": "/statics/pdf/bài-hát-lễ-bổn-mạng-ca-oan-9-17-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Chung Lời Tạ Ơn",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/chung-lời-tạ-ơn-lm.-nguyễn-duy-nhập-lễ-.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "TV 102-Chúa Là Đấng Từ Bi",
+          "author": "Tường Ân",
+          "audio": "/statics/mp4/thánh-vịnh-102-chúa-là-đấng-từ-bi-đáp-ca-chúa-nhật-24-thường-niên-năm-a-tường-ân-thanh-vân.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Tâm Tình Con Dâng 1",
+          "author": "Mai Khanh",
+          "audio": "/statics/mp4/tâm-tình-con-dâng-1-mai-khanh.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": " Ca Vang Tình Yêu Chúa 2",
+          "author": "Đinh Công Huỳnh",
+          "audio": "/statics/mp4/ca-vang-tình-yêu-chúa-2-đinh-minh-hoàng-đinh-công-huỳnh-ca-đoàn-mông-triệu.m4a"
+        },
+        {
+          "part": "Hát Tặng",
+          "song_title": "Ephata",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/êphata-hãy-mở-ra-thành-tâm.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Kinh Kính mừng",
+          "author": "Mai Khánh",
+          "audio": "/statics/mp4/kinh-kính-mừng-mai-khanh-ca-đoàn-mông-triệu-gx.-fatima-bình-triệu.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXIII Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-09-06",
