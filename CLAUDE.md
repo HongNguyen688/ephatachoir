@@ -20,6 +20,8 @@ python3 -m http.server 8080 --directory www
 
 Open http://localhost:8080. No build step required.
 
+There is no test suite, linter, or CI. (The README links a `.gemini/...test_cases.md` doc that does not exist in the repo.) Verification is manual in the browser and the native apps. There is also no `.gitignore` — `node_modules/` and `.DS_Store` files are committed.
+
 ---
 
 ## Deploying
@@ -68,6 +70,8 @@ CSS is split by page. `style.css` + `responsive.css` are loaded everywhere. Each
 ## Data Layer
 
 All data lives in `www/data/` as JSON files. No backend.
+
+> The repo root also has a stray `data/weeks.json` (plus `temp.pdf`, `ephata.png` scratch files) that is **not** served and is out of sync with the real file. Only edit `www/data/`.
 
 | File | Top-level key | Purpose |
 |------|---------------|---------|
@@ -123,7 +127,7 @@ Global functions exposed on `window`: `applyTheme(name, save)`, `applyAutoTheme(
 ## Service Worker Cache
 
 File: `www/service-worker.js`
-Cache name: `ephata-cache-vN` — **bump N whenever cached assets change** to force clients to pick up new files.
+Cache name: `ephata-cache-${CACHE_VERSION}` — **bump the `CACHE_VERSION` constant** (top of the file, currently `v15`) whenever cached assets change, to force clients to pick up new files.
 
 Strategy:
 - Network-first: HTML pages, JSON data files
@@ -139,6 +143,8 @@ When adding a new HTML page or static asset, also add it to the `STATIC_SHELL` a
 Admin panel: https://ephatachoir.org/admin/
 Config: `www/admin/config.yml`
 Backend: git-gateway (requires Netlify Identity login — commits directly to `main`).
+
+**Because the CMS pushes commits to `main` on its own, your local `main` goes stale often.** Always `git pull --rebase origin main` before starting work or pushing; a rejected push almost always means CMS/content commits landed remotely.
 
 Media upload paths:
 | Asset type | Stored in | Public URL prefix |

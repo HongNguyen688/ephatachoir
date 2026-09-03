@@ -127,7 +127,7 @@
               `;
             }).join("");
 
-            // Initialize pagination with chronological sort (Oldest → Newest)
+            // Initialize pagination with chronological sort (Newest -> Oldest)
             SEASON_ORDER.forEach((season) => {
               const seasonWeeks = yearWeeks
                 .filter((w) => w.season === season)
