@@ -1,6 +1,12 @@
 {
   "announcements": [
     {
+      "image": "/statics/images/announcements/bonmangcđ.png",
+      "title": "Mừng Bổn Mạng và Kỷ Niệm 20 Năm Thành Lập Ca Đoàn Ephata.",
+      "content": "Hiệp dâng Thánh Lễ vào \n\n11:00 am Chúa Nhật 13 tháng 9 tại thánh đường Chúa Kitô Vua, San Jose.",
+      "date": "2026-09-13"
+    },
+    {
       "image": "/statics/images/announcements/mung-chua-phuc-sinh.webp",
       "title": "Mừng Chúa Phục Sinh",
       "content": "Chủ Nhật, ngày 05 tháng 04 năm 2026 11:00 sáng - Tiếng Việt",
