@@ -117,10 +117,30 @@ Applied by setting `data-theme="X"` on `<html>` (`documentElement`).
 | Mùa Thường Niên I / II | `green` |
 | Các Ngày Lễ Khác | `red` |
 
+`bonmang` (royal blue & gold) is not season-mapped — it is driven only by the campaign override below.
+
 Auto-theme logic: `www/statics/js/index.js` → `applyAutoTheme()` — fetches `weeks.json`, finds the most recent past week, maps its `season` to a theme.
 Manual override stored in localStorage keys: `ephata_theme`, `theme_mode`
 
 Global functions exposed on `window`: `applyTheme(name, save)`, `applyAutoTheme()`, `setThemeMode(mode)`, `updateSettingsUI()`, `openExternalLink(url)`
+
+### Seasonal Campaign Override (`bonmang.js`)
+
+`www/statics/js/bonmang.js` is a date-windowed override that outranks both the auto-theme and each member's saved theme. It is loaded **in `<head>` without `defer`** on all 8 main pages so it stamps `<html>` before first paint — that ordering is load-bearing; deferring it reintroduces a flash of the normal design.
+
+Edit the single `CAMPAIGN` object at the top of the file to retarget or retire it:
+
+| Field | Meaning |
+|---|---|
+| `enabled` | Master switch — `false` disables regardless of dates |
+| `start` / `end` | Local-time window, start inclusive / end exclusive |
+| `force` | `true` = override a member's manually saved theme |
+
+When active it sets `data-theme="bonmang"` **and** adds the class `campaign-bonmang` to `<html>`. The class is what swaps the homepage hero: CSS at the bottom of `style.css` hides `.hero .text-container` and reveals `.bonmang-banner`. `index.js` reads `window.EPHATA_CAMPAIGN` via `campaignOverride()` and skips the season lookup while it is active.
+
+Current campaign: **Bổn Mạng / 20 Năm Thành Lập, Sept 1–30 2026**, artwork `www/statics/images/bonmang-2026.jpg`. The artwork reads "2006 – 2026", so it must be replaced — not just re-dated — if reused in a later year. The unoptimized 3.2 MB master is `BonMangCĐ.png` at the repo root; the served JPEG is 322 KB.
+
+The `.hero` padding override needs `!important` because `responsive.css` re-applies hero padding with `!important` in its mobile media query.
 
 ---
 

@@ -1002,3 +1002,98 @@ footer::before {
 .privacy-box li {
   margin-bottom: 0.5rem;
 }
+/* ==========================================================================
+   BỔN MẠNG / 20 NĂM THÀNH LẬP  —  royal blue & gold
+   Palette sampled from statics/images/bonmang-2026.jpg
+   Activated by statics/js/bonmang.js (see that file to change the dates).
+   ========================================================================== */
+:root[data-theme="bonmang"] {
+  --primary: #1a3a7a;
+  /* Royal blue — the cross, the "20", the ribbon */
+  --primary-hover: #22509e;
+  --primary-dark: #0f2557;
+  --accent: #c9a227;
+  /* Gold — the music notes and border filigree */
+  --accent-hover: #e0bd54;
+  --accent-dark: #a07f18;
+  --nav-border: #c9a227;
+  --hero-start: #1a3a7a;
+  --hero-mid: #22509e;
+  --hero-end: #0f2557;
+  --hero-text: #f4e7c1;
+  --hero-title: #ffffff;
+  --hero-text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 26px rgba(201, 162, 39, 0.35);
+  --hero-p-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  --card-border: #dbe6f6;
+  --card-shadow: rgba(26, 58, 122, 0.12);
+  --card-hover-shadow: rgba(26, 58, 122, 0.24);
+  --accent-shadow: rgba(201, 162, 39, 0.30);
+  --accent-shadow-hover: rgba(201, 162, 39, 0.55);
+  --button-ripple: rgba(255, 255, 255, 0.4);
+  --background: #f4f8fe;
+  /* Pale sky, matching the banner's backdrop */
+  --text-main: #2b3550;
+  --text-heading: #1a3a7a;
+  --footer-start: #1a3a7a;
+  --footer-end: #0f2557;
+  --footer-text: #f4e7c1;
+}
+
+/* Gold hairline under the nav, echoing the banner's filigree border */
+:root[data-theme="bonmang"] header {
+  border-bottom: 3px solid var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   Homepage hero swap — banner artwork replaces the welcome text.
+   Only fires when bonmang.js has added .campaign-bonmang to <html>.
+   -------------------------------------------------------------------------- */
+.bonmang-banner {
+  display: none;
+}
+
+/* !important is required to beat responsive.css, which re-adds hero padding
+   with !important inside its mobile media query. The banner runs full-bleed. */
+:root.campaign-bonmang .hero {
+  padding: 0 !important;
+  background: var(--hero-end);
+  background-image: none;
+}
+
+/* The artwork carries its own colour; the scrim would only mute it */
+:root.campaign-bonmang .hero::before,
+:root.campaign-bonmang .hero::after {
+  display: none;
+}
+
+:root.campaign-bonmang .hero .text-container {
+  display: none;
+}
+
+:root.campaign-bonmang .hero .bonmang-banner {
+  display: block;
+  position: relative;
+  z-index: 2;
+  line-height: 0;
+}
+
+:root.campaign-bonmang .hero .bonmang-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Screen-reader-only: keeps the welcome wording available to assistive tech
+   and to search engines while the artwork is showing. */
+.bonmang-banner .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -8,6 +8,8 @@
     <meta name="theme-color" content="#d35400" />
     <link rel="icon" type="image/svg+xml" href="./statics/images/logo.png" />
     <title>CĐ Ephata - San Jose</title>
+    <!-- Bổn Mạng template: must stay in <head> and un-deferred so the festive theme paints first -->
+    <script src="./statics/js/bonmang.js"></script>
     <link rel="stylesheet" href="./statics/css/style.css" />
     <link rel="stylesheet" href="./statics/css/responsive.css" />
     <link rel="stylesheet" href="./statics/css/weeklysong.css" />
@@ -103,11 +105,25 @@
                 .replace(/[^\w-]/g, "");
             };
 
+            // Only the season holding the most recently added week opens by
+            // default. Everything else starts collapsed, so members land on
+            // the songs currently in use instead of the whole year at once.
+            const newestWeek = yearWeeks.reduce(
+              (newest, w) =>
+                !newest || new Date(w.date) > new Date(newest.date) ? w : newest,
+              null,
+            );
+            const openSeason = newestWeek ? newestWeek.season : null;
+
             // Render seasonal containers
             container.innerHTML = SEASON_ORDER.map((season) => {
               const seasonSlug = slugify(season);
               const seasonId = `pagination-${year}-${seasonSlug}`;
               const seasonWeeks = yearWeeks.filter((w) => w.season === season);
+
+              // An empty season can never be the open one.
+              const openClass =
+                season === openSeason && seasonWeeks.length > 0 ? " active" : "";
 
               const bodyContent =
                 seasonWeeks.length === 0
@@ -119,8 +135,8 @@
 
               return `
                 <div class="season" data-season-year="${year}" data-season-name="${season}">
-                  <div class="season-header active">${season}</div>
-                  <div class="season-body active">
+                  <div class="season-header${openClass}">${season}</div>
+                  <div class="season-body${openClass}">
                     ${bodyContent}
                   </div>
                 </div>

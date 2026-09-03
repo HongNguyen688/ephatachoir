@@ -15,7 +15,8 @@ const THEME_META_COLORS = {
   gold_white: '#fdb52a',
   navy: '#1565C0',
   white: '#ffffff',
-  christmas_green: '#2e7d32'
+  christmas_green: '#2e7d32',
+  bonmang: '#1a3a7a'
 };
 const THEME_MAP = {
   'Mùa Vọng': 'purple',
@@ -27,7 +28,21 @@ const THEME_MAP = {
   'Các Ngày Lễ Khác': 'red'
 };
 
+// A running campaign (see statics/js/bonmang.js) outranks the liturgical
+// season while it is active, so the whole choir sees the feast-day look.
+function campaignOverride() {
+  const c = window.EPHATA_CAMPAIGN;
+  return c && c.active && c.force ? c : null;
+}
+
 async function applyAutoTheme() {
+  const campaign = campaignOverride();
+  if (campaign) {
+    applyTheme(campaign.theme, false);
+    console.log(`Campaign theme active: ${campaign.theme}`);
+    return;
+  }
+
   try {
     const response = await fetch('./data/weeks.json', { cache: 'no-cache' });
     const data = await response.json();
@@ -73,7 +88,12 @@ function applyTheme(themeName, save = true) {
 const themeMode = localStorage.getItem('theme_mode') || 'auto';
 const savedTheme = localStorage.getItem('ephata_theme');
 
-if (themeMode === 'auto') {
+if (campaignOverride()) {
+  // bonmang.js already stamped <html> from the <head>, so nothing repaints
+  // here — this only syncs the browser chrome colour and the Settings UI.
+  // Saved preferences are left untouched and return when the campaign ends.
+  applyTheme(campaignOverride().theme, false);
+} else if (themeMode === 'auto') {
   applyAutoTheme();
 } else if (savedTheme) {
   applyTheme(savedTheme, false);

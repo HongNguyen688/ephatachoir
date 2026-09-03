@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bổn Mạng template: must stay in <head> and un-deferred so the festive theme paints first -->
+  <script src="./statics/js/bonmang.js"></script>
   <link rel="stylesheet" href="statics/css/style.css" />
   <link rel="stylesheet" href="statics/css/responsive.css" />
   <title>Privacy Policy - Ephata Choir</title>
@@ -64,6 +66,10 @@
         <p>Chọn màu giao diện cố định cho website.</p>
 
         <div class="theme-buttons">
+          <button class="theme-btn" data-theme="bonmang" onclick="applyTheme('bonmang')">
+            <span class="color-circle" style="background: #1a3a7a; border: 2px solid #c9a227;"></span>
+            <span class="theme-name">Bổn Mạng – 20 Năm (Xanh & Vàng)</span>
+          </button>
           <button class="theme-btn" data-theme="navy" onclick="applyTheme('navy')">
             <span class="color-circle" style="background: #1565C0;"></span>
             <span class="theme-name">Giao Diện Quanh Năm (Xanh Navy)</span>
