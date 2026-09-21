@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXVI Thường Niên",
+      "full_pdf": "/statics/pdf/bài-hát-cn-26-tn-9-27-2026.pdf",
+      "date": "2026-09-27",
+      "season": "Mùa Thường Niên II",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Về Đây Hỡi Người",
+          "audio": "/statics/mp4/về-đây-hỡi-người-2-bè-nhập-lễ-.m4a",
+          "author": "Lan Thanh"
+        },
+        {
+          "part": "Đáp Ca",
+          "audio": "/statics/mp4/thánh-vịnh-24-cn-26-thường-niên-năm-a-thanh-lâm.m4a",
+          "song_title": "TV 24",
+          "author": "Thanh Lâm"
+        },
+        {
+          "song_title": "Lễ Dâng 1",
+          "part": "Dâng Lễ",
+          "author": "Nguyễn Mộng Huỳnh",
+          "audio": "/statics/mp4/lễ-dâng-1-nguyễn-mộng-huỳnh.m4a"
+        },
+        {
+          "song_title": "Thực Hành Lệnh Chúa Truyền",
+          "part": "Hiệp Lễ",
+          "audio": "/statics/mp4/ca-hiệp-lễ-cn-26-a-thường-niên-thực-hành-lệnh-chúa-truyền.m4a",
+          "author": "Nguyễn Mộng Huỳnh"
+        },
+        {
+          "part": "Kết Lễ",
+          "audio": "/statics/mp4/hoa-mân-côi-lm.-kim-long.m4a",
+          "song_title": "Hoa Mân Côi",
+          "author": "Kim Long"
+        }
+      ],
+      "theme": "Nó Hối Hận và Đi Làm."
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXV Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-09-20",
