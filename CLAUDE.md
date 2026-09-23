@@ -136,18 +136,18 @@ Edit the single `CAMPAIGN` object at the top of the file to retarget or retire i
 | `start` / `end` | Local-time window, start inclusive / end exclusive |
 | `force` | `true` = override a member's manually saved theme |
 
-When active it sets `data-theme="bonmang"` **and** adds the class `campaign-bonmang` to `<html>`. The class is what swaps the homepage hero: CSS at the bottom of `style.css` hides `.hero .text-container` and reveals `.bonmang-banner`. `index.js` reads `window.EPHATA_CAMPAIGN` via `campaignOverride()` and skips the season lookup while it is active.
+When active it sets `data-theme="bonmang"` **and** adds the class `campaign-bonmang` to `<html>`. The class is what swaps the homepage hero: CSS at the bottom of `style.css` hides `.hero-home .text-container` and reveals `.bonmang-banner`. `index.js` reads `window.EPHATA_CAMPAIGN` via `campaignOverride()` and skips the season lookup while it is active.
 
 Current campaign: **Bổn Mạng / 20 Năm Thành Lập, Sept 1–30 2026**, artwork `www/statics/images/bonmang-2026.jpg`. The artwork reads "2006 – 2026", so it must be replaced — not just re-dated — if reused in a later year. The unoptimized 3.2 MB master is `BonMangCĐ.png` at the repo root; the served JPEG is 322 KB.
 
-The `.hero` padding override needs `!important` because `responsive.css` re-applies hero padding with `!important` in its mobile media query.
+All campaign hero rules are scoped to `.hero-home` (the homepage hero only) so other pages keep their normal hero padding. The `.hero-home` padding override needs `!important` because `responsive.css` re-applies hero padding with `!important` in its mobile media query.
 
 ---
 
 ## Service Worker Cache
 
 File: `www/service-worker.js`
-Cache name: `ephata-cache-${CACHE_VERSION}` — **bump the `CACHE_VERSION` constant** (top of the file, currently `v15`) whenever cached assets change, to force clients to pick up new files.
+Cache name: `ephata-cache-${CACHE_VERSION}` — **bump the `CACHE_VERSION` constant** (top of the file, currently `v17`) whenever cached assets change, to force clients to pick up new files.
 
 Strategy:
 - Network-first: HTML pages, JSON data files

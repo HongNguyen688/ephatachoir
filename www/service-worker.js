@@ -1,6 +1,6 @@
 // CĐ Ephata Service Worker — Offline PWA (v16)
 // ============================================================
-const CACHE_VERSION = 'v16';
+const CACHE_VERSION = 'v17';
 const CACHE_NAME = `ephata-cache-${CACHE_VERSION}`;
 
 // Assets to pre-cache

@@ -1046,7 +1046,8 @@ footer::before {
 
 /* --------------------------------------------------------------------------
    Homepage hero swap — banner artwork replaces the welcome text.
-   Only fires when bonmang.js has added .campaign-bonmang to <html>.
+   Only fires when bonmang.js has added .campaign-bonmang to <html>, and only on
+   the homepage (.hero-home) — other pages keep their normal hero padding.
    -------------------------------------------------------------------------- */
 .bonmang-banner {
   display: none;
@@ -1054,30 +1055,30 @@ footer::before {
 
 /* !important is required to beat responsive.css, which re-adds hero padding
    with !important inside its mobile media query. The banner runs full-bleed. */
-:root.campaign-bonmang .hero {
+:root.campaign-bonmang .hero-home {
   padding: 0 !important;
   background: var(--hero-end);
   background-image: none;
 }
 
 /* The artwork carries its own colour; the scrim would only mute it */
-:root.campaign-bonmang .hero::before,
-:root.campaign-bonmang .hero::after {
+:root.campaign-bonmang .hero-home::before,
+:root.campaign-bonmang .hero-home::after {
   display: none;
 }
 
-:root.campaign-bonmang .hero .text-container {
+:root.campaign-bonmang .hero-home .text-container {
   display: none;
 }
 
-:root.campaign-bonmang .hero .bonmang-banner {
+:root.campaign-bonmang .hero-home .bonmang-banner {
   display: block;
   position: relative;
   z-index: 2;
   line-height: 0;
 }
 
-:root.campaign-bonmang .hero .bonmang-banner img {
+:root.campaign-bonmang .hero-home .bonmang-banner img {
   display: block;
   width: 100%;
   height: auto;
