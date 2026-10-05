@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXVIII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-10-11",
+      "full_pdf": "/statics/pdf/bài-hát-cn-28-tn-10-11-2026.pdf",
+      "theme": "Các ngươi gặp bất cứ ai, thì hãy mời vào dự tiệc cưới.",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "audio": "/statics/mp4/chung-lời-cảm-tạ-nhạc-lm-nguyễn-duy.m4a",
+          "song_title": "Chung Lời Cảm Tạ",
+          "author": "Nguyễn Duy"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "TV 22",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-22-chúa-nhật-28-thường-niên-năm-a-tg-thanh-lâm.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Lễ Vật Huyền Siêu",
+          "author": "Văn Chi",
+          "audio": "/statics/mp4/lễ-vật-huyền-siêu-lm.-văn-chi-ca-đoàn-thánh-linh-kansas-city..m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Chúa Biết Lòng Con ",
+          "author": "Ân Đức",
+          "audio": "https://www.youtube.com/watch?v=2BcAtDKizXI"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Con Xin Dâng Mẹ",
+          "author": "Văn Chi",
+          "audio": "/statics/mp4/con-xin-dâng-mẹ-văn-chi.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXVII Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-10-04",
