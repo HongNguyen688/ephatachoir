@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXIX Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-10-18",
+      "theme": "Các con hãy đi giảng dạy muôn dân.",
+      "full_pdf": "/statics/pdf/bài-hát-cn-29-tn-10-18-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Đẹp Thay",
+          "author": "Mi Trầm",
+          "audio": "/statics/mp4/đẹp-thay-lm.-mi-trầm-ca-đoàn-mông-triệu-giáo-xứ-fatima-bình-triệu.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "TV 95",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/thánh-vịnh-95-đáp-ca-chúa-nhật-29-thường-niên-năm-a-ns.-thanh-lâm-thanh-vân-dapca-thanhca.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Dâng Hồn Xác",
+          "author": "Hùng Lân",
+          "audio": "/statics/mp4/dâng-hồn-xác-hùng-lân.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Đường Con Đi",
+          "author": "Nguyễn Duy",
+          "audio": "/statics/mp4/đường-con-đi-lm.-nguyễn-duy-ca-đoàn-thiên-ca.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Lạy Chúa Xin Hãy Sai Đi",
+          "author": "Hoàng Kim",
+          "audio": "/statics/mp4/lạy-chúa-xin-hãy-sai-đi-–-linh-mục-nhạc-sĩ-hoàng-kim-thánh-ca-công-giáo-ca-đoàn-thérèse.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXVIII Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-10-11",
