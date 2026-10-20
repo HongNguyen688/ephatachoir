@@ -2,6 +2,45 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXX Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-10-25",
+      "full_pdf": "/statics/pdf/cn30tn.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "audio": "/statics/mp4/tram-trieu-loi-ca-gm.-nguyen-van-hoa-lm.-tien-dung.m4a",
+          "song_title": "Trăm Triệu Lời Ca",
+          "author": "Gm. Nguyen Van Hoa & Lm. Tien Dung"
+        },
+        {
+          "part": "Đáp Ca",
+          "audio": "/statics/mp4/đáp-ca-thánh-vịnh-17-cn-30-tn-a-lm-thái-nguyên.m4a",
+          "song_title": "TV17 CN 30 A",
+          "author": "Thái Nguyên"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Một Niềm Phó Thác",
+          "audio": "/statics/mp4/một-niềm-phó-thác-lm.-nguyễn-mộng-huỳnh-ca-đoàn-mông-triệu-gx.-fatima-bình-triệu.m4a",
+          "author": "Nguyễn Mộng Huỳnh"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Bài Ca Yêu Thương",
+          "author": "Từ Duyên",
+          "audio": "/statics/mp4/bài-ca-yêu-thương-lm-từ-duyên-trình-bày-cđ-gioan-phaolô-ii-hl-cn-23a-30a-.m4a"
+        },
+        {
+          "song_title": "Năm Xưa Trên Cây Sồi",
+          "author": "Huyền Linh",
+          "part": "Kết Lễ",
+          "audio": "/statics/mp4/năm-xưa-trên-cây-sồi-lê-huy-ca-đoàn-mẹ-lên-trời-di-dângiáo-phận-vinh-lễ-kính-đức-mẹ-hội-mân-côi.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXIX Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-10-18",
