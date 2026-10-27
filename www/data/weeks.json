@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật Lễ Các Thánh Nam Nữ",
+      "date": "2026-11-01",
+      "season": "Mùa Thường Niên II",
+      "theme": "Phúc cho những ai có tinh thần nghèo khó, vì nước trời là của họ.",
+      "full_pdf": "/statics/pdf/bai-hat-le-cac-thanh-hnam-nữ-11-1-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "audio": "/statics/mp4/mừng-các-thánh-lm-hoài-đức.m4a",
+          "song_title": "Mừng Các Thánh",
+          "author": "Hoài Đức"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 23",
+          "author": "Huy Hoàng",
+          "audio": "/statics/mp4/đáp-ca-alleluia-thánh-vịnh-23-lễ-các-thánh-nam-nữ-lm.-huy-hoàng.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "audio": "/statics/mp4/lễ-dâng-tình-yêu-thiên-thanh-bùi-tới..m4a",
+          "song_title": "Lễ Dâng Tình Yêu",
+          "author": "Thiên Thanh"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Vui Ngày Trở Về",
+          "author": "Thành Tâm",
+          "audio": "/statics/mp4/vui-ngày-trở-về-lm.-thành-tâm-ca-đoàn-mông-triệu-gx.-fatima-bình-triệu.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Từ Chốn Luyện Hình",
+          "author": "Kim Long",
+          "audio": "/statics/mp4/từ-chốn-luyện-hình-lm.-kim-long-ca-đoàn-mông-triệu-gx.-fatima-bình-triệu.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXX Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-10-25",
