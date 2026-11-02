@@ -2,6 +2,46 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXXII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-11-08",
+      "full_pdf": "/statics/pdf/bài-hát-cn-32a-11-8-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Ca Nhập Lễ 2",
+          "audio": "/statics/mp4/ca-nhập-lễ-2-nhạc-nguyễn-văn-trinh.m4a",
+          "author": "Nguyễn Văn Trinh"
+        },
+        {
+          "part": "Đáp Ca",
+          "audio": "/statics/mp4/thánh-vịnh-đáp-ca-chúa-nhật-32-thường-niên-năm-a-tv-62-ngọc-diệp.m4a",
+          "song_title": "TV 62",
+          "author": "Ngọc Diệp"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": " Lễ Dâng Tình Yêu",
+          "audio": "/statics/mp4/lễ-dâng-tình-yêu-đinh-dũng-và-đinh-công-huỳnh-.m4a",
+          "author": "Đinh Dũng và Đinh Công Huỳnh"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "audio": "/statics/mp4/vươn-cao-linh-hồn-nguyễn-duy.m4a",
+          "song_title": "Vươn Cao Linh Hồn",
+          "author": "Nguyễn Duy"
+        },
+        {
+          "part": "Kết Lễ",
+          "audio": "/statics/mp4/trung-kiên-chờ-mẹ-st-nguyễn-duy-ca-đoàn-mẫu-tâm-giáo-xứ-đức-mẹ-la-vang-san-jose.m4a",
+          "song_title": "Trung Kiên Chờ Mẹ",
+          "author": "Nguyễn Duy"
+        }
+      ],
+      "theme": "Kìa chàng rể đến, hãy ra đón người."
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật Lễ Các Thánh Nam Nữ",
       "date": "2026-11-01",
       "season": "Mùa Thường Niên II",
