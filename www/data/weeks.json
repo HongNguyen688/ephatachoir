@@ -2,6 +2,45 @@
   "weeks": [
     {
       "liturgical_year": "A",
+      "title": "Chúa Nhật XXXIII Thường Niên",
+      "season": "Mùa Thường Niên II",
+      "date": "2026-11-15",
+      "full_pdf": "/statics/pdf/bài-hát-cn-33-thường-niên-11-15-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "audio": "/statics/mp4/bài-ca-ngàn-trùng-nhạc-lm-kim-long.m4a",
+          "song_title": "Bài Ca Nghìn Trùng",
+          "author": "Kim Long"
+        },
+        {
+          "part": "Đáp Ca",
+          "audio": "/statics/mp4/thánh-vịnh-127-đáp-ca-chúa-nhật-33-thường-niên-năm-a-lm.-kim-long-thanh-vân-dapca-thanhca.m4a",
+          "song_title": "Thánh Vịnh 127",
+          "author": "Kim Long"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Dâng Cha 1",
+          "author": "Hương Vĩnh",
+          "audio": "/statics/mp4/dâng-cha-1-hương-vĩnh.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "audio": "/statics/mp4/chúa-luôn-còn-mãi-phanxico.m4a",
+          "song_title": "Chúa Luôn Còn Mãi",
+          "author": "Phanxico"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Từ Nơi Ngục Hình",
+          "author": "Duy Thiên",
+          "audio": "/statics/mp4/từ-nơi-ngục-hình-lm-duy-thiên-.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "A",
       "title": "Chúa Nhật XXXII Thường Niên",
       "season": "Mùa Thường Niên II",
       "date": "2026-11-08",
