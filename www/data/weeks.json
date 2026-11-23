@@ -1,6 +1,84 @@
 {
   "weeks": [
     {
+      "liturgical_year": "B",
+      "title": "Tĩnh Tâm Mùa Vọng",
+      "season": "Các Ngày Lễ Khác",
+      "date": "2026-12-04",
+      "full_pdf": "/statics/pdf/bài-hát-thứ-sáu-12-4-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Nguyện Mùa Vọng",
+          "author": "Hoàng Vũ",
+          "audio": "/statics/mp4/nguyện-mùa-vọng-lyrics-lời-nhạc.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 26",
+          "author": "Thanh Lâm",
+          "audio": "/statics/mp4/thánh-vịnh-26-b-cn-2-mùa-chay-năm-c-thanh-lâm.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Lễ Dâng Trông Đợi",
+          "author": "Viết Chung",
+          "audio": "/statics/mp4/lễ-dâng-trông-đợi-viết-chung.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Biến Đổi Đời Con Chúa Ơi",
+          "author": "Thái Nguyên",
+          "audio": "/statics/mp4/biến-đổi-đời-con-lm.-thái-nguyên-trình-bày-linh-lan.m4a"
+        },
+        {
+          "part": "Kết Lễ",
+          "song_title": "Trông Đợi",
+          "author": "Didier Rimaud",
+          "audio": "/statics/mp4/trông-đợi-lm-nguyễn-sang-nhạc-didier-rimaud-lời-j.bình-.m4a"
+        }
+      ]
+    },
+    {
+      "liturgical_year": "B",
+      "season": "Mùa Vọng",
+      "date": "2026-11-29",
+      "title": "Chúa Nhật I Mùa Vọng",
+      "full_pdf": "/statics/pdf/bai-hat-cn-i-mua-vong-năm-b-11-29-2026.pdf",
+      "songs": [
+        {
+          "part": "Nhập Lễ",
+          "song_title": "Nguyện Mùa Vọng",
+          "author": "Hoàng Vũ",
+          "audio": "/statics/mp4/nguyện-mùa-vọng-lyrics-lời-nhạc.m4a"
+        },
+        {
+          "part": "Đáp Ca",
+          "song_title": "Thánh Vịnh 79",
+          "author": "Thái Nguyên",
+          "audio": "/statics/mp4/thánh-vịnh-79-thái-nguyên-.m4a"
+        },
+        {
+          "part": "Dâng Lễ",
+          "song_title": "Lễ Dâng Trông Đợi",
+          "author": "Viết Chung",
+          "audio": "/statics/mp4/lễ-dâng-trông-đợi-viết-chung.m4a"
+        },
+        {
+          "part": "Hiệp Lễ",
+          "song_title": "Tỉnh Thức Và Cầu Nguyện",
+          "author": "Thái Nguyên",
+          "audio": "/statics/mp4/tỉnh-thức-và-cầu-nguyện-lm.-thái-nguyên-ca-đoàn-mông-triệu-giáo-xứ-fatima-bình-triệu.m4a"
+        },
+        {
+          "song_title": "Từ Chốn Tối Tăm",
+          "part": "Kết Lễ",
+          "author": "Kim Long",
+          "audio": "/statics/mp4/từ-chốn-tối-tâm-lm.-kim-long.m4a"
+        }
+      ]
+    },
+    {
       "liturgical_year": "A",
       "title": "Chúa Nhật XXXIV Thường Niên",
       "season": "Mùa Thường Niên II",
